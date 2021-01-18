@@ -1,0 +1,265 @@
+,country,alpha2,alpha3,latitude,longitude,population,jhu_ID,global_level,continent_level,numeric
+1,Antarctica,AQ,ATA,-90,0,NA,Antarctica,Global,Antarctica,10
+2,South Georgia and the South Sandwich Islands,GS,SGS,-54.5,-37,NA,SouthGeorgiaandtheSouthSandwichIslands,Global,South America,239
+3,Bouvet Island,BV,BVT,-54.4333,3.4,NA,BouvetIsland,Global,Antarctica,74
+4,Heard Island and McDonald Islands,HM,HMD,-53.1,72.5167,NA,HeardIslandandMcDonaldIslands,Global,Antarctica,334
+5,Falkland Islands,FK,FLK,-51.75,-59,3000,FalklandIslands(Malvinas),Global,South America,238
+6,French Southern and Antarctic Lands,TF,ATF,-43,67,NA,FrenchSouthernTerritories,Global,Antarctica,260
+7,New Zealand,NZ,NZL,-41,174,4822000,NewZealand,Global,Oceania,554
+8,Argentina,AR,ARG,-34,-64,45196000,Argentina,Global,South America,32
+9,Uruguay,UY,URY,-33,-56,3474000,Uruguay,Global,South America,858
+10,Chile,CL,CHL,-30,-71,19116000,Chile,Global,South America,152
+11,Lesotho,LS,LSO,-29.5,28.5,2142000,Lesotho,Global,Africa,426
+12,Norfolk Island,NF,NFK,-29.0333,167.95,NA,NorfolkIsland,Global,Oceania,574
+13,South Africa,ZA,ZAF,-29,24,59309000,SouthAfrica,Global,Africa,710
+14,Australia,AU,AUS,-27,133,25500000,Australia,Global,Oceania,36
+15,Swaziland,SZ,SWZ,-26.5,31.5,1160000,Swaziland,Global,Africa,748
+261,Eswatini,SZ,SWZ,-26.5,31.5,1160000,Eswatini,Global,Africa,748
+16,Pitcairn,PN,PCN,-24.7,-127.4,NA,Pitcairn,Global,Oceania,612
+17,Paraguay,PY,PRY,-23,-58,7133000,Paraguay,Global,South America,600
+18,Botswana,BW,BWA,-22,24,2352000,Botswana,Global,Africa,72
+19,Namibia,NA,NAM,-22,17,2541000,Namibia,Global,Africa,516
+20,New Caledonia,NC,NCL,-21.5,165.5,285000,NewCaledonia,Global,Oceania,540
+21,Cook Islands,CK,COK,-21.2333,-159.7667,18000,CookIslands,Global,Oceania,184
+22,Reunion,RE,REU,-21.1,55.6,895000,Reunion,Global,Africa,638
+23,Mauritius,MU,MUS,-20.2833,57.55,1272000,Mauritius,Global,Africa,480
+25,Tonga,TO,TON,-20,-175,106000,Tonga,Global,Oceania,776
+24,Madagascar,MG,MDG,-20,47,27691000,Madagascar,Global,Africa,450
+26,Zimbabwe,ZW,ZWE,-20,30,14863000,Zimbabwe,Global,Africa,716
+27,Niue,NU,NIU,-19.0333,-169.8667,2000,Niue,Global,Oceania,570
+28,Mozambique,MZ,MOZ,-18.25,35,31255000,Mozambique,Global,Africa,508
+29,Fiji,FJ,FJI,-18,175,896000,Fiji,Global,Oceania,242
+30,Bolivia,BO,BOL,-17,-65,11673000,Bolivia,Global,South America,68
+31,"Bolivia, Plurinational State of",BO,BOL,-17,-65,11673000,"Bolivia,PlurinationalStateof",Global,South America,68
+32,Vanuatu,VU,VUT,-16,167,307000,Vanuatu,Global,Oceania,548
+33,"Saint Helena, Ascension and Tristan da Cunha",SH,SHN,-15.9333,-5.7,6000,"SaintHelena,AscensionandTristandaCunha",Global,Africa,654
+34,French Polynesia,PF,PYF,-15,-140,281000,FrenchPolynesia,Global,Oceania,258
+35,Zambia,ZM,ZMB,-15,30,18384000,Zambia,Global,Africa,894
+36,American Samoa,AS,ASM,-14.3333,-170,55000,AmericanSamoa,Global,Oceania,16
+37,Samoa,WS,WSM,-13.5833,-172.3333,198000,Samoa,Global,Oceania,882
+38,Malawi,MW,MWI,-13.5,34,19130000,Malawi,Global,Africa,454
+39,Wallis and Futuna,WF,WLF,-13.3,-176.2,11000,WallisandFutuna,Global,Oceania,876
+40,Mayotte,YT,MYT,-12.8333,45.1667,273000,Mayotte,Global,Africa,175
+42,Cocos (Keeling) Islands,CC,CCK,-12.5,96.8333,NA,Cocos(Keeling)Islands,Global,Asia,166
+41,Angola,AO,AGO,-12.5,18.5,32866000,Angola,Global,Africa,24
+43,Comoros,KM,COM,-12.1667,44.25,870000,Comoros,Global,Africa,174
+44,Christmas Island,CX,CXR,-10.5,105.6667,NA,ChristmasIsland,Global,Asia,162
+45,Brazil,BR,BRA,-10,-55,212559000,Brazil,Global,South America,76
+46,Peru,PE,PER,-10,-76,32972000,Peru,Global,South America,604
+47,Tokelau,TK,TKL,-9,-172,1000,Tokelau,Global,Oceania,772
+48,Timor-Leste,TL,TLS,-8.55,125.5167,1318000,TimorLeste,Global,Asia,626
+49,Solomon Islands,SB,SLB,-8,159,687000,SolomonIslands,Global,Oceania,90
+50,Tuvalu,TV,TUV,-8,178,12000,Tuvalu,Global,Oceania,798
+51,British Indian Ocean Territory,IO,IOT,-6,71.5,NA,BritishIndianOceanTerritory,Global,Asia,86
+52,Papua New Guinea,PG,PNG,-6,147,8947000,PapuaNewGuinea,Global,Oceania,598
+53,"Tanzania, United Republic of",TZ,TZA,-6,35,59734000,Tanzania,Global,Africa,834
+54,Indonesia,ID,IDN,-5,120,273524000,Indonesia,Global,Asia,360
+55,Seychelles,SC,SYC,-4.5833,55.6667,98000,Seychelles,Global,Africa,690
+56,Burundi,BI,BDI,-3.5,30,11891000,Burundi,Global,Africa,108
+57,Ecuador,EC,ECU,-2,-77.5,17643000,Ecuador,Global,South America,218
+58,Rwanda,RW,RWA,-2,30,12952000,Rwanda,Global,Africa,646
+59,Republic of the Congo,CG,COG,-1,15,5518000,Congo,Global,Africa,178
+60,Gabon,GA,GAB,-1,11.75,2226000,Gabon,Global,Africa,266
+61,Nauru,NR,NRU,-0.5333,166.9167,11000,Nauru,Global,Oceania,520
+62,Democratic Republic of the Congo,CD,COD,0,25,89561000,DemocraticRepublicoftheCongo,Global,Africa,180
+63,Kenya,KE,KEN,1,38,53771000,Kenya,Global,Africa,404
+64,Sao Tome and Principe,ST,STP,1,7,219000,SaoTomeandPrincipe,Global,Africa,678
+65,Uganda,UG,UGA,1,32,45741000,Uganda,Global,Africa,800
+66,Singapore,SG,SGP,1.3667,103.8,5850000,Singapore,Global,Asia,702
+67,Kiribati,KI,KIR,1.4167,173,119000,Kiribati,Global,Oceania,296
+68,Equatorial Guinea,GQ,GNQ,2,10,1403000,EquatorialGuinea,Global,Africa,226
+69,Malaysia,MY,MYS,2.5,112.5,32366000,Malaysia,Global,Asia,458
+70,Maldives,MV,MDV,3.25,73,541000,Maldives,Global,Asia,462
+72,French Guiana,GF,GUF,4,-53,299000,FrenchGuiana,Global,South America,254
+71,Colombia,CO,COL,4,-72,50883000,Colombia,Global,South America,170
+73,Suriname,SR,SUR,4,-56,587000,Suriname,Global,South America,740
+74,Brunei,BN,BRN,4.5,114.6667,437000,Brunei,Global,Asia,96
+75,Brunei Darussalam,BN,BRN,4.5,114.6667,437000,BruneiDarussalam,Global,Asia,96
+76,Guyana,GY,GUY,5,-59,787000,Guyana,Global,South America,328
+77,Cameroon,CM,CMR,6,12,26546000,Cameroon,Global,Africa,120
+78,Liberia,LR,LBR,6.5,-9.5,5058000,Liberia,Global,Africa,430
+79,"Micronesia, Federated States of",FM,FSM,6.9167,158.25,115000,"Micronesia,FederatedStatesof",Global,Oceania,583
+81,Sri Lanka,LK,LKA,7,81,21413000,SriLanka,Global,Asia,144
+80,Central African Republic,CF,CAF,7,21,4830000,CentralAfricanRepublic,Global,Africa,140
+82,Palau,PW,PLW,7.5,134.5,18000,Palau,Global,Oceania,585
+88,Venezuela,VE,VEN,8,-66,28436000,Venezuela,Global,South America,862
+89,"Venezuela, Bolivarian Republic of",VE,VEN,8,-66,28436000,"Venezuela,BolivarianRepublicof",Global,South America,862
+83,Cote d'Ivoire,CI,CIV,8,-5,26378000,CotedIvoire,Global,Africa,384
+84,Ethiopia,ET,ETH,8,38,114964000,Ethiopia,Global,Africa,231
+85,Ghana,GH,GHA,8,-2,31073000,Ghana,Global,Africa,288
+86,Ivory Coast,CI,CIV,8,-5,26378000,IvoryCoast,Global,Africa,384
+87,Togo,TG,TGO,8,1.1667,8279000,Togo,Global,Africa,768
+90,Sierra Leone,SL,SLE,8.5,-11.5,7977000,SierraLeone,Global,Africa,694
+91,Marshall Islands,MH,MHL,9,168,59000,MarshallIslands,Global,Oceania,584
+92,Panama,PA,PAN,9,-80,4315000,Panama,Global,North America,591
+93,Benin,BJ,BEN,9.5,2.25,12123000,Benin,Global,Africa,204
+96,Somalia,SO,SOM,10,49,15893000,Somalia,Global,Africa,706
+94,Costa Rica,CR,CRI,10,-84,5094000,CostaRica,Global,North America,188
+95,Nigeria,NG,NGA,10,8,206140000,Nigeria,Global,Africa,566
+98,Trinidad & Tobago,TT,TTO,11,-61,1399000,Trinidad&Tobago,Global,North America,780
+99,Trinidad and Tobago,TT,TTO,11,-61,1399000,TrinidadandTobago,Global,North America,780
+97,Guinea,GN,GIN,11,-10,13133000,Guinea,Global,Africa,324
+100,Djibouti,DJ,DJI,11.5,43,988000,Djibouti,Global,Africa,262
+101,Guinea-Bissau,GW,GNB,12,-15,1968000,GuineaBissau,Global,Africa,624
+102,Grenada,GD,GRD,12.1167,-61.6667,113000,Grenada,Global,North America,308
+260,Curacao,CW,CUW,12.2,-69,164000,Curacao,Global,North America,531
+103,Netherlands Antilles,AN,ANT,12.25,-68.75,NA,NetherlandsAntilles,Global,North America,530
+104,Aruba,AW,ABW,12.5,-69.9667,107000,Aruba,Global,North America,533
+106,Cambodia,KH,KHM,13,105,16719000,Cambodia,Global,Asia,116
+108,Philippines,PH,PHL,13,122,109581000,Philippines,Global,Asia,608
+107,Nicaragua,NI,NIC,13,-85,6625000,Nicaragua,Global,North America,558
+105,Burkina Faso,BF,BFA,13,-2,20903000,BurkinaFaso,Global,Africa,854
+109,Barbados,BB,BRB,13.1667,-59.5333,287000,Barbados,Global,North America,52
+110,Saint Vincent & the Grenadines,VC,VCT,13.25,-61.2,111000,SaintVincent&theGrenadines,Global,North America,670
+111,Saint Vincent and the Grenadines,VC,VCT,13.25,-61.2,111000,SaintVincentandtheGrenadines,Global,North America,670
+112,St. Vincent and the Grenadines,VC,VCT,13.25,-61.2,111000,St.VincentandtheGrenadines,Global,North America,670
+114,Guam,GU,GUM,13.4667,144.7833,169000,Guam,Global,Oceania,316
+113,The Gambia,GM,GMB,13.4667,-16.5667,2417000,Gambia,Global,Africa,270
+115,El Salvador,SV,SLV,13.8333,-88.9167,6486000,ElSalvador,Global,North America,222
+116,Saint Lucia,LC,LCA,13.8833,-61.1333,184000,SaintLucia,Global,North America,662
+117,Senegal,SN,SEN,14,-14,16744000,Senegal,Global,Africa,686
+118,Martinique,MQ,MTQ,14.6667,-61,375000,Martinique,Global,North America,474
+123,Thailand,TH,THA,15,100,69800000,Thailand,Global,Asia,764
+122,Sudan,SD,SDN,15,30,43849000,Sudan,Global,Africa,736
+124,Yemen,YE,YEM,15,48,29826000,Yemen,Global,Asia,887
+121,Honduras,HN,HND,15,-86.5,9905000,Honduras,Global,North America,340
+119,Chad,TD,TCD,15,19,16426000,Chad,Global,Africa,148
+120,Eritrea,ER,ERI,15,39,3546000,Eritrea,Global,Africa,232
+125,Northern Mariana Islands,MP,MNP,15.2,145.75,58000,NorthernMarianaIslands,Global,Oceania,580
+126,Dominica,DM,DMA,15.4167,-61.3333,72000,Dominica,Global,North America,212
+127,Guatemala,GT,GTM,15.5,-90.25,17916000,Guatemala,Global,North America,320
+130,Viet Nam,VN,VNM,16,106,97339000,VietNam,Global,Asia,704
+131,Vietnam,VN,VNM,16,106,97339000,Vietnam,Global,Asia,704
+128,Cape Verde,CV,CPV,16,-24,556000,CapeVerde,Global,Africa,132
+129,Niger,NE,NER,16,8,24207000,Niger,Global,Africa,562
+132,Guadeloupe,GP,GLP,16.25,-61.5833,400000,Guadeloupe,Global,North America,312
+133,Montserrat,MS,MSR,16.75,-62.2,5000,Montserrat,Global,North America,500
+134,Mali,ML,MLI,17,-4,20251000,Mali,Global,Africa,466
+135,Antigua and Barbuda,AG,ATG,17.05,-61.8,98000,AntiguaandBarbuda,Global,North America,28
+136,Belize,BZ,BLZ,17.25,-88.75,398000,Belize,Global,North America,84
+137,Saint Kitts and Nevis,KN,KNA,17.3333,-62.75,53000,SaintKittsandNevis,Global,North America,659
+259,Saint Barthelemy,BL,BLM,17.9,-62.83,10000,SaintBarthelemy,Global,North America,652
+138,Lao People's Democratic Republic,LA,LAO,18,105,7276000,Laos,Global,Asia,418
+258,Saint Martin,MF,MAF,18.07,-63.05,39000,SaintMartin,Global,North America,663
+139,Anguilla,AI,AIA,18.25,-63.1667,15000,Anguilla,Global,North America,660
+141,Puerto Rico,PR,PRI,18.25,-66.5,2861000,PuertoRico,Global,North America,630
+140,Jamaica,JM,JAM,18.25,-77.5,2961000,Jamaica,Global,North America,388
+142,"Virgin Islands, U.S.",VI,VIR,18.3333,-64.8333,104000,"VirginIslands,U.S.",Global,North America,850
+143,"Virgin Islands, British",VG,VGB,18.5,-64.5,30000,"VirginIslands,British",Global,North America,92
+144,Dominican Republic,DO,DOM,19,-70.6667,10848000,DominicanRepublic,Global,North America,214
+145,Haiti,HT,HTI,19,-72.4167,11403000,Haiti,Global,North America,332
+146,United States Minor Outlying Islands,UM,UMI,19.2833,166.6,NA,UnitedStatesMinorOutlyingIslands,Global,Oceania,581
+147,Cayman Islands,KY,CYM,19.5,-80.5,66000,CaymanIslands,Global,North America,136
+148,India,IN,IND,20,77,1380004000,India,Global,Asia,356
+149,Mauritania,MR,MRT,20,-12,4650000,Mauritania,Global,Africa,478
+150,Oman,OM,OMN,21,57,5107000,Oman,Global,Asia,512
+151,Cuba,CU,CUB,21.5,-80,11327000,Cuba,Global,North America,192
+152,Turks and Caicos Islands,TC,TCA,21.75,-71.5833,39000,TurksandCaicosIslands,Global,North America,796
+153,Burma,MM,MMR,22,98,54410000,Burma,Global,Asia,104
+154,Myanmar,MM,MMR,22,98,54410000,Myanmar,Global,Asia,104
+155,Macao,MO,MAC,22.1667,113.55,649000,Macao,Global,Asia,446
+156,Hong Kong,HK,HKG,22.25,114.1667,7497000,HongKong,Global,Asia,344
+157,Mexico,MX,MEX,23,-102,128933000,Mexico,Global,North America,484
+158,Taiwan,TW,TWN,23.5,121,23817000,Taiwan,Global,Asia,158
+160,Bangladesh,BD,BGD,24,90,164689000,Bangladesh,Global,Asia,50
+161,United Arab Emirates,AE,ARE,24,54,9890000,UnitedArabEmirates,Global,Asia,784
+162,The Bahamas,BS,BHS,24.25,-76,393000,Bahamas,Global,North America,44
+163,Western Sahara,EH,ESH,24.5,-13,597000,WesternSahara,Global,Africa,732
+164,Libya,LY,LBY,25,17,6871000,Libya,Global,Africa,434
+165,Libyan Arab Jamahiriya,LY,LBY,25,17,6871000,LibyanArabJamahiriya,Global,Africa,434
+166,Saudi Arabia,SA,SAU,25,45,34814000,SaudiArabia,Global,Asia,682
+167,Qatar,QA,QAT,25.5,51.25,2881000,Qatar,Global,Asia,634
+168,Bahrain,BH,BHR,26,50.55,1702000,Bahrain,Global,Asia,48
+169,Egypt,EG,EGY,27,30,102334000,Egypt,Global,Africa,818
+170,Bhutan,BT,BTN,27.5,90.5,772000,Bhutan,Global,Asia,64
+172,Nepal,NP,NPL,28,84,29137000,Nepal,Global,Asia,524
+171,Algeria,DZ,DZA,28,3,43851000,Algeria,Global,Africa,12
+173,Kuwait,KW,KWT,29.3375,47.6581,4271000,Kuwait,Global,Asia,414
+174,Pakistan,PK,PAK,30,70,220892000,Pakistan,Global,Asia,586
+175,Jordan,JO,JOR,31,36,10203000,Jordan,Global,Asia,400
+176,Israel,IL,ISR,31.5,34.75,8656000,Israel,Global,Asia,376
+263,West Bank and Gaza,NA,NA,31.9522,35.2332,4800000,WestBankandGaza,Global,Asia,NA
+179,Occupied Palestinian Territory,PS,PSE,32,35.25,5101000,occupiedPalestinianterritory,Global,Asia,275
+177,Iran (Islamic Republic of),IR,IRN,32,53,83993000,Iran,Global,Asia,364
+178,Morocco,MA,MAR,32,-5,36911000,Morocco,Global,Africa,504
+180,Bermuda,BM,BMU,32.3333,-64.75,62000,Bermuda,Global,North America,60
+181,Afghanistan,AF,AFG,33,65,38928000,Afghanistan,Global,Asia,4
+182,Iraq,IQ,IRQ,33,44,40223000,Iraq,Global,Asia,368
+183,Lebanon,LB,LBN,33.8333,35.8333,6825000,Lebanon,Global,Asia,422
+187,Diamond Princess Cruise Ship,NA,NA,34,144,NA,DiamondPrincess,Global,NA,NA
+184,Tunisia,TN,TUN,34,9,11819000,Tunisia,Global,Africa,788
+185,Mainland China,CN,CHN,35,105,1439324000,China,Global,Asia,156
+186,Cyprus,CY,CYP,35,33,1207000,Cyprus,Global,Europe,196
+188,Syria,SY,SYR,35,38,17501000,Syria,Global,Asia,760
+189,Malta,MT,MLT,35.8333,14.5833,442000,Malta,Global,Europe,470
+190,Japan,JP,JPN,36,138,126476000,Japan,Global,Asia,392
+191,Gibraltar,GI,GIB,36.1833,-5.3667,34000,Gibraltar,Global,Europe,292
+192,"Korea, Republic of",KR,KOR,37,127.5,51269000,"Korea,Republicof",Global,Asia,410
+193,Republic of Korea,KR,KOR,37,127.5,51269000,RepublicofKorea,Global,Asia,410
+194,USA,US,USA,38,-97,331003000,US,Global,North America,840
+195,Greece,GR,GRC,39,22,10423000,Greece,Global,Europe,300
+196,Tajikistan,TJ,TJK,39,71,9538000,Tajikistan,Global,Asia,762
+197,Turkey,TR,TUR,39,35,84339000,Turkey,Global,Asia,792
+198,Portugal,PT,PRT,39.5,-8,10197000,Portugal,Global,Europe,620
+200,"Korea, Democratic People's Republic of",KP,PRK,40,127,25779000,"Korea,DemocraticPeople'sRepublicof",Global,Asia,408
+199,Armenia,AM,ARM,40,45,2963000,Armenia,Global,Asia,51
+201,Spain,ES,ESP,40,-4,46755000,Spain,Global,Europe,724
+202,Turkmenistan,TM,TKM,40,60,6031000,Turkmenistan,Global,Asia,795
+212,Italy,IT,ITA,42.8333,12.8333,60462000,Italy,Global,Europe,380
+203,Azerbaijan,AZ,AZE,40.5,47.5,10139000,Azerbaijan,Global,Asia,31
+204,Albania,AL,ALB,41,20,2878000,Albania,Global,Europe,8
+205,Kyrgyzstan,KG,KGZ,41,75,6524000,Kyrgyzstan,Global,Asia,417
+206,Uzbekistan,UZ,UZB,41,64,33469000,Uzbekistan,Global,Asia,860
+207,North Macedonia,MK,MKD,41.8333,22,2083000,NorthMacedonia,Global,Europe,807
+208,Holy See (Vatican City),VA,VAT,41.9,12.45,1000,HolySee,Global,Europe,336
+209,Georgia,GE,GEO,42,43.5,3989000,Georgia,Global,Asia,268
+210,Montenegro,ME,MNE,42,19,628000,Montenegro,Global,Europe,499
+211,Andorra,AD,AND,42.5,1.6,77000,Andorra,Global,Europe,20
+262,Kosovo,XK,XKX,42.6,20.9,1800000,Kosovo,Global,Europe,NA
+213,Bulgaria,BG,BGR,43,25,6948000,Bulgaria,Global,Europe,100
+214,Monaco,MC,MCO,43.7333,7.4,39000,Monaco,Global,Europe,492
+215,San Marino,SM,SMR,43.7667,12.4167,34000,SanMarino,Global,Europe,674
+216,Bosnia and Herzegovina,BA,BIH,44,18,3281000,BosniaandHerzegovina,Global,Europe,70
+217,Serbia,RS,SRB,44,21,8737000,Serbia,Global,Europe,688
+218,Croatia,HR,HRV,45.1667,15.5,4105000,Croatia,Global,Europe,191
+220,Mongolia,MN,MNG,46,105,3278000,Mongolia,Global,Asia,496
+219,France,FR,FRA,46,2,65274000,France,Global,Europe,250
+221,Romania,RO,ROU,46,25,19238000,Romania,Global,Europe,642
+222,Slovenia,SI,SVN,46,15,2079000,Slovenia,Global,Europe,705
+223,Saint Pierre and Miquelon,PM,SPM,46.8333,-56.3333,6000,SaintPierreandMiquelon,Global,North America,666
+224,Hungary,HU,HUN,47,20,9660000,Hungary,Global,Europe,348
+225,"Moldova, Republic of",MD,MDA,47,29,4034000,Moldova,Global,Europe,498
+226,Switzerland,CH,CHE,47,8,8655000,Switzerland,Global,Europe,756
+227,Liechtenstein,LI,LIE,47.1667,9.5333,38000,Liechtenstein,Global,Europe,438
+228,Austria,AT,AUT,47.3333,13.3333,9006000,Austria,Global,Europe,40
+229,Kazakhstan,KZ,KAZ,48,68,18777000,Kazakhstan,Global,Asia,398
+230,Slovakia,SK,SVK,48.6667,19.5,5460000,Slovakia,Global,Europe,703
+231,Ukraine,UA,UKR,49,32,43734000,Ukraine,Global,Europe,804
+232,Jersey,JE,JEY,49.21,-2.13,NA,Jersey,Global,Europe,832
+233,Guernsey,GG,GGY,49.5,-2.56,NA,Guernsey,Global,Europe,831
+234,Czech Republic,CZ,CZE,49.75,15.5,10709000,Czechia,Global,Europe,203
+235,Luxembourg,LU,LUX,49.75,6.1667,626000,Luxembourg,Global,Europe,442
+236,Belgium,BE,BEL,50.8333,4,11590000,Belgium,Global,Europe,56
+237,Germany,DE,DEU,51,9,83784000,Germany,Global,Europe,276
+238,Poland,PL,POL,52,20,37847000,Poland,Global,Europe,616
+239,Netherlands,NL,NLD,52.5,5.75,17135000,Netherlands,Global,Europe,528
+240,Belarus,BY,BLR,53,28,9449000,Belarus,Global,Europe,112
+241,Ireland,IE,IRL,53,-8,4938000,Ireland,Global,Europe,372
+242,UK,GB,GBR,54,-2,67886000,UnitedKingdom,Global,Europe,826
+243,Isle of Man,IM,IMN,54.23,-4.55,85000,IsleofMan,Global,Europe,833
+244,Denmark,DK,DNK,56,10,5792000,Denmark,Global,Europe,208
+245,Lithuania,LT,LTU,56,24,2722000,Lithuania,Global,Europe,440
+246,Latvia,LV,LVA,57,25,1886000,Latvia,Global,Europe,428
+247,Estonia,EE,EST,59,26,1327000,Estonia,Global,Europe,233
+249,Russia,RU,RUS,60,100,145934000,Russia,Global,Europe,643
+250,Russian Federation,RU,RUS,60,100,145934000,RussianFederation,Global,Europe,643
+248,Canada,CA,CAN,60,-95,37742000,Canada,Global,North America,124
+251,Faroe Islands,FO,FRO,62,-7,49000,FaroeIslands,Global,Europe,234
+252,Norway,NO,NOR,62,10,5421000,Norway,Global,Europe,578
+253,Sweden,SE,SWE,62,15,10099000,Sweden,Global,Europe,752
+254,Finland,FI,FIN,64,26,5541000,Finland,Global,Europe,246
+255,Iceland,IS,ISL,65,-18,341000,Iceland,Global,Europe,352
+256,Greenland,GL,GRL,72,-40,57000,Greenland,Global,North America,304
+257,Svalbard and Jan Mayen,SJ,SJM,78,20,NA,SvalbardandJanMayen,Global,Europe,744
+258,MS Zaandam Cruise Ship,NA,NA,27.66,-80,NA,MSZaandam,Global,NA,NA
+259,South Sudan,SS,SSD,6.88,31.3,11194000,SouthSudan,Global,Africa,728

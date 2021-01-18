@@ -1,0 +1,8 @@
+﻿Type,Description,Examples of licensed human vaccines
+RNA,"Consist of messenger RNA molecules which code for parts of the target pathogen that are recognised by our immune system ('antigens'). Inside our body's cells, the RNA molecules are converted into antigens, which are then detected by our immune cells.",None
+DNA,"Consist of DNA molecules which are converted into antigens by our body's cells (via RNA as an intermediate step). As with RNA vaccines, the antigens are subsequently detected by our immune cells.",None
+Viral vector,Consist of harmless viruses that have been modified to contain antigens from the target pathogen. The modified viruses act as delivery systems that display the antigens to our immune cells. Replicating viral vectors make extra copies of themselves in our body’s cells. Non-replicating viral vectors do not.,Ebola
+Inactivated,Consist of inactivated versions of the target pathogen. These are detected by our immune cells but cannot cause illness.,"Hepatitis A, Influenza, Rabies"
+Attenuated,"Consist of active but non-virulent versions of the target pathogen. These are still capable of infecting our body’s cells and inducing an immune response, but have been modified to reduce the risk of severe illness.","Polio, Rotavirus, Measles"
+Protein subunit,Consist of key antigens from the target pathogen that are recognised by our immune system.,"Whooping cough, Hepatitis B"
+Virus-like particle,Consist of empty viral shells that resemble the target pathogen but contain no genetic material.,HPV

@@ -1,0 +1,31 @@
+Candidate,Phase,Platform,Trial number,Link,Reference,Reference link,Publication date,Data extraction
+CanSino Ad5-nCoV,I,Non-replicating viral vector,NCT04313127,https://clinicaltrials.gov/ct2/show/NCT04313127,Zhu; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31208-3/fulltext,22/05/2020,Complete
+Moderna mRNA-1273,I,RNA,NCT04283461,https://clinicaltrials.gov/ct2/show/NCT04283461,Jackson; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2022483,14/07/2020,Complete
+Oxford ChAdOx1-S,I/II,Non-replicating viral vector,NCT04324606,https://clinicaltrials.gov/ct2/show/NCT04324606,Folegatti; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31604-4/fulltext,20/07/2020,Complete
+CanSino Ad5-nCoV,II,Non-replicating viral vector,NCT04341389,https://clinicaltrials.gov/ct2/show/NCT04341389,Zhu; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31605-6/fulltext,20/07/2020,Complete
+BioNTech BNT162,I,RNA,NCT04368728,https://clinicaltrials.gov/ct2/show/NCT04368728,Mulligan; Nature 2020,https://www.nature.com/articles/s41586-020-2639-4,12/08/2020,Complete
+WIBP inactivated vaccine ,I/II,Inactivated,ChiCTR2000031809,http://www.chictr.org.cn/showprojen.aspx?proj=52227,Xia; JAMA 2020,https://jamanetwork.com/journals/jama/fullarticle/2769612,13/08/2020,Complete
+Novavax NVX-CoV2373,I,Protein subunit,NCT04368988,https://clinicaltrials.gov/ct2/show/NCT04368988,Keech; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2026920,02/09/2020,Complete
+Gamaleya Gam-COVID-Vac,I/II,Non-replicating viral vector,NCT04436471,https://clinicaltrials.gov/ct2/show/NCT04436471,Logunov; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31866-3/fulltext,04/09/2020,Complete
+Moderna mRNA-1273,I,RNA,NCT04283461,https://clinicaltrials.gov/ct2/show/NCT04283461,Anderson; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2028436,29/09/2020,Complete
+BioNTech BNT162,I,RNA,NCT04368728,https://clinicaltrials.gov/ct2/show/NCT04368728,Sahin; Nature 2020,https://www.nature.com/articles/s41586-020-2814-7,30/09/2020,Complete
+CAMS vaccine,I,Inactivated,NCT04412538,https://clinicaltrials.gov/ct2/show/NCT04412538,Pu; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.09.27.20189548v1,06/10/2020,Complete
+BioNTech BNT162,I,RNA,NCT04368728,https://clinicaltrials.gov/ct2/show/NCT04368728,Walsh; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2027906,14/10/2020,Complete
+BIBP BBIBP-CorV,I/II,Inactivated,ChiCTR2000032459,http://www.chictr.org.cn/historyversionpuben.aspx?regno=ChiCTR2000032459,Xia; Lancet Infect Dis 2020,https://www.sciencedirect.com/science/article/pii/S1473309920308318?via%3Dihub,15/10/2020,Complete
+Medicago VLP vaccine,I,Virus-like particle,NCT04450004,https://clinicaltrials.gov/ct2/show/NCT04450004,Ward; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.11.04.20226282v1,06/11/2020,Complete
+CAMS vaccine,II,Inactivated,NCT04412538,https://clinicaltrials.gov/ct2/show/NCT04412538,Che; Clin Infect Dis 2020,https://academic.oup.com/cid/advance-article/doi/10.1093/cid/ciaa1703/5962856,09/11/2020,Complete
+CureVac CVnCoV,I,RNA,NCT04449276,https://clinicaltrials.gov/ct2/show/NCT04449276,Kremsner; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.11.09.20228551v1,09/11/2020,Complete
+Sinovac CoronaVac,I/II,Inactivated,NCT04352608,https://clinicaltrials.gov/ct2/show/NCT04352608,Zhang; Lancet Infect Dis 2020,https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30843-4/fulltext,17/11/2020,Complete
+Oxford ChAdOx1-S,II,Non-replicating viral vector,NCT04400838,https://clinicaltrials.gov/ct2/show/NCT04400838,Ramasamy; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32466-1/fulltext,18/11/2020,Complete
+Clover SCB-2019,I,Protein subunit,NCT04405908,https://clinicaltrials.gov/ct2/show/NCT04405908,Richmond; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.03.20243709v1,04/12/2020,Complete
+Oxford ChAdOx1-S,III,Non-replicating viral vector,NCT04400838,https://clinicaltrials.gov/ct2/show/NCT04400838,Voysey; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32661-1/fulltext,08/12/2020,Complete
+BioNTech BNT162,III,RNA,NCT04368728,https://clinicaltrials.gov/ct2/show/NCT04368728,Polack; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2034577,10/12/2020,Complete
+BioNTech BNT162,I/II,RNA,NCT04380701,https://clinicaltrials.gov/ct2/show/NCT04380701,Sahin; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.09.20245175v1,11/12/2020,Complete
+Bharat BBV152,I,Inactivated,NCT04471519,https://clinicaltrials.gov/ct2/show/NCT04471519,Ella; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.11.20210419v1,15/12/2020,Complete
+Oxford ChAdOx1-S,I/II,Non-replicating viral vector,NCT04324606,https://clinicaltrials.gov/ct2/show/NCT04324606,Ewer; Nature Med 2020 ,https://www.nature.com/articles/s41591-020-01194-5,17/12/2020,In progress
+Oxford ChAdOx1-S,I/II,Non-replicating viral vector,NCT04324606,https://clinicaltrials.gov/ct2/show/NCT04324606,Barrett; Nature Med 2020,https://www.nature.com/articles/s41591-020-01179-4,17/12/2020,In progress
+AZLB ZF2001,I/II,Protein subunit,NCT04445194,https://clinicaltrials.gov/ct2/show/NCT04445194,Yang; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.20.20248602v1,22/12/2020,In progress
+Bharat BBV152,II,Inactivated,NCT04471519,https://clinicaltrials.gov/ct2/show/NCT04471519,Ella; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.21.20248643v1,22/12/2020,In progress
+Inovio INO-4800,I,DNA,NCT04336410,https://clinicaltrials.gov/ct2/show/NCT04336410,Tebas; EClinicalMedicine 2020,https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30433-8/fulltext,23/12/2020,Complete
+Moderna mRNA-1273,III,RNA,NCT04470427,https://clinicaltrials.gov/ct2/show/NCT04470427,Baden; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2035389,30/12/2020,Complete
+Janssen Ad26COVS1,I/II,Non-replicating viral vector,NCT04436276,https://clinicaltrials.gov/ct2/show/NCT04436276,Sadoff; NEJM 2021,https://www.nejm.org/doi/full/10.1056/NEJMoa2034201,25/09/2020,In progress (complete for preprint)
