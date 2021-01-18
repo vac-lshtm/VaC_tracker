@@ -68,7 +68,6 @@ ui <- bootstrapPage(
                         
                         "First launched in April 2020, this tracker was developed by the", a("Vaccine Centre", href="https://www.lshtm.ac.uk/research/centres/vaccine-centre", target="_blank"),
                         "at the", a("London School of Hygiene & Tropical Medicine", href="https://www.lshtm.ac.uk", target="_blank"), "to follow candidates as they progress through the development pipeline.",
-                        "Read our", a("Commentary", href="https://www.nature.com/articles/s41577-020-00455-1", target="_blank"),"in",em("Nature Reviews Immunology"),"for further details.",
                         tags$br(),tags$br(),
                         
                         "All data and code are available via the LSHTM Vaccine Centre's", tags$a(href="https://github.com/vac-lshtm/VaC_tracker", "Github page.", target="_blank"),
@@ -1567,7 +1566,6 @@ server <- function(input, output, session) {
   outputOptions(output, "vaccine_timeline", suspendWhenHidden = FALSE)
 }
 
-#shinyApp(ui = ui, server = server)
-runApp(shinyApp(ui, server), launch.browser = TRUE)
-#library(rsconnect)
-#deployApp(account="vac-lshtm")
+shinyApp(ui = ui, server = server)
+#runApp(shinyApp(ui, server), launch.browser = TRUE)
+
