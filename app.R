@@ -41,7 +41,7 @@ source("input_code/VaC_implementation.R")
 #source("input_code/VaC_jhu_daily_cases.R")
 
 # update manual components for ui
-update_full = "18 January 2021"
+update_full = "25 January 2021"
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)

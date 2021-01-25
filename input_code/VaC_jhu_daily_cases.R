@@ -143,5 +143,5 @@ for (i in 1:length(country_list)) {
 }
 
 # save file
-write.csv(collated_data, "input_data/VaC_map_daily_cases.csv", row.names=F)
+write.csv(collated_data, "input_data/VaC_LSHTM_map_daily_cases.csv", row.names=F)
 rm(list = ls())

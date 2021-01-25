@@ -36,7 +36,7 @@ Manufacture projections,Bharat Covaxin/BBV152,"No information on company website
 Approval status,Bharat Covaxin/BBV152,Emergency use in India
 ,,
 Developer(s),BioNTech/Pfizer BNT162b2,"BioNTech, Pfizer, Fosun Pharma"
-Total number in registered trials,BioNTech/Pfizer BNT162b2,"45,838"
+Total number in registered trials,BioNTech/Pfizer BNT162b2,"47,118"
 Platform,BioNTech/Pfizer BNT162b2,RNA
 Dosing,BioNTech/Pfizer BNT162b2,"2 doses, intramuscular"
 Description,BioNTech/Pfizer BNT162b2,Lipid nanoparticle-formulated mRNA encoding full-length spike (S) protein
@@ -60,7 +60,7 @@ Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"No information on company 
 Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in China, UAE, Bahrain, and Egypt"
 ,,
 Developer(s),Cansino Ad5-nCoV,"CanSino Biological Inc, Beijing Institute of Biotechnology"
-Total number in registered trials,Cansino Ad5-nCoV,"42,531"
+Total number in registered trials,Cansino Ad5-nCoV,"42,382"
 Platform,Cansino Ad5-nCoV,Non-replicating viral vector
 Dosing,Cansino Ad5-nCoV,"1 dose, intramuscular"
 Description,Cansino Ad5-nCoV,Ad5 vector containing full-length spike (S) protein
@@ -84,7 +84,7 @@ Manufacture projections,Clover SCB-2019,"Up to 1 billion doses in 2021 (<a href=
 Approval status,Clover SCB-2019,Not yet approved for widespread use
 ,,
 Developer(s),CureVac CVnCoV,CureVac
-Total number in registered trials,CureVac CVnCoV,"40,660"
+Total number in registered trials,CureVac CVnCoV,"40,674"
 Platform,CureVac CVnCoV,RNA
 Dosing,CureVac CVnCoV,"2 doses, intramuscular"
 Description,CureVac CVnCoV,Lipid nanoparticle-formulated mRNA vaccine encoding stabilised pre-fusion form of full-length spike (S) protein
@@ -96,7 +96,7 @@ Manufacture projections,CureVac CVnCoV,"300 million doses in 2021, 600 million d
 Approval status,CureVac CVnCoV,Not yet approved for widespread use
 ,,
 Developer(s),Gamaleya Gam-COVID-Vac/Sputnik V,Gamaleya Research Institute
-Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"45,086"
+Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"38,954"
 Platform,Gamaleya Gam-COVID-Vac/Sputnik V,Non-replicating viral vector
 Dosing,Gamaleya Gam-COVID-Vac/Sputnik V,"2 doses, intramuscular"
 Description,Gamaleya Gam-COVID-Vac/Sputnik V,Recombinant Ad26 (prime) and recombinant Ad5 (boost) viruses expressing full-length spike (S) protein
