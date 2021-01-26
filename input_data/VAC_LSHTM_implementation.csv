@@ -18,7 +18,7 @@ Dosing,Anhui Zhifei Longcom Biopharmaceutical ZF2001,"2/3 doses, intramuscular"
 Description,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Adjuvanted recombinant protein vaccine targeting SARS-CoV-2 receptor binding domain (RBD)
 Published results,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Phase I/II - see <b>Living review</b>
 Efficacy data,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending
-Storage requirements,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending - refrigeration (2°C to 8°C) is typical for protain subunit vaccines
+Storage requirements,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending - refrigeration (2°C to 8°C) is typical for protein subunit vaccines
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Anhui Zhifei Longcom Biopharmaceutical ZF2001,No score available
 Manufacture projections,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending
 Approval status,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Not yet approved for widespread use
@@ -53,7 +53,7 @@ Platform,Beijing/Sinopharm BBIBP-CorV,Inactivated
 Dosing,Beijing/Sinopharm BBIBP-CorV,"2 doses, intramuscular"
 Description,Beijing/Sinopharm BBIBP-CorV,Inactivated vaccine administered with aluminium hydroxide adjuvant
 Published results,Beijing/Sinopharm BBIBP-CorV,Phase I/II - see <b>Living review</b>
-Efficacy data,Beijing/Sinopharm BBIBP-CorV,"Vaccine efficacy against COVID-19 reported to be 79% in a press release on <a href=""http://www.bjbpi.com/news_list.asp?id=787"" target=""_blank"">30 Dec 2020</a>); no supporting details provided."
+Efficacy data,Beijing/Sinopharm BBIBP-CorV,"Vaccine efficacy against COVID-19 reported to be 79% in a press release on <a href=""http://www.bjbpi.com/news_list.asp?id=787"" target=""_blank"">30 Dec 2020</a>); no supporting details provided"
 Storage requirements,Beijing/Sinopharm BBIBP-CorV,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Beijing/Sinopharm BBIBP-CorV,No score available
 Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"No information on company website; up to 1 billion doses in 2021 according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-china-vaccine/sinopharm-says-may-be-able-to-make-over-one-billion-coronavirus-vaccine-doses-in-2021-idINKBN2750VB"" target=""_blank"">20 Oct 2020</a>)"
@@ -71,6 +71,18 @@ Storage requirements,Cansino Ad5-nCoV,Pending - refrigeration (2°C to 8°C) or 
 Manufacture projections,Cansino Ad5-nCoV,Pending
 Approval status,Cansino Ad5-nCoV,Limited use in China
 ,,
+Developer(s),Chinese Academy of Medical Sciences vaccine,"Institute of Medical Biology, Chinese Academy of Medical Sciences"
+Total number in registered trials,Chinese Academy of Medical Sciences vaccine,"35,433"
+Platform,Chinese Academy of Medical Sciences vaccine,Inactivated
+Dosing,Chinese Academy of Medical Sciences vaccine,"2 doses, intramuscular"
+Description,Chinese Academy of Medical Sciences vaccine,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
+Published results,Chinese Academy of Medical Sciences vaccine,"Phase I, phase II - see <b>Living review</b>"
+Efficacy data,Chinese Academy of Medical Sciences vaccine,Pending
+Storage requirements,Chinese Academy of Medical Sciences vaccine,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Chinese Academy of Medical Sciences vaccine,No score available
+Manufacture projections,Chinese Academy of Medical Sciences vaccine,Pending
+Approval status,Chinese Academy of Medical Sciences vaccine,Not yet approved for widespread use
+,,
 Developer(s),Clover SCB-2019,"Clover Biopharmaceuticals Inc, GSK, Dynavax"
 Total number in registered trials,Clover SCB-2019,"34,150"
 Platform,Clover SCB-2019,Protein subunit
@@ -82,6 +94,18 @@ Storage requirements,Clover SCB-2019,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Clover SCB-2019,No score available
 Manufacture projections,Clover SCB-2019,"Up to 1 billion doses in 2021 (<a href=""https://www.cloverbiopharma.com/index.php?m=content&c=index&a=show&catid=11&id=53"" target=""_blank"">04 Dec 2020</a>) "
 Approval status,Clover SCB-2019,Not yet approved for widespread use
+,,
+Developer(s),Covaxx UB-612,"Covaxx, United Biomedical Inc"
+Total number in registered trials,Covaxx UB-612,"7,380"
+Platform,Covaxx UB-612,Protein subunit
+Dosing,Covaxx UB-612,"2 doses, intramuscular"
+Description,Covaxx UB-612,Multitope peptide-based vaccine
+Published results,Covaxx UB-612,None
+Efficacy data,Covaxx UB-612,Pending
+Storage requirements,Covaxx UB-612,Refrigeration (2°C to 8°C)
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Covaxx UB-612,No score available
+Manufacture projections,Covaxx UB-612,"Up to 1 billion doses in 2021 (<a href=""https://www.covaxx.com/vaccine"" target=""_blank"">26 Jan 2021</a>) "
+Approval status,Covaxx UB-612,Not yet approved for widespread use
 ,,
 Developer(s),CureVac CVnCoV,CureVac
 Total number in registered trials,CureVac CVnCoV,"40,674"
@@ -119,18 +143,6 @@ Storage requirements,Inovio INO-4800,Room temperature
 Manufacture projections,Inovio INO-4800,">100 million doses in 2021 (<a href=""http://ir.inovio.com/news-releases/news-releases-details/2021/INOVIO-and-Advaccine-Announce-Exclusive-Partnership-To-Commercialize-COVID-19-DNA-Vaccine-Candidate-INO-4800-in-Greater-China/default.aspx"" target=""_blank"">04 Jan 2021</a>) "
 Approval status,Inovio INO-4800,Not yet approved for widespread use
 ,,
-Developer(s),Chinese Academy of Medical Sciences vaccine,"Institute of Medical Biology, Chinese Academy of Medical Sciences"
-Total number in registered trials,Chinese Academy of Medical Sciences vaccine,"35,433"
-Platform,Chinese Academy of Medical Sciences vaccine,Inactivated
-Dosing,Chinese Academy of Medical Sciences vaccine,"2 doses, intramuscular"
-Description,Chinese Academy of Medical Sciences vaccine,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
-Published results,Chinese Academy of Medical Sciences vaccine,"Phase I, phase II - see <b>Living review</b>"
-Efficacy data,Chinese Academy of Medical Sciences vaccine,Pending
-Storage requirements,Chinese Academy of Medical Sciences vaccine,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
-"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Chinese Academy of Medical Sciences vaccine,No score available
-Manufacture projections,Chinese Academy of Medical Sciences vaccine,Pending
-Approval status,Chinese Academy of Medical Sciences vaccine,Not yet approved for widespread use
-,,
 Developer(s),Janssen Ad26.COV2.S,Janssen Pharmaceutical Companies
 Total number in registered trials,Janssen Ad26.COV2.S,"91,845"
 Platform,Janssen Ad26.COV2.S,Non-replicating viral vector
@@ -143,13 +155,25 @@ Storage requirements,Janssen Ad26.COV2.S,Refrigeration (2°C to 8°C)
 Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021 (<a href=""https://www.jnj.com/innovation/questions-about-johnson-johnson-investigational-covid-19-vaccine"" target=""_blank"">05 Jan 2021</a>) "
 Approval status,Janssen Ad26.COV2.S,Not yet approved for widespread use
 ,,
+Developer(s),Medicago CoVLP,"Medicago Inc, GSK, Dynavax"
+Total number in registered trials,Medicago CoVLP,"31,098"
+Platform,Medicago CoVLP,Virus-like particle
+Dosing,Medicago CoVLP,"2 doses, intramuscular"
+Description,Medicago CoVLP,"Virus-like particle displaying stabilised pre-fusion spike (S) protein, produced in plants; administered with either AS03 adjuvant (GSK) or CpG 1018 adjuvant (Dynavax)"
+Published results,Medicago CoVLP,Phase I - see <b>Living review</b>
+Efficacy data,Medicago CoVLP,Pending
+Storage requirements,Medicago CoVLP,Refrigeration (2°C to 8°C)
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Medicago CoVLP,No score available
+Manufacture projections,Medicago CoVLP,"80 million doses in 2021 (<a href=""https://www.medicago.com/en/covid-19-programs/"" target=""_blank"">26 Jan 2021</a>) "
+Approval status,Medicago CoVLP,Not yet approved for widespread use
+,,
 Developer(s),Moderna mRNA-1273,"Moderna, NIAID"
 Total number in registered trials,Moderna mRNA-1273,"33,720"
 Platform,Moderna mRNA-1273,RNA
 Dosing,Moderna mRNA-1273,"2 doses, intramuscular"
 Description,Moderna mRNA-1273,Lipid nanoparticle-encapsulated mRNA encoding pre-fusion spike (S) protein
 Published results,Moderna mRNA-1273,"Phase I, phase III - see <b>Living review</b>"
-Efficacy data,Moderna mRNA-1273,"Vaccine efficacy against COVID-19 reported to be 94.5% based on interim data from 95 cases (<a href=""https://investors.modernatx.com/news-releases/news-release-details/modernas-covid-19-vaccine-candidate-meets-its-primary-efficacy"" target=""_blank"">16 Nov 2020</a>). These included 11 cases of severe COVID-19, all of which occurred in the placebo group."
+Efficacy data,Moderna mRNA-1273,Vaccine efficacy against COVID-19 of 94% based on primary efficacy analysis of 196 confirmed cases - see <b>Living review</b>
 Storage requirements,Moderna mRNA-1273,Refrigeration (2°C to 8°C) for up to 30 days or frozen (-15°C to -25°C) for long-term storage
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Moderna mRNA-1273,"Moderna given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Moderna.pdf"" target=""_blank"">3.6 out of 15</a>"
 Manufacture projections,Moderna mRNA-1273,"Up to 1 billion doses per year (<a href=""https://investors.modernatx.com/news-releases/news-release-details/moderna-provides-covid-19-vaccine-supply-update"" target=""_blank"">04 Jan 2021</a>) "
@@ -173,23 +197,47 @@ Platform,Oxford/AstraZeneca ChAdOx1-S,Non-replicating viral vector
 Dosing,Oxford/AstraZeneca ChAdOx1-S,"2 doses, intramuscular"
 Description,Oxford/AstraZeneca ChAdOx1-S,Simian adenovirus vector containing codon-optimised spike (S) protein
 Published results,Oxford/AstraZeneca ChAdOx1-S,"Phase I/II, phase II, phase III - see <b>Living review</b>"
-Efficacy data,Oxford/AstraZeneca ChAdOx1-S,Vaccine efficacy against COVID-19 reported to be 62–90% based on interim data from 131 cases. See <b>Living review</b> for details.
+Efficacy data,Oxford/AstraZeneca ChAdOx1-S,Vaccine efficacy against COVID-19 reported to be 62–90% based on interim data from 131 cases - see <b>Living review</b>
 Storage requirements,Oxford/AstraZeneca ChAdOx1-S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Oxford/AstraZeneca ChAdOx1-S,"AstraZeneca given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_AstraZeneca.pdf"" target=""_blank"">8.6 out of 15</a>"
 Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<a href=""https://www.astrazeneca.com/media-centre/press-releases/2020/astrazenecas-covid-19-vaccine-authorised-in-uk.html"" target=""_blank"">30 Dec 2020</a>)"
 Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, India, Argentina, Dominican Republic, and El Salvador"
 ,,
+Developer(s),Research Institute for Biological Safety Problems QazCovid-in,"Research Institute for Biological Safety Problems, Kazakhstan"
+Total number in registered trials,Research Institute for Biological Safety Problems QazCovid-in,"3,244"
+Platform,Research Institute for Biological Safety Problems QazCovid-in,Inactivated
+Dosing,Research Institute for Biological Safety Problems QazCovid-in,"2 doses, intramuscular"
+Description,Research Institute for Biological Safety Problems QazCovid-in,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
+Published results,Research Institute for Biological Safety Problems QazCovid-in,None
+Efficacy data,Research Institute for Biological Safety Problems QazCovid-in,Pending
+Storage requirements,Research Institute for Biological Safety Problems QazCovid-in,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Research Institute for Biological Safety Problems QazCovid-in,No score available
+Manufacture projections,Research Institute for Biological Safety Problems QazCovid-in,Pending
+Approval status,Research Institute for Biological Safety Problems QazCovid-in,Not yet approved for widespread use
+,,
 Developer(s),Sinovac CoronaVac,Sinovac
 Total number in registered trials,Sinovac CoronaVac,"32,738"
 Platform,Sinovac CoronaVac,Inactivated
 Dosing,Sinovac CoronaVac,"2 doses, intramuscular"
-Description,Sinovac CoronaVac,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
+Description,Sinovac CoronaVac,Inactivated vaccine adiministered 
 Published results,Sinovac CoronaVac,Phase I/II - see <b>Living review</b>
 Efficacy data,Sinovac CoronaVac,Pending
 Storage requirements,Sinovac CoronaVac,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Sinovac CoronaVac,No score available
 Manufacture projections,Sinovac CoronaVac,"No information on institute website; up to 600 million doses per year according to media reports (<a href=""https://www.businesswire.com/news/home/20201206005056/en/Sinovac-Secures-Approximately-500-Million-in-Funding-for-COVID-19-Vaccine-Development"" target=""_blank"">06 Dec 2020</a>) "
 Approval status,Sinovac CoronaVac,Limited use in China
+,,
+Developer(s),Vector Institute EpiVacCorona,Vector Institute
+Total number in registered trials,Vector Institute EpiVacCorona,100
+Platform,Vector Institute EpiVacCorona,Protein subunit
+Dosing,Vector Institute EpiVacCorona,"2 doses, intramuscular"
+Description,Vector Institute EpiVacCorona,Peptide antigens conjugated to a carrier protein and administered with aluminum hydroxide
+Published results,Vector Institute EpiVacCorona,None
+Efficacy data,Vector Institute EpiVacCorona,Pending
+Storage requirements,Vector Institute EpiVacCorona,Pending - refrigeration (2°C to 8°C) is typical for protein subunit vaccines
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Vector Institute EpiVacCorona,No score available
+Manufacture projections,Vector Institute EpiVacCorona,"5 million doses per year according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-russia-cases-idUSKBN2870MO"" target=""_blank"">27 Nov 2020</a>) "
+Approval status,Vector Institute EpiVacCorona,Early use in Russia
 ,,
 Developer(s),Wuhan/Sinopharm vaccine,"Wuhan Institute of Biological Products, Sinopharm"
 Total number in registered trials,Wuhan/Sinopharm vaccine,"52,864"

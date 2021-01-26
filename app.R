@@ -41,7 +41,7 @@ source("input_code/VaC_implementation.R")
 #source("input_code/VaC_jhu_daily_cases.R")
 
 # update manual components for ui
-update_full = "25 January 2021"
+update_full = "26 January 2021"
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)
@@ -547,7 +547,8 @@ ui <- bootstrapPage(
                                  plotOutput("summary_matrix", height="750px", width="950px"),
                                  tags$br(),
                                  
-                                 "Abbreviations: nr, non-replicating; VLP, virus-like particle. Candidates in phase III testing and/or widespread use are included. 
+                                 "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
+                                 Candidates in phase III testing and/or widespread use are included. 
                                  Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
                                  tags$br(), tags$br()
                         ),
@@ -556,7 +557,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(4,13,15)],
+                                             selected = imp_list[c(4,15,17)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -1569,4 +1570,6 @@ server <- function(input, output, session) {
 
 shinyApp(ui = ui, server = server)
 #runApp(shinyApp(ui, server), launch.browser = TRUE)
+#library(rsconnect)
+#deployApp(account="vac-lshtm")
 

@@ -11,12 +11,12 @@ Bharat Covaxin/BBV152,Inactivated,1,1,1,1,1,0,1,7.00E+08
 Sinovac CoronaVac,Inactivated,1,1,1,1,1,0,1,6.00E+08
 Wuhan/Sinopharm vaccine,Inactivated,1,1,1,1,1,0,1,6.00E+08
 Chinese Academy of Medical Sciences vaccine,Inactivated,1,1,1,1,1,0,0,1
+RIBSP Kazakhstan QazCovid-in,Inactivated,1,1,1,0,0,0,0,1
 Vector Institute EpiVacCorona,Subunit,1,1,0,0,0,0,1,5.00E+06
-Anhui Zhifei Longcom Biopharmaceutical ZF2001,Subunit,1,1,1,1,1,0,0,1
+AZLB ZF2001,Subunit,1,1,1,1,1,0,0,1
 Novavax NVX-CoV2373,Subunit,1,1,1,1,0,0,0,2.00E+09
 Clover SCB-2019,Subunit,1,1,1,1,0,0,0,1.00E+09
-Covaxx UB-612,Subunit,1,1,1,0,0,0,0,4.80E+08
-RIBSP Kazakhstan Qazcovid-In,Subunit,1,1,1,0,0,0,0,1
+Covaxx UB-612,Subunit,1,1,1,0,0,0,0,1.00E+09
 Medicago CoVLP,VLP,1,1,1,1,0,0,0,8.00E+07
 Inovio INO-4800,DNA,1,1,1,1,0,0,0,1.00E+08
 AnGes AG0302-COVID19,DNA,1,1,1,0,0,0,0,1

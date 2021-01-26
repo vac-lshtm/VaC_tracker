@@ -76,6 +76,7 @@ g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) +
 
 # import Our Wolrd in Data country reporting statistics
 owid <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/locations.csv"))
+owid = subset(owid, iso_code!="")
 
 # calculate N reporting countries reporting use for each vaccine candidate
 s$n_country = NA
@@ -85,7 +86,7 @@ s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vacci
 s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik", owid$vaccines))
 s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm", owid$vaccines) | grepl("CNBG", owid$vaccines))
 s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
-s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Astrazeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
+s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford", owid$vaccines) | grepl("Covishield", owid$vaccines))
 
 # create plot of N countries reporting use (plot panel 3)
 g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n_country)) + geom_bar(stat = "identity") + theme_bw() +
