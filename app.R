@@ -41,7 +41,7 @@ source("input_code/VaC_implementation.R")
 #source("input_code/VaC_jhu_daily_cases.R")
 
 # update manual components for ui
-update_full = "26 January 2021"
+update_full = "29 January 2021"
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)
@@ -160,7 +160,7 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (1)" = "term",
-                                                                    "Pre-clinical (221)" = "preclin",
+                                                                    "Pre-clinical (222)" = "preclin",
                                                                     "Phase I (19)" = "phasei",
                                                                     "Phase I/II (24)" = "phasei_ii",
                                                                     "Phase II (6)" = "phaseii",
@@ -170,7 +170,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (281)" = "not_in_use",
+                                                        choices = c("No (282)" = "not_in_use",
                                                                     "Yes (10)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -184,7 +184,7 @@ ui <- bootstrapPage(
                                                                     "Inactivated (19)" = "inact",
                                                                     "Live-attenuated (4)" = "live", 
                                                                     "Protein subunit (89)" = "ps",
-                                                                    "Virus-like particle (19)" = "vlp",
+                                                                    "Virus-like particle (20)" = "vlp",
                                                                     "Other/Unknown (39)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
@@ -557,7 +557,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(4,15,17)],
+                                             selected = imp_list[c(4,15,16,17)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -1559,7 +1559,6 @@ server <- function(input, output, session) {
   })
   
   # render table even when hidden to improve loading speed
-  outputOptions(output, "efficacy_map", suspendWhenHidden = FALSE) 
   outputOptions(output, "implementation_table", suspendWhenHidden = FALSE)
   outputOptions(output, "trial_table", suspendWhenHidden = FALSE)
   outputOptions(output, "eligible_studies", suspendWhenHidden = FALSE)

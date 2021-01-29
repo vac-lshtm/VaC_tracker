@@ -75,6 +75,7 @@ g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) +
   
 
 # import Our Wolrd in Data country reporting statistics
+#owid = read.csv("input_data/owid_26Jan21.csv", stringsAsFactors = FALSE)
 owid <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/locations.csv"))
 owid = subset(owid, iso_code!="")
 
@@ -106,6 +107,9 @@ g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n
 # create multi-panel plot
 summary_matrix = plot_grid(g1, g2, g3, align = "h", axis = "bt", rel_widths = c(4,1,1), ncol=3)
 
+# pdf("myplot.pdf", width = 13.5, height = 10)
+# print(summary_matrix)
+# dev.off()
 
 ### Table --------------------------------------------------------------------
 
