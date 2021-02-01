@@ -47,10 +47,19 @@ timeline = timeline %>%
   add_row(group = "Gamaleya Research Institute", subgroup = "Vector (non-replicating)", 
           content = '<b>Oxford/Gamaleya vaccines</b><br>Phase II, Azerbaijan <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04686773" target="_blank">NCT04686773</a>', 
           start = '10/02/2021', end = '09/04/2021', country = 'Russia', stage = "Phase III", use="Yes") %>% 
-# add timeline input for terminated candidate
+# add timeline input for terminated candidates
 add_row(group = "University of Queensland<br>CSL<br>Seqirus", subgroup = "Protein subunit", 
         content = '<b>Molecular clamp vaccine</b><br>Programme halted<br><a href="https://www.csl.com/news/2020/20201211-update-on-the-university-of-queensland-covid-19-vaccine" target="_blank">11 Dec 2020</a>', 
-        start = '11/12/2020', country = 'Australia/UK/USA', stage = "Terminated", use = "No")
+        start = '11/12/2020', country = 'Australia/UK/USA', stage = "Terminated", use = "No") %>% 
+add_row(group = "IAVI<br>Merck", subgroup = "Vector (replicating)", 
+        content = '<b>MV590</b><br>Programme halted<br><a href="https://www.merck.com/news/merck-discontinues-development-of-sars-cov-2-covid-19-vaccine-candidates-continues-development-of-two-investigational-therapeutic-candidates/" target="_blank">25 Jan 2021</a>', 
+        start = '25/01/2021', country = 'USA', stage = "Terminated", use = "No") %>%
+add_row(group = "Institut Pasteur<br>Themis<br>University of Pittsburg<br>Merck", subgroup = "Vector (replicating)", 
+        content = '<b>V591/TMV-083</b><br>Programme halted<br><a href="https://www.merck.com/news/merck-discontinues-development-of-sars-cov-2-covid-19-vaccine-candidates-continues-development-of-two-investigational-therapeutic-candidates/" target="_blank">25 Jan 2021</a>', 
+        start = '25/01/2021', country = 'France/USA/Austria', stage = "Terminated", use = "No")  %>%
+  add_row(group = "Imperial College London", subgroup = "RNA", 
+          content = '<b>LNP-nCoVsaRNA</b><br>Programme halted<br><a href="https://www.imperial.ac.uk/news/213313/imperial-vaccine-tech-target-covid-mutations/" target="_blank">26 Jan 2021</a>', 
+          start = '26/01/2021', country = 'UK', stage = "Terminated", use = "No") 
 
 # set factor levels
 timeline$subgroup = factor(timeline$subgroup, levels=c("RNA", "DNA", "Vector (non-replicating)", "Vector (replicating)", "Inactivated", "Live-attenuated",

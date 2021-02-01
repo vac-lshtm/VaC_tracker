@@ -78,6 +78,7 @@ g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) +
 #owid = read.csv("input_data/owid_26Jan21.csv", stringsAsFactors = FALSE)
 owid <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/locations.csv"))
 owid = subset(owid, iso_code!="")
+#write.csv(owid, "owid.csv")
 
 # calculate N reporting countries reporting use for each vaccine candidate
 s$n_country = NA

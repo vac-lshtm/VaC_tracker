@@ -57,7 +57,7 @@ Efficacy data,Beijing/Sinopharm BBIBP-CorV,"Vaccine efficacy against COVID-19 re
 Storage requirements,Beijing/Sinopharm BBIBP-CorV,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Beijing/Sinopharm BBIBP-CorV,No score available
 Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"No information on company website; up to 1 billion doses in 2021 according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-china-vaccine/sinopharm-says-may-be-able-to-make-over-one-billion-coronavirus-vaccine-doses-in-2021-idINKBN2750VB"" target=""_blank"">20 Oct 2020</a>)"
-Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in China, UAE, Bahrain, and Egypt"
+Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in China, UAE, Bahrain, Egypt, and Hungary"
 ,,
 Developer(s),Cansino Ad5-nCoV,"CanSino Biological Inc, Beijing Institute of Biotechnology"
 Total number in registered trials,Cansino Ad5-nCoV,"42,382"
@@ -149,7 +149,7 @@ Platform,Janssen Ad26.COV2.S,Non-replicating viral vector
 Dosing,Janssen Ad26.COV2.S,"1 or 2 doses (to be determined), intramuscular"
 Description,Janssen Ad26.COV2.S,Ad26 vector expressing stabilised pre-fusion spike (S) protein
 Published results,Janssen Ad26.COV2.S,Phase I/II - see <b>Living review</b>
-Efficacy data,Janssen Ad26.COV2.S,Pending
+Efficacy data,Janssen Ad26.COV2.S,"Vaccine efficacy against moderate to severe COVID-19 reported to be 66% in a press release on <a href=""https://www.jnj.com/johnson-johnson-announces-single-shot-janssen-covid-19-vaccine-candidate-met-primary-endpoints-in-interim-analysis-of-its-phase-3-ensemble-trial"" target=""_blank"">29 Jan 2021</a>; estimates based on 468 confirmed cases;"
 Storage requirements,Janssen Ad26.COV2.S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Janssen Ad26.COV2.S,"Johnson & Johnson given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Johnson_Johnson.pdf"" target=""_blank"">6.7 out of 15</a>"
 Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021 (<a href=""https://www.jnj.com/innovation/questions-about-johnson-johnson-investigational-covid-19-vaccine"" target=""_blank"">05 Jan 2021</a>) "
@@ -201,7 +201,7 @@ Efficacy data,Oxford/AstraZeneca ChAdOx1-S,Vaccine efficacy against COVID-19 rep
 Storage requirements,Oxford/AstraZeneca ChAdOx1-S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Oxford/AstraZeneca ChAdOx1-S,"AstraZeneca given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_AstraZeneca.pdf"" target=""_blank"">8.6 out of 15</a>"
 Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<a href=""https://www.astrazeneca.com/media-centre/press-releases/2020/astrazenecas-covid-19-vaccine-authorised-in-uk.html"" target=""_blank"">30 Dec 2020</a>)"
-Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, India, Argentina, Dominican Republic, and El Salvador"
+Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, EU, India, Argentina, Dominican Republic, and El Salvador"
 ,,
 Developer(s),Research Institute for Biological Safety Problems QazCovid-in,"Research Institute for Biological Safety Problems, Kazakhstan"
 Total number in registered trials,Research Institute for Biological Safety Problems QazCovid-in,"3,244"

@@ -41,7 +41,7 @@ source("input_code/VaC_implementation.R")
 #source("input_code/VaC_jhu_daily_cases.R")
 
 # update manual components for ui
-update_full = "29 January 2021"
+update_full = "01 February 2021"
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)
@@ -159,10 +159,10 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
-                                                        choices = c("Terminated (1)" = "term",
-                                                                    "Pre-clinical (222)" = "preclin",
-                                                                    "Phase I (19)" = "phasei",
-                                                                    "Phase I/II (24)" = "phasei_ii",
+                                                        choices = c("Terminated (4)" = "term",
+                                                                    "Pre-clinical (223)" = "preclin",
+                                                                    "Phase I (17)" = "phasei",
+                                                                    "Phase I/II (23)" = "phasei_ii",
                                                                     "Phase II (6)" = "phaseii",
                                                                     "Phase III (20)" = "phaseiii"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii")),
@@ -170,14 +170,14 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (282)" = "not_in_use",
+                                                        choices = c("No (283)" = "not_in_use",
                                                                     "Yes (10)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (36)" = "rna",
+                                                        choices = c("RNA (37)" = "rna",
                                                                     "DNA (26)" = "dna",
                                                                     "Vector (non-replicating) (35)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",

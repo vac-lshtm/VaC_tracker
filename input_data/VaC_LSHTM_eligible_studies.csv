@@ -21,7 +21,6 @@ Clover SCB-2019,I,Protein subunit,NCT04405908,https://clinicaltrials.gov/ct2/sho
 Oxford ChAdOx1-S,III,Non-replicating viral vector,NCT04400838,https://clinicaltrials.gov/ct2/show/NCT04400838,Voysey; Lancet 2020,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32661-1/fulltext,08/12/2020,Complete
 BioNTech BNT162,III,RNA,NCT04368728,https://clinicaltrials.gov/ct2/show/NCT04368728,Polack; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2034577,10/12/2020,Complete
 BioNTech BNT162,I/II,RNA,NCT04380701,https://clinicaltrials.gov/ct2/show/NCT04380701,Sahin; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.09.20245175v1,11/12/2020,Complete
-Bharat BBV152,I,Inactivated,NCT04471519,https://clinicaltrials.gov/ct2/show/NCT04471519,Ella; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.11.20210419v1,15/12/2020,Complete
 Oxford ChAdOx1-S,I/II,Non-replicating viral vector,NCT04324606,https://clinicaltrials.gov/ct2/show/NCT04324606,Ewer; Nature Med 2020 ,https://www.nature.com/articles/s41591-020-01194-5,17/12/2020,In progress
 Oxford ChAdOx1-S,I/II,Non-replicating viral vector,NCT04324606,https://clinicaltrials.gov/ct2/show/NCT04324606,Barrett; Nature Med 2020,https://www.nature.com/articles/s41591-020-01179-4,17/12/2020,In progress
 AZLB ZF2001,I/II,Protein subunit,NCT04445194,https://clinicaltrials.gov/ct2/show/NCT04445194,Yang; medRxiv 2020,https://www.medrxiv.org/content/10.1101/2020.12.20.20248602v1,22/12/2020,In progress
@@ -30,3 +29,4 @@ Inovio INO-4800,I,DNA,NCT04336410,https://clinicaltrials.gov/ct2/show/NCT0433641
 Moderna mRNA-1273,III,RNA,NCT04470427,https://clinicaltrials.gov/ct2/show/NCT04470427,Baden; NEJM 2020,https://www.nejm.org/doi/full/10.1056/NEJMoa2035389,30/12/2020,Complete
 Janssen Ad26COVS1,I/II,Non-replicating viral vector,NCT04436276,https://clinicaltrials.gov/ct2/show/NCT04436276,Sadoff; NEJM 2021,https://www.nejm.org/doi/full/10.1056/NEJMoa2034201,13/01/2021,In progress (complete for preprint)
 Sanofi/GSK protein subunit vaccine,I/II,Protein subunit,NCT04537208,https://clinicaltrials.gov/ct2/show/NCT04537208,Goepfert; medRxiv 2021,https://www.medrxiv.org/content/10.1101/2021.01.19.20248611v1,20/01/2021,In progress
+Bharat BBV152,I,Inactivated,NCT04471519,https://clinicaltrials.gov/ct2/show/NCT04471519,Ella; Lancet Infect Dis 2020,https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30942-7/fulltext,21/01/2021,In progress (complete for preprint)

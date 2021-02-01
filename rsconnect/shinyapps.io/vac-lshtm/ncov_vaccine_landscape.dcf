@@ -5,6 +5,6 @@ account: vac-lshtm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2035718
-bundleId: 4144316
+bundleId: 4156885
 url: https://vac-lshtm.shinyapps.io/ncov_vaccine_landscape/
-when: 1611658068.20736
+when: 1611911967.28365
