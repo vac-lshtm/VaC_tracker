@@ -32,6 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
+update_full = "05 February 2021"
+current_date = as.Date("2021-02-05")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -41,7 +43,6 @@ source("input_code/VaC_implementation.R")
 #source("input_code/VaC_jhu_daily_cases.R")
 
 # update manual components for ui
-update_full = "01 February 2021"
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)
@@ -62,6 +63,8 @@ ui <- bootstrapPage(
              tabPanel("Home",
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
+                        
+                        tags$b("*** Update:"),"See",tags$b("Implementation"),"tab for new feature tracking the equity of vaccine roll-out.",tags$b("***"),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -384,8 +387,8 @@ ui <- bootstrapPage(
                                      tags$b("Abbreviations:"),
                                      tags$p("BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
                                      tags$b("Notes:"),
-                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), and Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020)."#,
-                                            #"Paper by XXX had not been indexed on PubMed as of XXX and is therefore not included in the search log below.", 
+                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), and Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020).
+                                           Paper by Logunov et al (2021) had not been indexed on PubMed as of 01 Feb 2021 and is therefore not included in the search log below." 
                                      ),
                                      tags$br(),
                                      
@@ -542,29 +545,67 @@ ui <- bootstrapPage(
                       "Last updated on ",tags$b(paste0(update_full,".")),
                       tags$br(),tags$br(),
                       
-                      tabsetPanel(
-                        tabPanel("Summary plot",
-                                 plotOutput("summary_matrix", height="750px", width="950px"),
-                                 tags$br(),
-                                 
-                                 "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
-                                 Candidates in phase III testing and/or widespread use are included. 
-                                 Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
-                                 tags$br(), tags$br()
-                        ),
+                      h4("Equity of vaccine roll-out"),
+                      "Vaccines against COVID-19 are now being rolled out across the globe. However, we are falling considerably short of achieving equitable global distribution.
+                      In the plot below, each circle represents a country, with circle size corresponding to population size. Hover over the circles for additional details.", 
+                      tags$br(),tags$br(),
+                      
+                      sidebarLayout(
+                        sidebarPanel(width = 3,
+                                     
+                                     pickerInput("equity_outcome", h5("Select outcome:"),   
+                                                 choices = c("% vaccinated with at least 1 dose", "% fully vaccinated", "Total vaccines per hundred people"), # "Total vaccines" 
+                                                 selected = c("% vaccinated with at least 1 dose"),
+                                                 multiple = FALSE),
+                                     
+                                     checkboxGroupInput(inputId = "equity_group",
+                                                        label = h5("Select income group:"),
+                                                        choices = c("High income" = "hic",
+                                                                    "Upper middle income" = "umic",
+                                                                    "Lower middle income" = "lmic",
+                                                                    "Low income" = "lic"),
+                                                        selected = c("hic", "umic", "lmic", "lic")),
+                                     
+                                     sliderTextInput("equity_date",
+                                                     label = h5("Select date:"),
+                                                     choices = format(unique(equity_slider), "%d %b %y"),
+                                                     selected = format(current_date, "%d %b %y"),
+                                                     grid = TRUE,
+                                                     animate=animationOptions(interval = 1200, loop = FALSE))
+                                     
+                        ), 
                         
-                        tabPanel("Table",
+                        mainPanel(
+                          h4(textOutput("equity_sum",inline = T),"million doses of vaccine given worldwide"),
+                          plotlyOutput("equity_plot", height="400px", width="700px")
+                        )
+                      ),
+                      
+                      "Source for vaccine roll-out data:", a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
+                      "Source for income data:", a("Gapminder.", href="https://www.gapminder.org/tools/", target="_blank"),
+                      "Source for income group data:", a("World Bank.", href="https://data.worldbank.org", target="_blank"),
+                      
+                      tags$br(),tags$br(),
+                      h4("Testing and implementation status of front-running candidates"),
+                      tags$br(),
+                      plotOutput("summary_matrix", height="750px", width="950px"),
+                      tags$br(),
+                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
+                      Candidates in phase III testing and/or widespread use are included. 
+                      Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
+                      tags$br(), tags$br(),
+                        
+                      h4("Side-by-side comparison of front-running candidates"),
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(4,15,16,17)],
+                                             selected = imp_list[c(4,13,15,16,17)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
                                  "Vaccines undergoing phase III efficacy testing are included (see",tags$b("Clinical trials"),"and",tags$b("Trial map"),"tabs for further details).",
                                  tags$br(), tags$br()
-                        )
-                      )
+                      
                       ),
              
 
@@ -1544,6 +1585,67 @@ server <- function(input, output, session) {
       formatStyle(columns = 1, fontWeight = 'bold')
   })
   
+  # equity plot
+  equity_input <- reactive({
+    equity = equity_full
+    selected_date = format(as.Date(input$equity_date, format="%d %b %y"), "%Y-%m-%d")
+  
+    equity$date[is.na(equity$date)] = selected_date
+    equity <- equity %>% filter(date == selected_date) 
+    
+    if ("hic" %in% input$equity_group==FALSE) { equity = subset(equity, income_group!="High income") }
+    if ("umic" %in% input$equity_group==FALSE) { equity = subset(equity, income_group!="Upper middle income") }
+    if ("lmic" %in% input$equity_group==FALSE) { equity = subset(equity, income_group!="Lower middle income") }
+    if ("lic" %in% input$equity_group==FALSE) { equity = subset(equity, income_group!="Low income") }
+
+    if (nrow(equity)==0) {
+      equity = equity_full
+      equity$date[is.na(equity$date)] = selected_date
+      equity <- equity %>% filter(date == selected_date)
+    }
+    
+    if (input$equity_outcome=="% vaccinated with at least 1 dose") { equity$y = equity$people_vaccinated_per_hundred }
+    if (input$equity_outcome=="% fully vaccinated") { equity$y = equity$people_fully_vaccinated_per_hundred }
+    if (input$equity_outcome=="Total vaccines per hundred people") { equity$y = equity$total_vaccinations_per_hundred }
+    if (input$equity_outcome=="Total vaccines") { equity$y = equity$total_vaccinations }
+    
+    equity = subset(equity, population>1e6 & !is.na(gdp_2019))
+    equity$y[is.na(equity$y)] = 0
+    equity
+  })
+  
+  output$equity_sum <- renderText({ round(sum(equity_input()$total_vaccinations, na.rm=TRUE)/1e6,0)})
+  
+  output$equity_plot <- renderPlotly({
+    
+    if (input$equity_outcome=="% vaccinated with at least 1 dose") {
+      ymax = max(equity_full$people_vaccinated_per_hundred, na.rm=TRUE)+10
+      }
+    if (input$equity_outcome=="% fully vaccinated") { 
+      ymax = max(equity_full$people_fully_vaccinated_per_hundred, na.rm=TRUE)+10
+      }
+    if (input$equity_outcome=="Total vaccines per hundred people") { 
+      ymax = max(equity_full$total_vaccinations_per_hundred, na.rm=TRUE)+10
+    }
+    # if (input$equity_outcome=="Total vaccines") { 
+    #   ymax = max(equity_full$total_vaccinations, na.rm=TRUE)
+    # }
+    
+    g1 = ggplot(equity_input(), aes(gdp_2019, y, fill=factor(income_group), size=population^(1/2), group = 1,
+                                    text = paste0("<b>",y,"</b>",
+                                                  "\n<i>",country,"</i>", 
+                                                  "\nVaccine(s): ",vaccines))) + #"\nPopulation: ", round(population/1e6,1), "M")
+                                                  theme_bw() +
+      geom_point(alpha=0.5, stroke = 0.2) + ylab(input$equity_outcome) + 
+      scale_fill_manual(values = c("High income" =  "#B40F20", "Upper middle income" = "#8856a7", "Lower middle income" = "#EBCC2A", "Low income" = "#3B9AB2")) + 
+      theme(legend.title = element_blank()) +
+      scale_x_continuous(trans = log2_trans(), breaks = trans_breaks("log2", function(x) 2^x), limits = c(min(equity_full$gdp_2019, na.rm=T), max(equity_full$gdp_2019, na.rm=T)))  +
+      scale_size(range = c(0, 12)) + theme(text = element_text(size=11), legend.position = "none") +
+      xlab("Income (GDP/capita in USD)") + ylim(0,ymax)
+    
+    ggplotly(g1, tooltip = c("text")) %>% layout(hoverlabel = list(font=list(size=15)))
+  })
+  
   
   
   #################
@@ -1565,6 +1667,8 @@ server <- function(input, output, session) {
   outputOptions(output, "search_log", suspendWhenHidden = FALSE)
   outputOptions(output, "vaccine_types", suspendWhenHidden = FALSE)
   outputOptions(output, "vaccine_timeline", suspendWhenHidden = FALSE)
+  outputOptions(output, "equity_sum", suspendWhenHidden = FALSE)
+  outputOptions(output, "equity_plot", suspendWhenHidden = FALSE)
 }
 
 shinyApp(ui = ui, server = server)

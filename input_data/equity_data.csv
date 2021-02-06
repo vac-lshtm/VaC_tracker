@@ -1,0 +1,192 @@
+country,iso_code,region,income_group,gdp_2015,gdp_2016,gdp_2017,gdp_2018,gdp_2019
+Afghanistan,AFG,South Asia,Low income,574,571,572,568,571
+Albania,ALB,Europe & Central Asia,Upper middle income,4520,4680,4860,5070,5210
+Algeria,DZA,Middle East & North Africa,Lower middle income,4780,4830,4790,4760,4710
+Andorra,AND,Europe & Central Asia,High income,42100,44100,44400,45100,45900
+Angola,AGO,Sub-Saharan Africa,Lower middle income,3750,3530,3410,3230,3100
+Antigua and Barbuda,ATG,Latin America & Caribbean,High income,13300,13900,14200,15100,15700
+Argentina,ARG,Latin America & Caribbean,Upper middle income,10600,10200,10400,10000,9730
+Armenia,ARM,Europe & Central Asia,Upper middle income,3920,3920,4200,4410,4730
+Australia,AUS,East Asia & Pacific,High income,55100,55700,56100,56900,57100
+Austria,AUT,Europe & Central Asia,High income,47800,48300,49100,50100,50700
+Azerbaijan,AZE,Europe & Central Asia,Upper middle income,6060,5810,5760,5800,5880
+Bahamas,BHS,Latin America & Caribbean,High income,27500,27400,27100,27300,27500
+Bahrain,BHR,Middle East & North Africa,High income,22400,22300,22100,21500,20900
+Bangladesh,BGD,South Asia,Lower middle income,1000,1060,1130,1200,1290
+Barbados,BRB,Latin America & Caribbean,High income,15800,16200,16300,16100,16100
+Belarus,BLR,Europe & Central Asia,Upper middle income,6380,6220,6380,6590,6680
+Belgium,BEL,Europe & Central Asia,High income,45500,45900,46600,47100,47500
+Belize,BLZ,Latin America & Caribbean,Upper middle income,4300,4220,4210,4220,4150
+Benin,BEN,Sub-Saharan Africa,Lower middle income,1130,1130,1170,1210,1260
+Bhutan,BTN,South Asia,Lower middle income,2780,2970,3070,3130,
+Bolivia,BOL,Latin America & Caribbean,Lower middle income,2360,2430,2490,2560,2580
+Bosnia and Herzegovina,BIH,Europe & Central Asia,Upper middle income,5360,5600,5770,6040,6240
+Botswana,BWA,Sub-Saharan Africa,Upper middle income,7610,7800,7860,8030,8090
+Brazil,BRA,Latin America & Caribbean,Upper middle income,11400,11000,11000,11100,11100
+Brunei,BRN,East Asia & Pacific,High income,32900,31700,31800,31400,32300
+Bulgaria,BGR,Europe & Central Asia,Upper middle income,7660,8010,8350,8670,9030
+Burkina Faso,BFA,Sub-Saharan Africa,Low income,727,748,771,801,822
+Burundi,BDI,Sub-Saharan Africa,Low income,228,220,214,211,208
+Cambodia,KHM,East Asia & Pacific,Lower middle income,1020,1080,1140,1200,1270
+Cameroon,CMR,Sub-Saharan Africa,Lower middle income,1440,1470,1480,1500,1520
+Canada,CAN,North America,High income,50300,50200,51200,51500,51600
+Cape Verde,CPV,Sub-Saharan Africa,Lower middle income,3410,3530,3620,3740,3910
+Central African Republic,CAF,Sub-Saharan Africa,Low income,347,360,371,379,384
+Chad,TCD,Sub-Saharan Africa,Low income,957,869,818,812,814
+Chile,CHL,Latin America & Caribbean,High income,14700,14800,14700,15100,15100
+China,CHN,East Asia & Pacific,Upper middle income,6500,6910,7350,7810,8250
+Colombia,COL,Latin America & Caribbean,Upper middle income,7580,7630,7620,7700,7840
+Comoros,COM,Sub-Saharan Africa,Lower middle income,1350,1370,1390,1400,1410
+"Congo, Dem. Rep.",COD,Sub-Saharan Africa,Low income,411,407,409,419,424
+"Congo, Rep.",COG,Sub-Saharan Africa,Lower middle income,3010,2850,2730,2710,2610
+Costa Rica,CRI,Latin America & Caribbean,Upper middle income,9220,9510,9780,9940,10000
+Cote d'Ivoire,CIV,Sub-Saharan Africa,Lower middle income,1460,1530,1600,1670,1740
+Croatia,HRV,Europe & Central Asia,High income,14100,14700,15400,15900,16500
+Cuba,CUB,Latin America & Caribbean,Upper middle income,6520,6550,6670,6820,
+Cyprus,CYP,Europe & Central Asia,High income,27900,29600,30700,31500,32100
+Czech Republic,CZE,Europe & Central Asia,High income,21400,21900,22800,23300,23800
+Denmark,DNK,Europe & Central Asia,High income,60400,61900,62700,63900,65100
+Djibouti,DJI,Middle East & North Africa,Lower middle income,,,,,
+Dominica,DMA,Latin America & Caribbean,Upper middle income,6890,7060,6560,6690,7060
+Dominican Republic,DOM,Latin America & Caribbean,Upper middle income,6660,7030,7270,7700,8010
+Ecuador,ECU,Latin America & Caribbean,Upper middle income,5330,5180,5210,5180,5100
+Egypt,EGY,Middle East & North Africa,Lower middle income,2700,2760,2820,2910,3010
+El Salvador,SLV,Latin America & Caribbean,Lower middle income,3310,3380,3440,3510,3570
+Equatorial Guinea,GNQ,Sub-Saharan Africa,Upper middle income,14100,12400,11200,10100,9240
+Eritrea,ERI,Sub-Saharan Africa,Low income,,,,,
+Estonia,EST,Europe & Central Asia,High income,17600,18100,19100,19900,20700
+Eswatini,SWZ,Sub-Saharan Africa,Lower middle income,4650,4660,4710,4770,4820
+Ethiopia,ETH,Sub-Saharan Africa,Low income,483,514,548,571,602
+Fiji,FJI,East Asia & Pacific,Upper middle income,4360,4450,4660,4800,4810
+Finland,FIN,Europe & Central Asia,High income,45600,46800,48100,48800,49200
+France,FRA,Europe & Central Asia,High income,41800,42100,43000,43700,44300
+Gabon,GAB,Sub-Saharan Africa,Upper middle income,9520,9430,9210,9050,9130
+Gambia,GMB,Sub-Saharan Africa,Low income,755,747,760,786,809
+Georgia,GEO,Europe & Central Asia,Upper middle income,4190,4300,4510,4730,4990
+Germany,DEU,Europe & Central Asia,High income,45300,46000,46900,47500,47600
+Ghana,GHA,Sub-Saharan Africa,Lower middle income,1630,1640,1740,1810,1880
+Greece,GRC,Europe & Central Asia,High income,22600,22700,23100,23500,24000
+Grenada,GRD,Latin America & Caribbean,Upper middle income,8190,8450,8780,9090,9330
+Guatemala,GTM,Latin America & Caribbean,Upper middle income,3210,3240,3290,3340,3410
+Guinea,GIN,Sub-Saharan Africa,Low income,750,810,869,897,921
+Guinea-Bissau,GNB,Sub-Saharan Africa,Low income,574,595,614,622,635
+Guyana,GUY,Latin America & Caribbean,Upper middle income,3690,3790,3850,3990,4160
+Haiti,HTI,Latin America & Caribbean,Low income,729,730,729,730,714
+Honduras,HND,Latin America & Caribbean,Lower middle income,2070,2110,2180,2220,2240
+Hungary,HUN,Europe & Central Asia,High income,14700,15100,15800,16600,17500
+Iceland,ISL,Europe & Central Asia,High income,47500,50000,51000,51600,51300
+India,IND,South Asia,Lower middle income,1750,1880,1990,2090,2170
+Indonesia,IDN,East Asia & Pacific,Upper middle income,3820,3970,4120,4280,4450
+Iran,IRN,Middle East & North Africa,Upper middle income,6070,6790,6950,,
+Iraq,IRQ,Middle East & North Africa,Upper middle income,5300,5930,5640,5480,5590
+Ireland,IRL,Europe & Central Asia,High income,65400,67100,71800,76700,79700
+Israel,ISR,Middle East & North Africa,High income,33100,33700,34200,34700,35300
+Italy,ITA,Europe & Central Asia,High income,34000,34500,35100,35400,35600
+Jamaica,JAM,Latin America & Caribbean,Upper middle income,4720,4760,4790,4860,4870
+Japan,JPN,East Asia & Pacific,High income,47100,47400,48500,48800,49200
+Jordan,JOR,Middle East & North Africa,Upper middle income,3310,3270,3260,3270,3280
+Kazakhstan,KAZ,Europe & Central Asia,Upper middle income,10600,10600,10900,11200,11500
+Kenya,KEN,Sub-Saharan Africa,Lower middle income,1090,1130,1160,1200,1240
+Kiribati,KIR,East Asia & Pacific,Lower middle income,1710,1770,1760,1780,1790
+Kuwait,KWT,Middle East & North Africa,High income,36000,35900,33400,33100,32700
+Kyrgyz Republic,KGZ,Europe & Central Asia,Lower middle income,1020,1040,1070,1090,1120
+Lao,LAO,East Asia & Pacific,Lower middle income,1540,1620,1710,1790,1840
+Latvia,LVA,Europe & Central Asia,High income,14300,14700,15400,16200,16700
+Lebanon,LBN,Middle East & North Africa,Upper middle income,6490,6410,6370,6210,5860
+Lesotho,LSO,Sub-Saharan Africa,Lower middle income,1360,1420,1390,1370,1380
+Liberia,LBR,Sub-Saharan Africa,Low income,571,548,548,541,516
+Libya,LBY,Middle East & North Africa,Upper middle income,5900,5670,7090,8040,8120
+Liechtenstein,LIE,Europe & Central Asia,High income,,,,,
+Lithuania,LTU,Europe & Central Asia,High income,15400,15900,16900,17600,18400
+Luxembourg,LUX,Europe & Central Asia,High income,108000,110000,109000,111000,111000
+Madagascar,MDG,Sub-Saharan Africa,Low income,470,476,481,490,500
+Malawi,MWI,Sub-Saharan Africa,Low income,508,506,513,515,524
+Malaysia,MYS,East Asia & Pacific,Upper middle income,10900,11200,11700,12100,12500
+Maldives,MDV,South Asia,Upper middle income,7500,7630,7810,8030,8210
+Mali,MLI,Sub-Saharan Africa,Low income,730,749,766,778,793
+Malta,MLT,Middle East & North Africa,High income,25900,26800,27800,28800,28900
+Marshall Islands,MHL,East Asia & Pacific,Upper middle income,2860,2880,2980,3070,
+Mauritania,MRT,Sub-Saharan Africa,Lower middle income,1730,1710,1720,1700,1760
+Mauritius,MUS,Sub-Saharan Africa,High income,9480,9830,10200,10600,10900
+Mexico,MEX,Latin America & Caribbean,Upper middle income,10000,10200,10300,10400,10300
+"Micronesia, Fed. Sts.",FSM,East Asia & Pacific,Lower middle income,2720,2710,2750,2730,
+Moldova,MDA,Europe & Central Asia,Lower middle income,2950,3120,3320,3530,3720
+Monaco,MCO,Europe & Central Asia,High income,190000,194000,186000,196000,
+Mongolia,MNG,East Asia & Pacific,Lower middle income,3900,3870,4000,4210,4350
+Montenegro,MNE,Europe & Central Asia,Upper middle income,7280,7490,7850,8250,8550
+Morocco,MAR,Middle East & North Africa,Lower middle income,3220,3210,3310,3360,3400
+Mozambique,MOZ,Sub-Saharan Africa,Low income,579,584,589,591,587
+Myanmar,MMR,East Asia & Pacific,Lower middle income,1340,1400,1480,1570,1610
+Namibia,NAM,Sub-Saharan Africa,Upper middle income,6270,6140,6010,5940,5770
+Nauru,NRU,East Asia & Pacific,High income,8010,7930,7570,8140,8220
+Nepal,NPL,South Asia,Lower middle income,732,730,779,818,859
+Netherlands,NLD,Europe & Central Asia,High income,51900,52700,53900,55000,55700
+New Zealand,NZL,East Asia & Pacific,High income,36800,37400,37700,38800,39000
+Nicaragua,NIC,Latin America & Caribbean,Lower middle income,1840,1900,1960,1860,1760
+Niger,NER,Sub-Saharan Africa,Low income,518,527,532,548,558
+Nigeria,NGA,Sub-Saharan Africa,Lower middle income,2560,2460,2410,2400,2390
+North Macedonia,MKD,Europe & Central Asia,Upper middle income,5110,5250,5300,5440,5630
+Norway,NOR,Europe & Central Asia,High income,90000,90200,91500,92100,92600
+Oman,OMN,Middle East & North Africa,High income,16200,16200,15600,15400,15000
+Pakistan,PAK,South Asia,Lower middle income,1080,1120,1160,1200,1190
+Palau,PLW,East Asia & Pacific,High income,12600,12600,12100,12300,
+Palestine,PSE,Middle East & North Africa,Lower middle income,2630,2690,2720,2680,
+Panama,PAN,Latin America & Caribbean,High income,10800,11100,11500,11800,11900
+Papua New Guinea,PNG,East Asia & Pacific,Lower middle income,2400,2450,2490,2420,2510
+Paraguay,PRY,Latin America & Caribbean,Upper middle income,4940,5090,5270,5380,5310
+Peru,PER,Latin America & Caribbean,Upper middle income,6110,6260,6310,6450,6490
+Philippines,PHL,East Asia & Pacific,Lower middle income,2740,2890,3040,3190,3340
+Poland,POL,Europe & Central Asia,High income,14600,15100,15800,16700,17400
+Portugal,PRT,Europe & Central Asia,High income,22000,22500,23400,24000,24600
+Qatar,QAT,Middle East & North Africa,High income,65100,64300,63600,63300,62000
+Romania,ROU,Europe & Central Asia,High income,9710,10200,11000,11600,12100
+Russia,RUS,Europe & Central Asia,Upper middle income,11400,11400,11600,11800,12000
+Rwanda,RWA,Sub-Saharan Africa,Low income,768,793,803,849,905
+Samoa,WSM,East Asia & Pacific,Upper middle income,3560,3820,3850,3750,3860
+San Marino,SMR,Europe & Central Asia,High income,48600,49500,49500,49900,
+Sao Tome and Principe,STP,Sub-Saharan Africa,Lower middle income,1240,1260,1290,1300,1300
+Saudi Arabia,SAU,Middle East & North Africa,High income,21400,21300,20700,20800,20500
+Senegal,SEN,Sub-Saharan Africa,Lower middle income,1380,1430,1500,1550,1580
+Serbia,SRB,Europe & Central Asia,Upper middle income,6160,6390,6560,6890,7210
+Seychelles,SYC,Sub-Saharan Africa,High income,13200,13600,14000,14400,15000
+Sierra Leone,SLE,Sub-Saharan Africa,Low income,441,458,467,473,488
+Singapore,SGP,East Asia & Pacific,High income,54000,55000,57400,59100,58800
+Slovak Republic,SVK,Europe & Central Asia,High income,18900,19300,19800,20600,21000
+Slovenia,SVN,Europe & Central Asia,High income,23800,24600,25700,26700,27200
+Solomon Islands,SLB,East Asia & Pacific,Lower middle income,1440,1450,1470,1480,1480
+South Africa,ZAF,Sub-Saharan Africa,Upper middle income,7560,7480,7480,7430,7350
+South Korea,KOR,East Asia & Pacific,High income,26100,26700,27500,28100,28600
+South Sudan,SSD,Sub-Saharan Africa,Low income,731,,,,
+Spain,ESP,Europe & Central Asia,High income,30500,31400,32300,32900,33300
+Sri Lanka,LKA,South Asia,Lower middle income,3650,3770,3860,3950,4010
+St. Kitts and Nevis,KNA,Latin America & Caribbean,High income,16700,17100,16600,16900,17200
+St. Lucia,LCA,Latin America & Caribbean,Upper middle income,8490,8790,9050,9240,9350
+St. Vincent and the Grenadines,VCT,Latin America & Caribbean,Upper middle income,6580,6690,6730,6850,6850
+Sudan,SDN,Sub-Saharan Africa,Low income,1830,1870,1900,1810,1720
+Suriname,SUR,Latin America & Caribbean,Upper middle income,8460,7910,7970,8100,7970
+Sweden,SWE,Europe & Central Asia,High income,56300,56800,57500,57900,58000
+Switzerland,CHE,Europe & Central Asia,High income,76600,77000,77700,79200,79400
+Tajikistan,TJK,Europe & Central Asia,Low income,936,976,1020,1070,1120
+Tanzania,TZA,Sub-Saharan Africa,Lower middle income,872,904,937,959,985
+Thailand,THA,East Asia & Pacific,Upper middle income,5740,5920,6140,6370,6500
+Timor-Leste,TLS,East Asia & Pacific,Lower middle income,909,923,871,848,860
+Togo,TGO,Sub-Saharan Africa,Low income,631,649,661,677,696
+Tonga,TON,East Asia & Pacific,Upper middle income,3900,4020,4090,4050,
+Trinidad and Tobago,TTO,Latin America & Caribbean,High income,16800,15700,15300,15200,15100
+Tunisia,TUN,Middle East & North Africa,Lower middle income,4310,4310,4340,4410,4410
+Turkey,TUR,Europe & Central Asia,Upper middle income,13900,14100,14900,15100,15000
+Turkmenistan,TKM,Europe & Central Asia,Upper middle income,6690,6990,7320,7650,
+Tuvalu,TUV,East Asia & Pacific,Upper middle income,3430,3490,3590,3640,3940
+Uganda,UGA,Sub-Saharan Africa,Low income,900,910,910,931,957
+Ukraine,UKR,Europe & Central Asia,Lower middle income,2830,2900,2990,3110,3220
+United Arab Emirates,ARE,Middle East & North Africa,High income,40200,41000,41500,41300,41400
+United Kingdom,GBR,Europe & Central Asia,High income,42000,42500,43000,43300,43700
+United States,USA,North America,High income,52100,52600,53400,54700,55700
+Uruguay,URY,Latin America & Caribbean,High income,13900,14100,14400,14600,14600
+Uzbekistan,UZB,Europe & Central Asia,Lower middle income,2140,2230,2290,2370,2460
+Vanuatu,VUT,East Asia & Pacific,Lower middle income,2780,2800,2850,2860,2870
+Venezuela,VEN,Latin America & Caribbean,Upper middle income,,,,,
+Vietnam,VNM,East Asia & Pacific,Lower middle income,1670,1750,1850,1960,2080
+Yemen,YEM,Middle East & North Africa,Low income,785,694,643,633,
+Zambia,ZMB,Sub-Saharan Africa,Lower middle income,1640,1650,1660,1680,1660
+Zimbabwe,ZWE,Sub-Saharan Africa,Lower middle income,1230,1220,1260,1310,1180

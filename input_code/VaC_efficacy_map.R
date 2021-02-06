@@ -20,6 +20,7 @@ cv_cases = read.csv("input_data/VaC_LSHTM_map_daily_cases.csv")
 
 # import mapping data
 countries = read.csv("input_data/countries_codes_and_coordinates.csv")
+countries$iso_code = as.character(countries$alpha3)
 worldcountry = geojson_read("input_data/50m.geojson", what = "sp")
 country_geoms = read.csv("input_data/country_geoms.csv")
 

@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-
+current_date = as.Date("2021-02-05")
 
 ### Figure --------------------------------------------------------------------
 
@@ -118,3 +118,46 @@ summary_matrix = plot_grid(g1, g2, g3, align = "h", axis = "bt", rel_widths = c(
 imp = read.csv("input_data/VAC_LSHTM_implementation.csv")
 imp = subset(imp, Metric!="")
 imp_list = as.character(unique(imp$Vaccine))
+
+### Bubble plot --------------------------------------------------------------------
+
+gdp = read.csv("input_data/equity_data.csv")
+owid_vac <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"))
+owid_vac = subset(owid_vac, iso_code!="")
+owid_vac$date = as.Date(owid_vac$date)
+owid_vac = merge(owid_vac, owid[,c("iso_code", "vaccines")], by = "iso_code")
+date = seq(as.Date("2021-01-01"), current_date, by="days")
+country_list = unique(owid_vac$location) 
+
+equity = NULL
+for (i in 1:length(country_list)) {
+  country_sub = data.frame(date = date)
+  country_sub$location = country_list[i]
+  owid_sub = subset(owid_vac, location==country_list[i])
+  country_sub = merge(country_sub, owid_sub[,c("date", "total_vaccinations", "people_vaccinated", "people_fully_vaccinated",
+                                               "total_vaccinations_per_hundred", "people_vaccinated_per_hundred", "people_fully_vaccinated_per_hundred")], by = "date", all.x = TRUE)
+  # replace NAs with 0s  
+  country_sub[is.na(country_sub)] = 0 
+  # for each row use maximum value observed up until that point (i.e. replace 0s with rolling total)
+  for (j in 1:nrow(country_sub)) {
+    rows = country_sub[1:j,]
+    country_sub$total_vaccinations[j] = max(rows$total_vaccinations) 
+    country_sub$people_vaccinated[j] = max(rows$people_vaccinated) 
+    country_sub$people_fully_vaccinated[j] = max(rows$people_fully_vaccinated) 
+    country_sub$total_vaccinations_per_hundred[j] = max(rows$total_vaccinations_per_hundred) 
+    country_sub$people_vaccinated_per_hundred[j] = max(rows$people_vaccinated_per_hundred) 
+    country_sub$people_fully_vaccinated_per_hundred[j] = max(rows$people_fully_vaccinated_per_hundred) 
+  }
+  equity = rbind(equity, country_sub)
+}
+equity = merge(equity, owid[,c("location", "iso_code", "vaccines")], by = "location")
+countries_sub = countries[!duplicated(countries$iso_code),]
+equity = merge(equity, countries_sub[,c("iso_code", "latitude", "longitude", "population")], by = "iso_code", all.y=TRUE)
+equity_full = merge(equity, gdp, by = "iso_code")
+
+equity_slider = seq(as.Date("2021-01-01"), current_date, by="weeks")
+if(max(equity_slider != current_date)) { equity_slider = c(equity_slider, current_date) }
+
+# equity = equity_full
+# equity$date[is.na(equity$date)] = current_date
+# equity <- equity %>% filter(date == current_date
