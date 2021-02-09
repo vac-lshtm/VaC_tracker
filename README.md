@@ -52,10 +52,11 @@ Key elements of the analysis code are as follows:
   - **Efficacy**: We report protective efficacy against COVID-19, severe COVID-19, and/or asymptomatic SARS-CoV-2 infection. Where available, we present the profile (age, ethnicity, and comorbidity prevalence) of the study population, as well as vaccine efficacy estimates stratified by relevant covariates (dose regimen, age group, ethnicity, and presence of comorbidities).
 
 ### Implementation tab
-* Updated weekly
+* Updated multiple times  weekly
 * Input data: *VAC_implementation.csv* and *VaC_LSHTM_landscape_summary.csv*
 * Sources:
-  - Number of countries reporting use of each vaccine obtained from [Our World in Data](https://ourworldindata.org/covid-vaccinations)
+  - Vaccine roll-out data obtained from [Our World in Data](https://ourworldindata.org/covid-vaccinations)
+  - Country income data obtained from [Gapminder](https://www.gapminder.org/tools/) and [World Bank](https://data.worldbank.org)
   - Dosing, description, and efficacy data obtained from *VaC_LSHTM_living_review_data.xlsx*. Where interim efficacy estimates have been in press releases but there is no published manuscript, hyperlinks are provided.
   - Vaccine Access Test scores obtained from [ONE](https://www.one.org/international/vaccine-access-test/)
   - Manufacture projections obtained from company websites. If unavailable, we report projections stated by a company spokesperson in the mainstream media where available and provide relevant hyperlinks.

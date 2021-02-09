@@ -84,7 +84,7 @@ Manufacture projections,Chinese Academy of Medical Sciences vaccine,Pending
 Approval status,Chinese Academy of Medical Sciences vaccine,Not yet approved for widespread use
 ,,
 Developer(s),Clover SCB-2019,"Clover Biopharmaceuticals Inc, GSK, Dynavax"
-Total number in registered trials,Clover SCB-2019,"34,150"
+Total number in registered trials,Clover SCB-2019,"22,150"
 Platform,Clover SCB-2019,Protein subunit
 Dosing,Clover SCB-2019,"2 doses, intramuscular"
 Description,Clover SCB-2019,Stabilised trimeric spike (S) protein administered with AS03 oil-in-water adjuvant or CpG 1018/Alum adjuvant
@@ -120,7 +120,7 @@ Manufacture projections,CureVac CVnCoV,"300 million doses in 2021, 600 million d
 Approval status,CureVac CVnCoV,Not yet approved for widespread use
 ,,
 Developer(s),Gamaleya Gam-COVID-Vac/Sputnik V,Gamaleya Research Institute
-Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"38,954"
+Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"44,954"
 Platform,Gamaleya Gam-COVID-Vac/Sputnik V,Non-replicating viral vector
 Dosing,Gamaleya Gam-COVID-Vac/Sputnik V,"2 doses, intramuscular"
 Description,Gamaleya Gam-COVID-Vac/Sputnik V,Recombinant Ad26 (prime) and recombinant Ad5 (boost) viruses expressing full-length spike (S) protein

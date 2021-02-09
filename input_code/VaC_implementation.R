@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date("2021-02-05")
+current_date = as.Date("2021-02-09")
 
 ### Figure --------------------------------------------------------------------
 
@@ -78,17 +78,20 @@ g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) +
 #owid = read.csv("input_data/owid_26Jan21.csv", stringsAsFactors = FALSE)
 owid <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/locations.csv"))
 owid = subset(owid, iso_code!="")
+
 #write.csv(owid, "owid.csv")
+#unique(owid$vaccines)
 
 # calculate N reporting countries reporting use for each vaccine candidate
 s$n_country = NA
 s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
-s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("BioNTech", owid$vaccines))
+s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("Pfizer/BioNTech", owid$vaccines))
 s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
-s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik", owid$vaccines))
-s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm", owid$vaccines) | grepl("CNBG", owid$vaccines))
+s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik V", owid$vaccines))
+s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines))
+s$n_country[s$Institutes=="Wuhan/Sinopharm vaccine"] = sum(grepl("Sinopharm/Wuhan", owid$vaccines))
 s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
-s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford", owid$vaccines) | grepl("Covishield", owid$vaccines))
+s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford/AstraZeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
 
 # create plot of N countries reporting use (plot panel 3)
 g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n_country)) + geom_bar(stat = "identity") + theme_bw() +

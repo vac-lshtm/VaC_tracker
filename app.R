@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "05 February 2021"
-current_date = as.Date("2021-02-05")
+update_full = "09 February 2021"
+update_equity = "09 February 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -62,7 +62,7 @@ ui <- bootstrapPage(
              
              tabPanel("Home",
                       tags$div(
-                        "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
+                        "Last updated on ",tags$b(paste0(update_equity,".")),tags$br(),tags$br(),
                         
                         tags$b("*** Update:"),"See",tags$b("Implementation"),"tab for new feature tracking the equity of vaccine roll-out.",tags$b("***"),tags$br(),tags$br(),
                         
@@ -164,8 +164,8 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (17)" = "phasei",
-                                                                    "Phase I/II (23)" = "phasei_ii",
+                                                                    "Phase I (18)" = "phasei",
+                                                                    "Phase I/II (24)" = "phasei_ii",
                                                                     "Phase II (6)" = "phaseii",
                                                                     "Phase III (20)" = "phaseiii"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii")),
@@ -173,7 +173,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (283)" = "not_in_use",
+                                                        choices = c("No (285)" = "not_in_use",
                                                                     "Yes (10)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -182,13 +182,13 @@ ui <- bootstrapPage(
                                                         label = "Vaccine type",
                                                         choices = c("RNA (37)" = "rna",
                                                                     "DNA (26)" = "dna",
-                                                                    "Vector (non-replicating) (35)" = "nrvv",
+                                                                    "Vector (non-replicating) (36)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (19)" = "inact",
                                                                     "Live-attenuated (4)" = "live", 
-                                                                    "Protein subunit (89)" = "ps",
+                                                                    "Protein subunit (91)" = "ps",
                                                                     "Virus-like particle (20)" = "vlp",
-                                                                    "Other/Unknown (39)" = "unknown"),
+                                                                    "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
                                      
@@ -387,8 +387,8 @@ ui <- bootstrapPage(
                                      tags$b("Abbreviations:"),
                                      tags$p("BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
                                      tags$b("Notes:"),
-                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), and Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020).
-                                           Paper by Logunov et al (2021) had not been indexed on PubMed as of 01 Feb 2021 and is therefore not included in the search log below." 
+                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), and Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020)."
+                                      #     Paper by Logunov et al (2021) had not been indexed on PubMed as of 01 Feb 2021 and is therefore not included in the search log below." 
                                      ),
                                      tags$br(),
                                      
@@ -448,7 +448,7 @@ ui <- bootstrapPage(
                                      conditionalPanel("input.select_phase != 'III'",
                                                       tags$h4("Antibody response"),
                                                       tags$em("We present antibody levels measured 28 days post-vaccination or the nearest available timepoint. 
-                                                              Where multiple types of antibody were measured, we prioritise (i) ELISA for the vaccine-specific antigen; 
+                                                              Where multiple types of antibody were measured, we prioritise (i) antigen-specific ELISA (IgG); 
                                                               (ii) neutralisation of live SARS-CoV-2; and (iii) neutralisation of a pseudovirus modified to express SARS-CoV-2 antigens."),
                                                       tags$br(),tags$br(),
                                                       
@@ -542,7 +542,7 @@ ui <- bootstrapPage(
              ###########################
              
              tabPanel("Implementation",
-                      "Last updated on ",tags$b(paste0(update_full,".")),
+                      "Last updated on ",tags$b(paste0(update_equity,".")),
                       tags$br(),tags$br(),
                       
                       h4("Equity of vaccine roll-out"),
@@ -569,14 +569,14 @@ ui <- bootstrapPage(
                                      sliderTextInput("equity_date",
                                                      label = h5("Select date:"),
                                                      choices = format(unique(equity_slider), "%d %b %y"),
-                                                     selected = format(current_date, "%d %b %y"),
+                                                     selected = format(max(equity_slider), "%d %b %y"),
                                                      grid = TRUE,
                                                      animate=animationOptions(interval = 1200, loop = FALSE))
                                      
                         ), 
                         
                         mainPanel(
-                          h4(textOutput("equity_sum",inline = T),"million doses of vaccine given worldwide"),
+                          h4(textOutput("equity_date_clean",inline = T),"-",textOutput("equity_sum",inline = T),"million doses of vaccine given worldwide"),
                           plotlyOutput("equity_plot", height="400px", width="700px")
                         )
                       ),
@@ -1585,6 +1585,7 @@ server <- function(input, output, session) {
       formatStyle(columns = 1, fontWeight = 'bold')
   })
   
+  
   # equity plot
   equity_input <- reactive({
     equity = equity_full
@@ -1615,24 +1616,29 @@ server <- function(input, output, session) {
   })
   
   output$equity_sum <- renderText({ round(sum(equity_input()$total_vaccinations, na.rm=TRUE)/1e6,0)})
+  output$equity_date_clean <-  renderText({ format(as.Date(input$equity_date, format="%d %b %y"), "%d %b %Y") })
+    
   
   output$equity_plot <- renderPlotly({
     
     if (input$equity_outcome=="% vaccinated with at least 1 dose") {
       ymax = max(equity_full$people_vaccinated_per_hundred, na.rm=TRUE)+10
+      units = "%"
       }
     if (input$equity_outcome=="% fully vaccinated") { 
       ymax = max(equity_full$people_fully_vaccinated_per_hundred, na.rm=TRUE)+10
+      units = "%"
       }
     if (input$equity_outcome=="Total vaccines per hundred people") { 
       ymax = max(equity_full$total_vaccinations_per_hundred, na.rm=TRUE)+10
+      units = " vaccine doses"    
     }
     # if (input$equity_outcome=="Total vaccines") { 
     #   ymax = max(equity_full$total_vaccinations, na.rm=TRUE)
     # }
     
     g1 = ggplot(equity_input(), aes(gdp_2019, y, fill=factor(income_group), size=population^(1/2), group = 1,
-                                    text = paste0("<b>",y,"</b>",
+                                    text = paste0("<b>",round(y,1),units,"</b>",
                                                   "\n<i>",country,"</i>", 
                                                   "\nVaccine(s): ",vaccines))) + #"\nPopulation: ", round(population/1e6,1), "M")
                                                   theme_bw() +
