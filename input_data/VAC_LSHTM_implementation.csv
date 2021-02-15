@@ -12,7 +12,7 @@ Manufacture projections,AnGes AG0302-COVID19,Pending
 Approval status,AnGes AG0302-COVID19,Not yet approved for widespread use
 ,,
 Developer(s),Anhui Zhifei Longcom Biopharmaceutical ZF2001,"Anhui Zhifei Longcom Biopharmaceutical, Chinese Academy of Sciences"
-Total number in registered trials,Anhui Zhifei Longcom Biopharmaceutical ZF2001,"30,216"
+Total number in registered trials,Anhui Zhifei Longcom Biopharmaceutical ZF2001,"121,800"
 Platform,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Protein subunit
 Dosing,Anhui Zhifei Longcom Biopharmaceutical ZF2001,"2/3 doses, intramuscular"
 Description,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Adjuvanted recombinant protein vaccine targeting SARS-CoV-2 receptor binding domain (RBD)
@@ -24,7 +24,7 @@ Manufacture projections,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending
 Approval status,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Not yet approved for widespread use
 ,,
 Developer(s),Bharat Covaxin/BBV152,"Bharat Biotech, ICMR, National Institute of Virology"
-Total number in registered trials,Bharat Covaxin/BBV152,"26,679"
+Total number in registered trials,Bharat Covaxin/BBV152,"35,378"
 Platform,Bharat Covaxin/BBV152,Inactivated
 Dosing,Bharat Covaxin/BBV152,"2 doses, intramuscular"
 Description,Bharat Covaxin/BBV152,Inactivated vaccine administered with imidazoquinoline adjuvant (TLR7/8 agonist)
@@ -36,15 +36,15 @@ Manufacture projections,Bharat Covaxin/BBV152,"No information on company website
 Approval status,Bharat Covaxin/BBV152,Emergency use in India
 ,,
 Developer(s),BioNTech/Pfizer BNT162b2,"BioNTech, Pfizer, Fosun Pharma"
-Total number in registered trials,BioNTech/Pfizer BNT162b2,"47,118"
+Total number in registered trials,BioNTech/Pfizer BNT162b2,"23,620"
 Platform,BioNTech/Pfizer BNT162b2,RNA
 Dosing,BioNTech/Pfizer BNT162b2,"2 doses, intramuscular"
 Description,BioNTech/Pfizer BNT162b2,Lipid nanoparticle-formulated mRNA encoding full-length spike (S) protein
 Published results,BioNTech/Pfizer BNT162b2,"Phase I/II, phase III - see <b>Living review</b>"
 Efficacy data,BioNTech/Pfizer BNT162b2,Vaccine efficacy against COVID-19 of 95% based on primary efficacy analysis of 170 confirmed cases - see <b>Living review</b>
 Storage requirements,BioNTech/Pfizer BNT162b2,Ultra-cold (-60°C to -80°C)
-"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",BioNTech/Pfizer BNT162b2,"BioNTech and Pfizer given scores of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_BioNTech_EN.pdf"" target=""_blank"">1.2 out of 15</a> and <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Pfizer.pdf"" target=""_blank"">3.2 out of 15</a>, respectively"
-Manufacture projections,BioNTech/Pfizer BNT162b2,"Up to 1.3 billion doses in 2021 (<a href=""https://www.pfizer.com/news/press-release/press-release-detail/pfizer-and-biontech-supply-european-union-100-million"" target=""_blank"">29 Dec 2020</a>) "
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",BioNTech/Pfizer BNT162b2,"BioNTech and Pfizer given scores of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_BioNTech_EN.pdf"" target=""_blank"">2.3 out of 15</a> and <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Pfizer.pdf"" target=""_blank"">4.3 out of 15</a>, respectively"
+Manufacture projections,BioNTech/Pfizer BNT162b2,"Up to 2 billion doses in 2021 (<a href=""https://www.reuters.com/article/us-pfizer-results-idUSKBN2A21EO"" target=""_blank"">02 Feb 2021</a>) "
 Approval status,BioNTech/Pfizer BNT162b2,"Full or emergency use in numerous countries; granted emergency use approval by the WHO on  <a href=""https://www.who.int/news/item/31-12-2020-who-issues-its-first-emergency-use-validation-for-a-covid-19-vaccine-and-emphasizes-need-for-equitable-global-access"" target=""_blank"">31 Dec 2020</a>"
 ,,
 Developer(s),Beijing/Sinopharm BBIBP-CorV,"Beijing Institute of Biological Products, Sinopharm"
@@ -57,10 +57,10 @@ Efficacy data,Beijing/Sinopharm BBIBP-CorV,"Vaccine efficacy against COVID-19 re
 Storage requirements,Beijing/Sinopharm BBIBP-CorV,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Beijing/Sinopharm BBIBP-CorV,No score available
 Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"No information on company website; up to 1 billion doses in 2021 according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-china-vaccine/sinopharm-says-may-be-able-to-make-over-one-billion-coronavirus-vaccine-doses-in-2021-idINKBN2750VB"" target=""_blank"">20 Oct 2020</a>)"
-Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in China, UAE, Bahrain, Egypt, and Hungary"
+Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in numerous countries, including China, UAE, Bahrain, Egypt, and Hungary"
 ,,
 Developer(s),Cansino Ad5-nCoV,"CanSino Biological Inc, Beijing Institute of Biotechnology"
-Total number in registered trials,Cansino Ad5-nCoV,"42,382"
+Total number in registered trials,Cansino Ad5-nCoV,"9,551"
 Platform,Cansino Ad5-nCoV,Non-replicating viral vector
 Dosing,Cansino Ad5-nCoV,"1 dose, intramuscular"
 Description,Cansino Ad5-nCoV,Ad5 vector containing full-length spike (S) protein
@@ -72,7 +72,7 @@ Manufacture projections,Cansino Ad5-nCoV,Pending
 Approval status,Cansino Ad5-nCoV,Limited use in China
 ,,
 Developer(s),Chinese Academy of Medical Sciences vaccine,"Institute of Medical Biology, Chinese Academy of Medical Sciences"
-Total number in registered trials,Chinese Academy of Medical Sciences vaccine,"35,433"
+Total number in registered trials,Chinese Academy of Medical Sciences vaccine,"5,748"
 Platform,Chinese Academy of Medical Sciences vaccine,Inactivated
 Dosing,Chinese Academy of Medical Sciences vaccine,"2 doses, intramuscular"
 Description,Chinese Academy of Medical Sciences vaccine,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
@@ -104,11 +104,11 @@ Published results,Covaxx UB-612,None
 Efficacy data,Covaxx UB-612,Pending
 Storage requirements,Covaxx UB-612,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Covaxx UB-612,No score available
-Manufacture projections,Covaxx UB-612,"Up to 1 billion doses in 2021 (<a href=""https://www.covaxx.com/vaccine"" target=""_blank"">26 Jan 2021</a>) "
+Manufacture projections,Covaxx UB-612,"Up to 1 billion doses in 2021 (<a href=""https://www.covaxx.com/vaccine"" target=""_blank"">15 Feb 2021</a>) "
 Approval status,Covaxx UB-612,Not yet approved for widespread use
 ,,
 Developer(s),CureVac CVnCoV,CureVac
-Total number in registered trials,CureVac CVnCoV,"40,674"
+Total number in registered trials,CureVac CVnCoV,"3,819"
 Platform,CureVac CVnCoV,RNA
 Dosing,CureVac CVnCoV,"2 doses, intramuscular"
 Description,CureVac CVnCoV,Lipid nanoparticle-formulated mRNA vaccine encoding stabilised pre-fusion form of full-length spike (S) protein
@@ -120,19 +120,19 @@ Manufacture projections,CureVac CVnCoV,"300 million doses in 2021, 600 million d
 Approval status,CureVac CVnCoV,Not yet approved for widespread use
 ,,
 Developer(s),Gamaleya Gam-COVID-Vac/Sputnik V,Gamaleya Research Institute
-Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"44,954"
+Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"5,870"
 Platform,Gamaleya Gam-COVID-Vac/Sputnik V,Non-replicating viral vector
 Dosing,Gamaleya Gam-COVID-Vac/Sputnik V,"2 doses, intramuscular"
 Description,Gamaleya Gam-COVID-Vac/Sputnik V,Recombinant Ad26 (prime) and recombinant Ad5 (boost) viruses expressing full-length spike (S) protein
 Published results,Gamaleya Gam-COVID-Vac/Sputnik V,Phase I/II - see <b>Living review</b>
-Efficacy data,Gamaleya Gam-COVID-Vac/Sputnik V,"Vaccine efficacy against COVID-19 reported to be 91% in a press release on <a href=""https://sputnikvaccine.com/newsroom/pressreleases/the-sputnik-v-vaccine-s-efficacy-is-confirmed-at-91-4-based-on-data-analysis-of-the-final-control-po/"" target=""_blank"">14 Dec 2020</a>; estimates based on 170 confirmed cases, including 20 cases of severe COVID-19, all of which occurred in the placebo group"
+Efficacy data,Gamaleya Gam-COVID-Vac/Sputnik V,Vaccine efficacy against COVID-19 of 92% based on primary efficacy analysis of 78 confirmed cases - see <b>Living review</b>
 Storage requirements,Gamaleya Gam-COVID-Vac/Sputnik V,Being produced in lyophilised formulation requiring refrigeration (2°C to 8°C) or frozen formulation (maximum -18°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Gamaleya Gam-COVID-Vac/Sputnik V,No score available
 Manufacture projections,Gamaleya Gam-COVID-Vac/Sputnik V,"No information on institute website; up to 1 billion doses in 2021 according to media reports (<a href=""https://www.sciencemag.org/news/2020/11/more-data-its-covid-19-vaccine-russia-institute-offers-new-evidence-success"" target=""_blank"">24 Nov 2020</a>) "
-Approval status,Gamaleya Gam-COVID-Vac/Sputnik V,"Early or emergency use in Russia, Belarus, Argentina, and Serbia"
+Approval status,Gamaleya Gam-COVID-Vac/Sputnik V,"Early or emergency use in numerous countries, including Russia, Belarus, Argentina, Serbia, and Algeria"
 ,,
 Developer(s),Inovio INO-4800,"Inovio Pharmaceuticals, International Vaccine Institute"
-Total number in registered trials,Inovio INO-4800,"7,498"
+Total number in registered trials,Inovio INO-4800,"1,140"
 Platform,Inovio INO-4800,DNA
 Dosing,Inovio INO-4800,"2 doses, intradermal"
 Description,Inovio INO-4800,DNA plasmid vaccine with electroporation
@@ -144,7 +144,7 @@ Manufacture projections,Inovio INO-4800,">100 million doses in 2021 (<a href=""h
 Approval status,Inovio INO-4800,Not yet approved for widespread use
 ,,
 Developer(s),Janssen Ad26.COV2.S,Janssen Pharmaceutical Companies
-Total number in registered trials,Janssen Ad26.COV2.S,"91,845"
+Total number in registered trials,Janssen Ad26.COV2.S,"1,100"
 Platform,Janssen Ad26.COV2.S,Non-replicating viral vector
 Dosing,Janssen Ad26.COV2.S,"1 or 2 doses (to be determined), intramuscular"
 Description,Janssen Ad26.COV2.S,Ad26 vector expressing stabilised pre-fusion spike (S) protein
@@ -156,7 +156,7 @@ Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021
 Approval status,Janssen Ad26.COV2.S,Not yet approved for widespread use
 ,,
 Developer(s),Medicago CoVLP,"Medicago Inc, GSK, Dynavax"
-Total number in registered trials,Medicago CoVLP,"31,098"
+Total number in registered trials,Medicago CoVLP,560
 Platform,Medicago CoVLP,Virus-like particle
 Dosing,Medicago CoVLP,"2 doses, intramuscular"
 Description,Medicago CoVLP,"Virus-like particle displaying stabilised pre-fusion spike (S) protein, produced in plants; administered with either AS03 adjuvant (GSK) or CpG 1018 adjuvant (Dynavax)"
@@ -164,11 +164,11 @@ Published results,Medicago CoVLP,Phase I - see <b>Living review</b>
 Efficacy data,Medicago CoVLP,Pending
 Storage requirements,Medicago CoVLP,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Medicago CoVLP,No score available
-Manufacture projections,Medicago CoVLP,"80 million doses in 2021 (<a href=""https://www.medicago.com/en/covid-19-programs/"" target=""_blank"">26 Jan 2021</a>) "
+Manufacture projections,Medicago CoVLP,"80 million doses in 2021 (<a href=""https://www.medicago.com/en/covid-19-programs/"" target=""_blank"">15 Feb 2021</a>) "
 Approval status,Medicago CoVLP,Not yet approved for widespread use
 ,,
 Developer(s),Moderna mRNA-1273,"Moderna, NIAID"
-Total number in registered trials,Moderna mRNA-1273,"33,720"
+Total number in registered trials,Moderna mRNA-1273,856
 Platform,Moderna mRNA-1273,RNA
 Dosing,Moderna mRNA-1273,"2 doses, intramuscular"
 Description,Moderna mRNA-1273,Lipid nanoparticle-encapsulated mRNA encoding pre-fusion spike (S) protein
@@ -177,29 +177,29 @@ Efficacy data,Moderna mRNA-1273,Vaccine efficacy against COVID-19 of 94% based o
 Storage requirements,Moderna mRNA-1273,Refrigeration (2°C to 8°C) for up to 30 days or frozen (-15°C to -25°C) for long-term storage
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Moderna mRNA-1273,"Moderna given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Moderna.pdf"" target=""_blank"">3.6 out of 15</a>"
 Manufacture projections,Moderna mRNA-1273,"Up to 1 billion doses per year (<a href=""https://investors.modernatx.com/news-releases/news-release-details/moderna-provides-covid-19-vaccine-supply-update"" target=""_blank"">04 Jan 2021</a>) "
-Approval status,Moderna mRNA-1273,"Full or emergency use in USA, Canada, EU, UK, and Israel"
+Approval status,Moderna mRNA-1273,"Full or emergency use in numerous countries, including USA, Canada, EU, UK, and Israel"
 ,,
 Developer(s),Novavax NVX-CoV2373,Novavax
-Total number in registered trials,Novavax NVX-CoV2373,"50,819"
+Total number in registered trials,Novavax NVX-CoV2373,603
 Platform,Novavax NVX-CoV2373,Protein subunit
 Dosing,Novavax NVX-CoV2373,"2 doses, intramuscular"
 Description,Novavax NVX-CoV2373,"Recombinant nanoparticle vaccine consisting of full-length spike (S) protein, administered with or without saponin-based Matrix-M1 adjuvant"
 Published results,Novavax NVX-CoV2373,Phase I - see <b>Living review</b>
 Efficacy data,Novavax NVX-CoV2373,"Vaccine efficacy against COVID-19 reported to be 89% in a press release on <a href=""https://ir.novavax.com/news-releases/news-release-details/novavax-covid-19-vaccine-demonstrates-893-efficacy-uk-phase-3"" target=""_blank"">28 Jan 2021</a>; estimates based on 62 confirmed cases, including 1 case of severe COVID-19 in the placebo group"
 Storage requirements,Novavax NVX-CoV2373,Refrigeration (2°C to 8°C)
-"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Novavax NVX-CoV2373,"Novavax given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Novavax.pdf"" target=""_blank"">3.7 out of 15</a>"
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Novavax NVX-CoV2373,"Novavax given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Novavax.pdf"" target=""_blank"">4.6 out of 15</a>"
 Manufacture projections,Novavax NVX-CoV2373,"2 billion doses per year as of 2021 (<a href=""https://ir.novavax.com/news-releases/news-release-details/novavax-announces-covid-19-vaccine-manufacturing-agreement-serum"" target=""_blank"">15 Sep 2020</a>) "
 Approval status,Novavax NVX-CoV2373,Not yet approved for widespread use
 ,,
 Developer(s),Oxford/AstraZeneca ChAdOx1-S,"University of Oxford, AstraZeneca"
-Total number in registered trials,Oxford/AstraZeneca ChAdOx1-S,"68,066"
+Total number in registered trials,Oxford/AstraZeneca ChAdOx1-S,"1,272"
 Platform,Oxford/AstraZeneca ChAdOx1-S,Non-replicating viral vector
 Dosing,Oxford/AstraZeneca ChAdOx1-S,"2 doses, intramuscular"
 Description,Oxford/AstraZeneca ChAdOx1-S,Simian adenovirus vector containing codon-optimised spike (S) protein
 Published results,Oxford/AstraZeneca ChAdOx1-S,"Phase I/II, phase II, phase III - see <b>Living review</b>"
 Efficacy data,Oxford/AstraZeneca ChAdOx1-S,Vaccine efficacy against COVID-19 reported to be 62–90% based on interim data from 131 cases - see <b>Living review</b>
 Storage requirements,Oxford/AstraZeneca ChAdOx1-S,Refrigeration (2°C to 8°C)
-"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Oxford/AstraZeneca ChAdOx1-S,"AstraZeneca given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_AstraZeneca.pdf"" target=""_blank"">8.6 out of 15</a>"
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Oxford/AstraZeneca ChAdOx1-S,"AstraZeneca given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_AstraZeneca.pdf"" target=""_blank"">8.8 out of 15</a>"
 Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<a href=""https://www.astrazeneca.com/media-centre/press-releases/2020/astrazenecas-covid-19-vaccine-authorised-in-uk.html"" target=""_blank"">30 Dec 2020</a>)"
 Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, EU, India, Argentina, Dominican Republic, and El Salvador"
 ,,
@@ -216,7 +216,7 @@ Manufacture projections,Research Institute for Biological Safety Problems QazCov
 Approval status,Research Institute for Biological Safety Problems QazCovid-in,Not yet approved for widespread use
 ,,
 Developer(s),Sinovac CoronaVac,Sinovac
-Total number in registered trials,Sinovac CoronaVac,"32,738"
+Total number in registered trials,Sinovac CoronaVac,684
 Platform,Sinovac CoronaVac,Inactivated
 Dosing,Sinovac CoronaVac,"2 doses, intramuscular"
 Description,Sinovac CoronaVac,Inactivated vaccine adiministered 
@@ -224,8 +224,8 @@ Published results,Sinovac CoronaVac,Phase I/II - see <b>Living review</b>
 Efficacy data,Sinovac CoronaVac,Pending
 Storage requirements,Sinovac CoronaVac,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Sinovac CoronaVac,No score available
-Manufacture projections,Sinovac CoronaVac,"No information on institute website; up to 600 million doses per year according to media reports (<a href=""https://www.businesswire.com/news/home/20201206005056/en/Sinovac-Secures-Approximately-500-Million-in-Funding-for-COVID-19-Vaccine-Development"" target=""_blank"">06 Dec 2020</a>) "
-Approval status,Sinovac CoronaVac,Limited use in China
+Manufacture projections,Sinovac CoronaVac,"No information on institute website; up to 1 billion doses per year according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-vaccine-sinovac/chinas-sinovac-to-double-annual-covid-19-vaccine-capacity-to-1-billion-doses-idUSKBN29I0YN?feedType=RSS&feedName=healthNews"" target=""_blank"">13 Jan 2021</a>) "
+Approval status,Sinovac CoronaVac,"Full or emergency use in numerous countries, including China, Azerbaijan, Brazil, Chile, and Colombia"
 ,,
 Developer(s),Vector Institute EpiVacCorona,Vector Institute
 Total number in registered trials,Vector Institute EpiVacCorona,100

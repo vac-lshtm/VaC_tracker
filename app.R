@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "09 February 2021"
-update_equity = "09 February 2021"
+update_full = "15 February 2021"
+update_equity = "15 February 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -164,8 +164,8 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (18)" = "phasei",
-                                                                    "Phase I/II (24)" = "phasei_ii",
+                                                                    "Phase I (21)" = "phasei",
+                                                                    "Phase I/II (25)" = "phasei_ii",
                                                                     "Phase II (6)" = "phaseii",
                                                                     "Phase III (20)" = "phaseiii"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii")),
@@ -173,7 +173,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (285)" = "not_in_use",
+                                                        choices = c("No (289)" = "not_in_use",
                                                                     "Yes (10)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -182,12 +182,12 @@ ui <- bootstrapPage(
                                                         label = "Vaccine type",
                                                         choices = c("RNA (37)" = "rna",
                                                                     "DNA (26)" = "dna",
-                                                                    "Vector (non-replicating) (36)" = "nrvv",
+                                                                    "Vector (non-replicating) (37)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (19)" = "inact",
                                                                     "Live-attenuated (4)" = "live", 
-                                                                    "Protein subunit (91)" = "ps",
-                                                                    "Virus-like particle (20)" = "vlp",
+                                                                    "Protein subunit (92)" = "ps",
+                                                                    "Virus-like particle (22)" = "vlp",
                                                                     "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
@@ -359,6 +359,7 @@ ui <- bootstrapPage(
                                      Since 24 August 2020, we have performed a weekly search of",strong(em("medRxiv")),"and",strong("PubMed"),
                                      "(see", tags$b("Search log"),"below) using the R packages",em("medrxivr"),"and",em("easyPubMed."),
                                      "Titles and abstracts are screened to identify articles reporting outcome data from human clinical trials of COVID-19 vaccine candidates.",
+                                     "Additional preprints are identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Search term"),
@@ -377,7 +378,7 @@ ui <- bootstrapPage(
                                                estimates stratified by relevant covariates (dose regimen, age group, ethnicity, and presence of comorbidities)."),
                                        tags$li(strong("Planned next steps"),"for clinical testing and/or manufacture. See",strong("Implementation"),"tab for additional details.")
                                        ),
-                                     "Preprints are replaced with peer-reviewed publications when the latter become available.",
+                                     "Data extraction is performed for all peer-reviewed manuscripts. Links are provided to all preprints.",
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Eligible studies"),
@@ -416,7 +417,9 @@ ui <- bootstrapPage(
                                                       htmlOutput("efficacy_endpoint_severe", inline = T),
                                                       tags$br(),
                                                       tabsetPanel(
-                                                        tabPanel("Plot", plotOutput("outcome_plot_efficacy", width = "900px",  height = "525px"), 
+                                                        tabPanel("Plot", 
+                                                                 tags$br(),
+                                                                 plotOutput("outcome_plot_efficacy", width = "900px",  height = "525px"), 
                                                                  tags$br()),
                                                         tabPanel("Table",
                                                                  fluidPage(style = "font-size: 85%; padding: 0px 0px; margin: 0%", DT::dataTableOutput("efficacy_table", width="100%")),
@@ -445,7 +448,7 @@ ui <- bootstrapPage(
                                      htmlOutput("safetyissue"),
                                      tags$br(),tags$br(),
                                      
-                                     conditionalPanel("input.select_phase != 'III'",
+                                     conditionalPanel("input.select_phase == 'I/II' | input.select_trial == 'Gamaleya Gam-COVID-Vac phase III'",
                                                       tags$h4("Antibody response"),
                                                       tags$em("We present antibody levels measured 28 days post-vaccination or the nearest available timepoint. 
                                                               Where multiple types of antibody were measured, we prioritise (i) antigen-specific ELISA (IgG); 
@@ -599,7 +602,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(4,13,15,16,17)],
+                                             selected = imp_list[c(4,11,13,15,17)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -983,8 +986,13 @@ server <- function(input, output, session) {
     eligible$`Trial number`[eligible$Reference=="Voysey; Lancet 2020"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04400838 target="_blank">NCT04400838</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04536051 target="_blank">NCT04536051</a><br>
-    <a href=https://clinicaltrials.gov/ct2/show/NCT04444674 target="_blank">NCT04444674</a>'     
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04444674 target="_blank">NCT04444674</a>'    
     
+    # Modify Oxford phase III preprint to include 3 corresponding trials
+    eligible$`Trial number`[eligible$Reference=="Voysey; Lancet preprint 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04400838 target="_blank">NCT04400838</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04444674 target="_blank">NCT04444674</a>'    
+
     # Modify AZLB ZF2001 I/II to include 2 corresponding trials
     eligible$`Trial number`[eligible$Reference=="Yang; medRxiv 2020"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04445194 target="_blank">NCT04445194</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04466085 target="_blank">NCT04466085.</a>'     
@@ -994,10 +1002,11 @@ server <- function(input, output, session) {
     eligible$`Data extraction`[eligible$`Data extraction`=="Complete"] = "<em><span style=\"color:green\">Complete</span></em>"
     eligible$`Data extraction`[eligible$`Data extraction`=="In progress"] = "<em><span style=\"color:orange\">In progress</span></em>"
     eligible$`Data extraction`[eligible$`Data extraction`=="In progress (complete for preprint)"] = "<em><span style=\"color:orange\">In progress (complete for preprint)</span></em>"
-    DT::datatable(eligible, rownames=F, escape = FALSE, options = list(dom = 't', ordering=F, pageLength = 50)) %>%
+    DT::datatable(eligible,  extensions = 'RowGroup', rownames=F, escape = FALSE, 
+                  options = list(dom = 't', ordering=F, rowGroup = list(dataSrc = 2), pageLength = 50, columnDefs = list(list(visible=FALSE, targets=2)))) %>%
       formatStyle(columns = c(1:8), fontSize = '80%') 
   })
-  
+
   observeEvent(input$select_phase, {
     updatePickerInput(session = session, inputId = "select_trial", 
                       choices = unique(db$Identifier[db$Phasegroup==input$select_phase & !is.na(db$Phasegroup)]), selected = unique(db$Identifier[db$Phasegroup==input$select_phase & !is.na(db$Phasegroup)])[1])
@@ -1091,10 +1100,9 @@ server <- function(input, output, session) {
     g1 = ggplot(subset(db_piecharts, profile_plotgroup=="age"), aes(x="", y=as.numeric(Efficacyprofileplotpercentage), fill=Efficacyprofileplotgroup)) +
       geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + theme_minimal() + guides(fill=guide_legend(title="Age (y)")) +
       scale_fill_brewer(palette = "Spectral") + theme(legend.text=element_text(size=9), legend.title=element_text(size=9)) +
-      ggtitle(paste0("N = ",format(as.numeric(db_piecharts$EfficacyN[1]),big.mark=","))) + theme(plot.title = element_text(hjust = -1.9, vjust=-2, face="bold.italic", size=11)) + 
+      ggtitle(paste0("N = ",format(as.numeric(db_piecharts$EfficacyN[1]),big.mark=","))) + theme(plot.title = element_text(hjust = -1.9, vjust = 4, face="italic", size=11)) + 
       theme(legend.position = "left", axis.text.x=element_blank(), panel.border = element_blank(), axis.title.x = element_blank(), axis.title.y = element_blank(), panel.grid=element_blank()) +
       theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
-    
     
     g2 = ggplot(subset(db_piecharts, profile_plotgroup=="ethnicity"), aes(x="", y=as.numeric(Efficacyprofileplotpercentage), fill=Efficacyprofileplotgroup)) +
       geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + theme_minimal() + guides(fill=guide_legend(title="Ethnicity")) +
@@ -1112,7 +1120,7 @@ server <- function(input, output, session) {
                             label = format(as.numeric(VEmid),nsmall=1))) +
       geom_point(aes(size=as.numeric(Efficacycases)), alpha=0.8) + xlab("") + ylab("Efficacy, %") +
       geom_errorbar(aes(ymin=as.numeric(VElower), ymax=as.numeric(VEupper)), width=0, size=0.8, alpha=0.8, position=position_dodge(.5, preserve = 'single')) +
-      scale_colour_manual(values = c("Symptomatic COVID-19" = covid_col, "Virologically confirmed COVID-19" = covid_col, "Asymptomatic SARS-CoV-2" = "#3B9AB2", "Severe COVID-19" = "#9970ab")) + 
+      scale_colour_manual(values = c("Symptomatic COVID-19" = covid_col, "Virologically confirmed COVID-19" = covid_col, "Asymptomatic SARS-CoV-2" = "#3B9AB2", "Moderate/Severe COVID-19" = "#9970ab", "Severe COVID-19" = "#9970ab")) + 
       geom_text(nudge_x = 0.3, nudge_y = -10, show.legend=FALSE, size=3.5) + ylim(-10,100) + ggtitle(" ") +
       theme_bw() + coord_flip() + facet_grid(Efficacystratum~., scales="free_y", space = "free_y") +
       guides(colour=guide_legend(title="Endpoint", order=2), size=guide_legend(title="N cases")) +
@@ -1526,13 +1534,13 @@ server <- function(input, output, session) {
   # update outcome measurement options - antibody
   observeEvent(input$select_trial, {
     updatePickerInput(session = session, inputId = "select_outcome", 
-                      choices = unique(reactive_db()$Outcome[reactive_db()$Group=="Antibody"]), selected = reactive_db()$Outcome[reactive_db()$Group=="Antibody"][1])
+                      choices = unique(reactive_db()$Outcome[reactive_db()$Group=="Antibody" & !is.na(reactive_db()$Group)]), selected = reactive_db()$Outcome[reactive_db()$Group=="Antibody"][1])
   }, ignoreInit = TRUE)
   
   # update outcome measurement options - T cell endpoints
   observeEvent(input$select_trial, {
     updatePickerInput(session = session, inputId = "select_outcome_T", 
-                      choices = unique(reactive_db()$Outcome[reactive_db()$Group=="T-cell"]), selected = reactive_db()$Outcome[reactive_db()$Group=="T-cell"][1])
+                      choices = unique(reactive_db()$Outcome[reactive_db()$Group=="T-cell" & !is.na(reactive_db()$Group)]), selected = reactive_db()$Outcome[reactive_db()$Group=="T-cell"][1])
   }, ignoreInit = TRUE)
   
   # update outcome measurement options - efficacy endpoints
@@ -1681,4 +1689,3 @@ shinyApp(ui = ui, server = server)
 #runApp(shinyApp(ui, server), launch.browser = TRUE)
 #library(rsconnect)
 #deployApp(account="vac-lshtm")
-

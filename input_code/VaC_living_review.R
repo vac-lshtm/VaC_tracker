@@ -20,6 +20,7 @@ db$Efficacypopulationprofile = str_replace_all(db$Efficacypopulationprofile, ";"
 db$Totalenrolledn = str_replace_all(db$Totalenrolledn, ";", "<br/>")
 db$Numberofdoses = str_replace_all(db$Numberofdoses, "; ", "<br/>") 
 db$Descriptionofvaccine = str_replace_all(db$Descriptionofvaccine, "\\^10", "<sup>10</sup>")
+db$Descriptionofvaccine = str_replace_all(db$Descriptionofvaccine, "\\^11", "<sup>11</sup>")
 db$Doses = str_replace_all(db$Doses, "\\^10", "<sup>10</sup>")
 db$Doses = str_replace_all(db$Doses, "\\^11", "<sup>11</sup>")
 db$Nextstepsproposed = str_replace_all(db$Nextstepsproposed, "\\^10", "<sup>10</sup>") 
