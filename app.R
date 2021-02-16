@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "15 February 2021"
-update_equity = "15 February 2021"
+update_full = "16 February 2021"
+update_equity = "16 February 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -813,10 +813,20 @@ server <- function(input, output, session) {
     # map updates
     recruiting_countries = subset(mapper_reactive_db(), Location_status=="Active/recruiting")
     recruiting_countries = recruiting_countries[order(recruiting_countries$alpha3),]
-    plot_map_layer_1 <- worldcountry[worldcountry$ADM0_A3 %in% recruiting_countries$alpha3, ]
+    plot_map_layer_1 <- worldcountry[worldcountry$ADM0_A3 %in% recruiting_countries$alpha3[1], ]
+    if (nrow(recruiting_countries)>1) {
+      for (i in 2:nrow(recruiting_countries)) {
+        plot_map_layer_1 = rbind(plot_map_layer_1, worldcountry[worldcountry$ADM0_A3 %in% recruiting_countries$alpha3[i], ])
+      }
+    }
     pending_countries = subset(mapper_reactive_db(), Location_status=="Not yet recruiting")
     pending_countries = pending_countries[order(pending_countries$alpha3),]
-    plot_map_layer_2 <- worldcountry[worldcountry$ADM0_A3 %in% pending_countries$alpha3, ]
+    plot_map_layer_2 <- worldcountry[worldcountry$ADM0_A3 %in% pending_countries$alpha3[1], ]
+    if (nrow(pending_countries)>1) {
+      for (i in 2:nrow(pending_countries)) {
+        plot_map_layer_2 = rbind(plot_map_layer_2, worldcountry[worldcountry$ADM0_A3 %in% pending_countries$alpha3[i], ])
+      }
+    }
     
     basemap_update = leafletProxy("efficacy_map") %>%
       clearMarkers() %>% clearShapes()
