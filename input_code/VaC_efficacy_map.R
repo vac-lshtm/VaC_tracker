@@ -43,16 +43,27 @@ cv_cases$rolling7permill = as.numeric(format(round(cv_cases$new_cases_rolling7/(
 
 # create subset of data for first trial (selected when map first loaded)
 trial_layer = subset(trials, Vaccine==trials$Vaccine[1])
+#trial_layer = subset(trials, Vaccine=="Janssen Ad26.COV2.S")
 
 # create paramters for active trials layer
 recruiting_countries = subset(trial_layer, Location_status=="Active/recruiting")
 recruiting_countries = recruiting_countries[order(recruiting_countries$alpha3),]
-plot_map_layer_1 <- worldcountry[worldcountry$ADM0_A3 %in% recruiting_countries$alpha3, ]
+plot_map_layer_1 <- worldcountry[worldcountry$ADM0_A3 %in% recruiting_countries$alpha3[1], ]
+if (nrow(recruiting_countries)>1) {
+  for (i in 2:nrow(recruiting_countries)) {
+    plot_map_layer_1 = rbind(plot_map_layer_1, worldcountry[worldcountry$ADM0_A3 %in% recruiting_countries$alpha3[i], ])
+  }
+}
 
 # create paramters for planned trials layer
 pending_countries = subset(trial_layer, Location_status=="Not yet recruiting")
 pending_countries = pending_countries[order(pending_countries$alpha3),]
-plot_map_layer_2 <- worldcountry[worldcountry$ADM0_A3 %in% pending_countries$alpha3, ]
+plot_map_layer_2 <- worldcountry[worldcountry$ADM0_A3 %in% pending_countries$alpha3[1], ]
+if (nrow(pending_countries)>1) {
+  for (i in 2:nrow(pending_countries)) {
+    plot_map_layer_2 = rbind(plot_map_layer_2, worldcountry[worldcountry$ADM0_A3 %in% pending_countries$alpha3[i], ])
+  }
+}
 
 # create palette for trial status
 status_pal <- colorFactor(c(active_col, planned_col), domain = c("Active/recruiting", "Not yet recruiting"))
@@ -85,3 +96,4 @@ basemap = leaflet(plot_map_layer_1) %>%
             labelOptions = labelOptions(
               style = list("font-weight" = "normal", padding = "3px 8px", "color" = ~status_pal(Location_status)),
               textsize = "15px", direction = "auto"))
+
