@@ -33,7 +33,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
 update_full = "22 February 2021"
-update_equity = "22 February 2021"
+update_equity = "23 February 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -248,7 +248,7 @@ ui <- bootstrapPage(
                       tags$br(),tags$br(),
                       
                       pickerInput("trial_select_subset", h4("Select subset:"),
-                                  choices = c("All trials", "Trials of pregnant women", "Trials of <18s", "Heterologous prime-boost studies"),
+                                  choices = c("All trials", "Trials involving pregnant women", "Trials involving <18s", "Heterologous prime-boost trials"),
                                   selected = "All trials",
                                   multiple = FALSE),
                       tags$br(),
@@ -743,9 +743,9 @@ server <- function(input, output, session) {
     table$`Trial number` = paste0("<a href=",table$Link,' target="_blank">',table$`Trial number`,"</a>")
 
     if (input$trial_select_subset=="All trials") { table_selected = table }
-    if (input$trial_select_subset=="Trials of pregnant women") { table_selected = subset(table, Pregnancy==1) }
-    if (input$trial_select_subset=="Trials of <18s") { table_selected = subset(table, Children==1) }
-    if (input$trial_select_subset=="Heterologous prime-boost studies") { table_selected = subset(table, `Prime boost`==1) }
+    if (input$trial_select_subset=="Trials involving pregnant women") { table_selected = subset(table, Pregnancy==1) }
+    if (input$trial_select_subset=="Trials involving <18s") { table_selected = subset(table, Children==1) }
+    if (input$trial_select_subset=="Heterologous prime-boost trials") { table_selected = subset(table, `Prime boost`==1) }
     
     DT::datatable(table_selected %>% select(-c(Institutes, Name, Link, Pregnancy, Children, `Prime boost`)), rownames=F, escape = FALSE, 
                   options = list(ordering=T, pageLength = 20,
