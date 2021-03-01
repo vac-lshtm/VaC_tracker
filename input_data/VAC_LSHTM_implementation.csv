@@ -45,7 +45,7 @@ Efficacy data,BioNTech/Pfizer BNT162b2,Vaccine efficacy against COVID-19 of 95% 
 Storage requirements,BioNTech/Pfizer BNT162b2,Ultra-cold (-60°C to -80°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",BioNTech/Pfizer BNT162b2,"BioNTech and Pfizer given scores of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_BioNTech_EN.pdf"" target=""_blank"">2.3 out of 15</a> and <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Pfizer.pdf"" target=""_blank"">4.3 out of 15</a>, respectively"
 Manufacture projections,BioNTech/Pfizer BNT162b2,"Up to 2 billion doses in 2021 (<a href=""https://www.reuters.com/article/us-pfizer-results-idUSKBN2A21EO"" target=""_blank"">02 Feb 2021</a>) "
-Approval status,BioNTech/Pfizer BNT162b2,"Full or emergency use in numerous countries; granted emergency use approval by the WHO on  <a href=""https://www.who.int/news/item/31-12-2020-who-issues-its-first-emergency-use-validation-for-a-covid-19-vaccine-and-emphasizes-need-for-equitable-global-access"" target=""_blank"">31 Dec 2020</a>"
+Approval status,BioNTech/Pfizer BNT162b2,"Full or emergency use in numerous countries; granted emergency use approval by the WHO on <a href=""https://www.who.int/news/item/31-12-2020-who-issues-its-first-emergency-use-validation-for-a-covid-19-vaccine-and-emphasizes-need-for-equitable-global-access"" target=""_blank"">31 Dec 2020</a>"
 ,,
 Developer(s),Beijing/Sinopharm BBIBP-CorV,"Beijing Institute of Biological Products, Sinopharm"
 Total number in registered trials,Beijing/Sinopharm BBIBP-CorV,"56,128"
@@ -69,7 +69,7 @@ Efficacy data,Cansino Ad5-nCoV,Pending
 Storage requirements,Cansino Ad5-nCoV,Pending - refrigeration (2°C to 8°C) or freezing (-15°C to -25°C) is typical for vectored vaccines
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Cansino Ad5-nCoV,No score available
 Manufacture projections,Cansino Ad5-nCoV,Pending
-Approval status,Cansino Ad5-nCoV,Limited use in China
+Approval status,Cansino Ad5-nCoV,"Full or emergency use in China, Mexico, and Pakistan"
 ,,
 Developer(s),Chinese Academy of Medical Sciences vaccine,"Institute of Medical Biology, Chinese Academy of Medical Sciences"
 Total number in registered trials,Chinese Academy of Medical Sciences vaccine,"35,433"
@@ -82,6 +82,18 @@ Storage requirements,Chinese Academy of Medical Sciences vaccine,Pending - refri
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Chinese Academy of Medical Sciences vaccine,No score available
 Manufacture projections,Chinese Academy of Medical Sciences vaccine,Pending
 Approval status,Chinese Academy of Medical Sciences vaccine,Not yet approved for widespread use
+,,
+Developer(s),Chumakov Center CoviVac,"Chumakov Center, Russian Academy of Sciences"
+Total number in registered trials,Chumakov Center CoviVac,0
+Platform,Chumakov Center CoviVac,Inactivated
+Dosing,Chumakov Center CoviVac,"2 doses, intramuscular"
+Description,Chumakov Center CoviVac,Inactivated whole-virion vaccine
+Published results,Chumakov Center CoviVac,None
+Efficacy data,Chumakov Center CoviVac,Pending
+Storage requirements,Chumakov Center CoviVac,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Chumakov Center CoviVac,No score available
+Manufacture projections,Chumakov Center CoviVac,"Up to 20 million doses in 2021 (<a href=""https://www.rferl.org/a/russia-coronavirus-vaccine-covivac/31113697.html"" target=""_blank"">21 Feb 2021</a>) "
+Approval status,Chumakov Center CoviVac,Early use in Russia
 ,,
 Developer(s),Clover SCB-2019,"Clover Biopharmaceuticals Inc, GSK, Dynavax"
 Total number in registered trials,Clover SCB-2019,"22,150"
@@ -153,7 +165,7 @@ Efficacy data,Janssen Ad26.COV2.S,"Vaccine efficacy against moderate to severe C
 Storage requirements,Janssen Ad26.COV2.S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Janssen Ad26.COV2.S,"Johnson & Johnson given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Johnson_Johnson.pdf"" target=""_blank"">6.7 out of 15</a>"
 Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021 (<a href=""https://www.jnj.com/innovation/questions-about-johnson-johnson-investigational-covid-19-vaccine"" target=""_blank"">05 Jan 2021</a>) "
-Approval status,Janssen Ad26.COV2.S,"Early use in South Africa (<a href=""https://www.businessinsider.co.za/covid-19-vaccine-johnson-johnson-what-we-know-2020-12"" target=""_blank"">17 Feb 2021</a>)  "
+Approval status,Janssen Ad26.COV2.S,"Early or emergency use in South Africa, Bahrain, and USA"
 ,,
 Developer(s),Medicago CoVLP,"Medicago Inc, GSK, Dynavax"
 Total number in registered trials,Medicago CoVLP,"32,016"
@@ -164,7 +176,7 @@ Published results,Medicago CoVLP,Phase I - see <b>Living review</b>
 Efficacy data,Medicago CoVLP,Pending
 Storage requirements,Medicago CoVLP,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Medicago CoVLP,No score available
-Manufacture projections,Medicago CoVLP,"80 million doses in 2021 (<a href=""https://www.medicago.com/en/covid-19-programs/"" target=""_blank"">15 Feb 2021</a>) "
+Manufacture projections,Medicago CoVLP,"80 million doses in 2021 (<a href=""https://www.medicago.com/en/covid-19-programs/"" target=""_blank"">01 Mar 2021</a>) "
 Approval status,Medicago CoVLP,Not yet approved for widespread use
 ,,
 Developer(s),Moderna mRNA-1273,"Moderna, NIAID"
@@ -176,7 +188,7 @@ Published results,Moderna mRNA-1273,"Phase I, phase III - see <b>Living review</
 Efficacy data,Moderna mRNA-1273,Vaccine efficacy against COVID-19 of 94% based on primary efficacy analysis of 196 confirmed cases - see <b>Living review</b>
 Storage requirements,Moderna mRNA-1273,Refrigeration (2°C to 8°C) for up to 30 days or frozen (-15°C to -25°C) for long-term storage
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Moderna mRNA-1273,"Moderna given score of <a href=""https://s3.amazonaws.com/one.org/vaccine-access-test/ONE_VAT_company_Moderna.pdf"" target=""_blank"">3.6 out of 15</a>"
-Manufacture projections,Moderna mRNA-1273,"Up to 1 billion doses per year (<a href=""https://investors.modernatx.com/news-releases/news-release-details/moderna-provides-covid-19-vaccine-supply-update"" target=""_blank"">04 Jan 2021</a>) "
+Manufacture projections,Moderna mRNA-1273,"Up to 1 billion doses in 2021 (<a href=""https://investors.modernatx.com/news-releases/news-release-details/moderna-reports-fourth-quarter-and-fiscal-year-2020-financial"" target=""_blank"">25 Feb 2021</a>) "
 Approval status,Moderna mRNA-1273,"Full or emergency use in numerous countries, including USA, Canada, EU, UK, and Israel"
 ,,
 Developer(s),Novavax NVX-CoV2373,Novavax

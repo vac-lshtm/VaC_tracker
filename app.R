@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "22 February 2021"
-update_equity = "23 February 2021"
+update_full = "01 March 2021"
+update_equity = "01 March 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -64,7 +64,7 @@ ui <- bootstrapPage(
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_equity,".")),tags$br(),tags$br(),
                         
-                        tags$b("*** Update:"),"See",tags$b("Implementation"),"tab for new feature tracking the equity of vaccine roll-out.",tags$b("***"),tags$br(),tags$br(),
+                        #tags$b("*** Update:"),"See",tags$b("Implementation"),"tab for new feature tracking the equity of vaccine roll-out.",tags$b("***"),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -163,7 +163,7 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (226)" = "preclin",
+                                                                    "Pre-clinical (227)" = "preclin",
                                                                     "Phase I (24)" = "phasei",
                                                                     "Phase I/II (26)" = "phasei_ii",
                                                                     "Phase II (7)" = "phaseii",
@@ -174,8 +174,8 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (296)" = "not_in_use",
-                                                                    "Yes (11)" = "in_use"),
+                                                        choices = c("No (297)" = "not_in_use",
+                                                                    "Yes (12)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -185,11 +185,11 @@ ui <- bootstrapPage(
                                                                     "DNA (26)" = "dna",
                                                                     "Vector (non-replicating) (37)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",
-                                                                    "Inactivated (19)" = "inact",
+                                                                    "Inactivated (20)" = "inact",
                                                                     "Live-attenuated (4)" = "live", 
                                                                     "Protein subunit (99)" = "ps",
                                                                     "Virus-like particle (22)" = "vlp",
-                                                                    "Other/Unknown (38)" = "unknown"),
+                                                                    "Other/Unknown (39)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
                                      
@@ -608,7 +608,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(4,11,13,15,17)],
+                                             selected = imp_list[c(4,12,14,16,18)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -723,7 +723,7 @@ server <- function(input, output, session) {
   output$vaccine_timeline <- renderTimevis({
     timevis(reactive_timeline() %>% select(-c(stage)), 
             groups = reactive_groups()) %>%
-      setWindow("2019-10-01", "2021-03-31") 
+      setWindow("2019-10-01", "2021-12-31") 
   })
   
   # summary figure of landscape

@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date("2021-02-23")
+current_date = as.Date("2021-03-01")
 
 ### Figure --------------------------------------------------------------------
 
