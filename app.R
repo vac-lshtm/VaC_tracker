@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "01 March 2021"
-update_equity = "01 March 2021"
+update_full = "12 March 2021"
+update_equity = "12 March 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -165,31 +165,31 @@ ui <- bootstrapPage(
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (227)" = "preclin",
                                                                     "Phase I (24)" = "phasei",
-                                                                    "Phase I/II (26)" = "phasei_ii",
-                                                                    "Phase II (7)" = "phaseii",
-                                                                    "Phase III (16)" = "phaseiii",
-                                                                    "Phase IV (4)" = "phaseiv"),
+                                                                    "Phase I/II (24)" = "phasei_ii",
+                                                                    "Phase II (6)" = "phaseii",
+                                                                    "Phase III (18)" = "phaseiii",
+                                                                    "Phase IV (5)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (297)" = "not_in_use",
+                                                        choices = c("No (298)" = "not_in_use",
                                                                     "Yes (12)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (38)" = "rna",
+                                                        choices = c("RNA (39)" = "rna",
                                                                     "DNA (26)" = "dna",
-                                                                    "Vector (non-replicating) (37)" = "nrvv",
+                                                                    "Vector (non-replicating) (38)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (20)" = "inact",
                                                                     "Live-attenuated (4)" = "live", 
-                                                                    "Protein subunit (99)" = "ps",
+                                                                    "Protein subunit (100)" = "ps",
                                                                     "Virus-like particle (22)" = "vlp",
-                                                                    "Other/Unknown (39)" = "unknown"),
+                                                                    "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
                                      

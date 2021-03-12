@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date("2021-03-01")
+current_date = as.Date("2021-03-12")
 
 ### Figure --------------------------------------------------------------------
 
@@ -93,6 +93,7 @@ s$n_country[s$Institutes=="Wuhan/Sinopharm vaccine"] = sum(grepl("Sinopharm/Wuha
 s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
 s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford/AstraZeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
+s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
 
 # create plot of N countries reporting use (plot panel 3)
 g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n_country)) + geom_bar(stat = "identity") + theme_bw() +
