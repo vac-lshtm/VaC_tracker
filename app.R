@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "12 March 2021"
-update_equity = "12 March 2021"
+update_full = "15 March 2021"
+update_equity = "15 March 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -71,10 +71,13 @@ ui <- bootstrapPage(
                         
                         "First launched in April 2020, this tracker was developed by the", a("Vaccine Centre", href="https://www.lshtm.ac.uk/research/centres/vaccine-centre", target="_blank"),
                         "at the", a("London School of Hygiene & Tropical Medicine", href="https://www.lshtm.ac.uk", target="_blank"), "to follow candidates as they progress through the development pipeline.",
-                        "Read our", a("Commentary", href="https://www.nature.com/articles/s41577-020-00455-1", target="_blank"),"in",em("Nature Reviews Immunology"),"for further details.",
+                        "Read our", a("Correspondence", href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(21)00043-7/fulltext", target="_blank"),"in",em("Lancet Global Health"),"for further details.",
                         tags$br(),tags$br(),
                         
                         "All data and code are available via the LSHTM Vaccine Centre's", tags$a(href="https://github.com/vac-lshtm/VaC_tracker", "Github page.", target="_blank"),
+                        tags$br(),tags$br(),
+                        
+                        "Citation details: Shrotri, Swinnen, Kampmann, Parker (2021). An interactive website tracking COVID-19 vaccine development.",tags$i("Lancet Glob Health;"),"epub ahead of print.",
                         tags$br(),tags$br(),
                         
                         actionButton("twitter_share", label = "Share", icon = icon("twitter"),class = "btn btn-warning",
@@ -163,9 +166,9 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (227)" = "preclin",
-                                                                    "Phase I (24)" = "phasei",
-                                                                    "Phase I/II (24)" = "phasei_ii",
+                                                                    "Pre-clinical (225)" = "preclin",
+                                                                    "Phase I (27)" = "phasei",
+                                                                    "Phase I/II (25)" = "phasei_ii",
                                                                     "Phase II (6)" = "phaseii",
                                                                     "Phase III (18)" = "phaseiii",
                                                                     "Phase IV (5)" = "phaseiv"),
@@ -174,8 +177,8 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (298)" = "not_in_use",
-                                                                    "Yes (12)" = "in_use"),
+                                                        choices = c("No (297)" = "not_in_use",
+                                                                    "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -184,9 +187,9 @@ ui <- bootstrapPage(
                                                         choices = c("RNA (39)" = "rna",
                                                                     "DNA (26)" = "dna",
                                                                     "Vector (non-replicating) (38)" = "nrvv",
-                                                                    "Vector (replicating) (24)" = "rvv",
+                                                                    "Vector (replicating) (25)" = "rvv",
                                                                     "Inactivated (20)" = "inact",
-                                                                    "Live-attenuated (4)" = "live", 
+                                                                    "Live-attenuated (3)" = "live", 
                                                                     "Protein subunit (100)" = "ps",
                                                                     "Virus-like particle (22)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),

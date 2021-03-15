@@ -1,6 +1,5 @@
 ﻿Metric,Vaccine,Summary
 Developer(s),AnGes AG0302-COVID19,"Osaka University, AnGes, Takara Bio"
-Total number in registered trials,AnGes AG0302-COVID19,530
 Platform,AnGes AG0302-COVID19,DNA
 Dosing,AnGes AG0302-COVID19,"2 doses, intramuscular"
 Description,AnGes AG0302-COVID19,DNA plasmid - target antigen(s) unknown
@@ -12,7 +11,6 @@ Manufacture projections,AnGes AG0302-COVID19,Pending
 Approval status,AnGes AG0302-COVID19,Not yet approved for widespread use
 ,,
 Developer(s),Anhui Zhifei Longcom Biopharmaceutical ZF2001,"Anhui Zhifei Longcom Biopharmaceutical, Chinese Academy of Sciences"
-Total number in registered trials,Anhui Zhifei Longcom Biopharmaceutical ZF2001,"30,216"
 Platform,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Protein subunit
 Dosing,Anhui Zhifei Longcom Biopharmaceutical ZF2001,"2/3 doses, intramuscular"
 Description,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Adjuvanted recombinant protein vaccine targeting SARS-CoV-2 receptor binding domain (RBD)
@@ -21,10 +19,9 @@ Efficacy data,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending
 Storage requirements,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending - refrigeration (2°C to 8°C) is typical for protein subunit vaccines
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Anhui Zhifei Longcom Biopharmaceutical ZF2001,No score available
 Manufacture projections,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Pending
-Approval status,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Not yet approved for widespread use
+Approval status,Anhui Zhifei Longcom Biopharmaceutical ZF2001,Emergency use in China and Uzbekistan
 ,,
 Developer(s),Bharat Covaxin/BBV152,"Bharat Biotech, ICMR, National Institute of Virology"
-Total number in registered trials,Bharat Covaxin/BBV152,"26,679"
 Platform,Bharat Covaxin/BBV152,Inactivated
 Dosing,Bharat Covaxin/BBV152,"2 doses, intramuscular"
 Description,Bharat Covaxin/BBV152,Inactivated vaccine administered with imidazoquinoline adjuvant (TLR7/8 agonist)
@@ -36,7 +33,6 @@ Manufacture projections,Bharat Covaxin/BBV152,"No information on company website
 Approval status,Bharat Covaxin/BBV152,Emergency use in India
 ,,
 Developer(s),BioNTech/Pfizer BNT162b2,"BioNTech, Pfizer, Fosun Pharma"
-Total number in registered trials,BioNTech/Pfizer BNT162b2,"51,358"
 Platform,BioNTech/Pfizer BNT162b2,RNA
 Dosing,BioNTech/Pfizer BNT162b2,"2 doses, intramuscular"
 Description,BioNTech/Pfizer BNT162b2,Lipid nanoparticle-formulated mRNA encoding full-length spike (S) protein
@@ -48,7 +44,6 @@ Manufacture projections,BioNTech/Pfizer BNT162b2,"Up to 2 billion doses in 2021 
 Approval status,BioNTech/Pfizer BNT162b2,"Full or emergency use in numerous countries; granted emergency use approval by the WHO on <a href=""https://www.who.int/news/item/31-12-2020-who-issues-its-first-emergency-use-validation-for-a-covid-19-vaccine-and-emphasizes-need-for-equitable-global-access"" target=""_blank"">31 Dec 2020</a>"
 ,,
 Developer(s),Beijing/Sinopharm BBIBP-CorV,"Beijing Institute of Biological Products, Sinopharm"
-Total number in registered trials,Beijing/Sinopharm BBIBP-CorV,"56,128"
 Platform,Beijing/Sinopharm BBIBP-CorV,Inactivated
 Dosing,Beijing/Sinopharm BBIBP-CorV,"2 doses, intramuscular"
 Description,Beijing/Sinopharm BBIBP-CorV,Inactivated vaccine administered with aluminium hydroxide adjuvant
@@ -60,7 +55,6 @@ Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"No information on company 
 Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in numerous countries, including China, UAE, Bahrain, Egypt, and Hungary"
 ,,
 Developer(s),Cansino Ad5-nCoV,"CanSino Biological Inc, Beijing Institute of Biotechnology"
-Total number in registered trials,Cansino Ad5-nCoV,"42,382"
 Platform,Cansino Ad5-nCoV,Non-replicating viral vector
 Dosing,Cansino Ad5-nCoV,"1 dose, intramuscular"
 Description,Cansino Ad5-nCoV,Ad5 vector containing full-length spike (S) protein
@@ -72,7 +66,6 @@ Manufacture projections,Cansino Ad5-nCoV,Pending
 Approval status,Cansino Ad5-nCoV,"Full or emergency use in China, Mexico, and Pakistan"
 ,,
 Developer(s),Chinese Academy of Medical Sciences vaccine,"Institute of Medical Biology, Chinese Academy of Medical Sciences"
-Total number in registered trials,Chinese Academy of Medical Sciences vaccine,"35,433"
 Platform,Chinese Academy of Medical Sciences vaccine,Inactivated
 Dosing,Chinese Academy of Medical Sciences vaccine,"2 doses, intramuscular"
 Description,Chinese Academy of Medical Sciences vaccine,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
@@ -84,7 +77,6 @@ Manufacture projections,Chinese Academy of Medical Sciences vaccine,Pending
 Approval status,Chinese Academy of Medical Sciences vaccine,Not yet approved for widespread use
 ,,
 Developer(s),Chumakov Center CoviVac,"Chumakov Center, Russian Academy of Sciences"
-Total number in registered trials,Chumakov Center CoviVac,0
 Platform,Chumakov Center CoviVac,Inactivated
 Dosing,Chumakov Center CoviVac,"2 doses, intramuscular"
 Description,Chumakov Center CoviVac,Inactivated whole-virion vaccine
@@ -96,7 +88,6 @@ Manufacture projections,Chumakov Center CoviVac,"Up to 20 million doses in 2021 
 Approval status,Chumakov Center CoviVac,Early use in Russia
 ,,
 Developer(s),Clover SCB-2019,"Clover Biopharmaceuticals Inc, GSK, Dynavax"
-Total number in registered trials,Clover SCB-2019,"22,150"
 Platform,Clover SCB-2019,Protein subunit
 Dosing,Clover SCB-2019,"2 doses, intramuscular"
 Description,Clover SCB-2019,Stabilised trimeric spike (S) protein administered with AS03 oil-in-water adjuvant or CpG 1018/Alum adjuvant
@@ -108,7 +99,6 @@ Manufacture projections,Clover SCB-2019,"Up to 1 billion doses in 2021 (<a href=
 Approval status,Clover SCB-2019,Not yet approved for widespread use
 ,,
 Developer(s),Covaxx UB-612,"Covaxx, United Biomedical Inc"
-Total number in registered trials,Covaxx UB-612,"7,380"
 Platform,Covaxx UB-612,Protein subunit
 Dosing,Covaxx UB-612,"2 doses, intramuscular"
 Description,Covaxx UB-612,Multitope peptide-based vaccine
@@ -120,7 +110,6 @@ Manufacture projections,Covaxx UB-612,"Up to 1 billion doses in 2021 (<a href=""
 Approval status,Covaxx UB-612,Not yet approved for widespread use
 ,,
 Developer(s),CureVac CVnCoV,CureVac
-Total number in registered trials,CureVac CVnCoV,"40,674"
 Platform,CureVac CVnCoV,RNA
 Dosing,CureVac CVnCoV,"2 doses, intramuscular"
 Description,CureVac CVnCoV,Lipid nanoparticle-formulated mRNA vaccine encoding stabilised pre-fusion form of full-length spike (S) protein
@@ -132,7 +121,6 @@ Manufacture projections,CureVac CVnCoV,"300 million doses in 2021, 600 million d
 Approval status,CureVac CVnCoV,Not yet approved for widespread use
 ,,
 Developer(s),Gamaleya Gam-COVID-Vac/Sputnik V,Gamaleya Research Institute
-Total number in registered trials,Gamaleya Gam-COVID-Vac/Sputnik V,"44,754"
 Platform,Gamaleya Gam-COVID-Vac/Sputnik V,Non-replicating viral vector
 Dosing,Gamaleya Gam-COVID-Vac/Sputnik V,"2 doses, intramuscular"
 Description,Gamaleya Gam-COVID-Vac/Sputnik V,Recombinant Ad26 (prime) and recombinant Ad5 (boost) viruses expressing full-length spike (S) protein
@@ -144,7 +132,6 @@ Manufacture projections,Gamaleya Gam-COVID-Vac/Sputnik V,"No information on inst
 Approval status,Gamaleya Gam-COVID-Vac/Sputnik V,"Early or emergency use in numerous countries, including Russia, Belarus, Argentina, Serbia, and Algeria"
 ,,
 Developer(s),Inovio INO-4800,"Inovio Pharmaceuticals, International Vaccine Institute"
-Total number in registered trials,Inovio INO-4800,"1,321"
 Platform,Inovio INO-4800,DNA
 Dosing,Inovio INO-4800,"2 doses, intradermal"
 Description,Inovio INO-4800,DNA plasmid vaccine with electroporation
@@ -156,7 +143,6 @@ Manufacture projections,Inovio INO-4800,">100 million doses in 2021 (<a href=""h
 Approval status,Inovio INO-4800,Not yet approved for widespread use
 ,,
 Developer(s),Janssen Ad26.COV2.S,Janssen Pharmaceutical Companies
-Total number in registered trials,Janssen Ad26.COV2.S,"77,034"
 Platform,Janssen Ad26.COV2.S,Non-replicating viral vector
 Dosing,Janssen Ad26.COV2.S,"1 or 2 doses (to be determined), intramuscular"
 Description,Janssen Ad26.COV2.S,Ad26 vector expressing stabilised pre-fusion spike (S) protein
@@ -168,7 +154,6 @@ Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021
 Approval status,Janssen Ad26.COV2.S,"Early or emergency use in South Africa, Bahrain, and USA"
 ,,
 Developer(s),Medicago CoVLP,"Medicago Inc, GSK, Dynavax"
-Total number in registered trials,Medicago CoVLP,"32,016"
 Platform,Medicago CoVLP,Virus-like particle
 Dosing,Medicago CoVLP,"2 doses, intramuscular"
 Description,Medicago CoVLP,"Virus-like particle displaying stabilised pre-fusion spike (S) protein, produced in plants; administered with either AS03 adjuvant (GSK) or CpG 1018 adjuvant (Dynavax)"
@@ -180,7 +165,6 @@ Manufacture projections,Medicago CoVLP,"80 million doses in 2021 (<a href=""http
 Approval status,Medicago CoVLP,Not yet approved for widespread use
 ,,
 Developer(s),Moderna mRNA-1273,"Moderna, NIAID"
-Total number in registered trials,Moderna mRNA-1273,"34,320"
 Platform,Moderna mRNA-1273,RNA
 Dosing,Moderna mRNA-1273,"2 doses, intramuscular"
 Description,Moderna mRNA-1273,Lipid nanoparticle-encapsulated mRNA encoding pre-fusion spike (S) protein
@@ -192,7 +176,6 @@ Manufacture projections,Moderna mRNA-1273,"Up to 1 billion doses in 2021 (<a hre
 Approval status,Moderna mRNA-1273,"Full or emergency use in numerous countries, including USA, Canada, EU, UK, and Israel"
 ,,
 Developer(s),Novavax NVX-CoV2373,Novavax
-Total number in registered trials,Novavax NVX-CoV2373,"50,819"
 Platform,Novavax NVX-CoV2373,Protein subunit
 Dosing,Novavax NVX-CoV2373,"2 doses, intramuscular"
 Description,Novavax NVX-CoV2373,"Recombinant nanoparticle vaccine consisting of full-length spike (S) protein, administered with or without saponin-based Matrix-M1 adjuvant"
@@ -204,7 +187,6 @@ Manufacture projections,Novavax NVX-CoV2373,"2 billion doses per year as of 2021
 Approval status,Novavax NVX-CoV2373,Not yet approved for widespread use
 ,,
 Developer(s),Oxford/AstraZeneca ChAdOx1-S,"University of Oxford, AstraZeneca"
-Total number in registered trials,Oxford/AstraZeneca ChAdOx1-S,"58,166"
 Platform,Oxford/AstraZeneca ChAdOx1-S,Non-replicating viral vector
 Dosing,Oxford/AstraZeneca ChAdOx1-S,"2 doses, intramuscular"
 Description,Oxford/AstraZeneca ChAdOx1-S,Simian adenovirus vector containing codon-optimised spike (S) protein
@@ -216,7 +198,6 @@ Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<
 Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, EU, India, Argentina, Dominican Republic, and El Salvador"
 ,,
 Developer(s),Research Institute for Biological Safety Problems QazCovid-in,"Research Institute for Biological Safety Problems, Kazakhstan"
-Total number in registered trials,Research Institute for Biological Safety Problems QazCovid-in,"3,244"
 Platform,Research Institute for Biological Safety Problems QazCovid-in,Inactivated
 Dosing,Research Institute for Biological Safety Problems QazCovid-in,"2 doses, intramuscular"
 Description,Research Institute for Biological Safety Problems QazCovid-in,Inactivated vaccine adiministered with aluminium hydroxide adjuvant
@@ -228,7 +209,6 @@ Manufacture projections,Research Institute for Biological Safety Problems QazCov
 Approval status,Research Institute for Biological Safety Problems QazCovid-in,Not yet approved for widespread use
 ,,
 Developer(s),Sinovac CoronaVac,Sinovac
-Total number in registered trials,Sinovac CoronaVac,"35,633"
 Platform,Sinovac CoronaVac,Inactivated
 Dosing,Sinovac CoronaVac,"2 doses, intramuscular"
 Description,Sinovac CoronaVac,Inactivated vaccine adiministered 
@@ -240,7 +220,6 @@ Manufacture projections,Sinovac CoronaVac,"No information on institute website; 
 Approval status,Sinovac CoronaVac,"Full or emergency use in numerous countries, including China, Azerbaijan, Brazil, Chile, and Colombia"
 ,,
 Developer(s),Vector Institute EpiVacCorona,Vector Institute
-Total number in registered trials,Vector Institute EpiVacCorona,100
 Platform,Vector Institute EpiVacCorona,Protein subunit
 Dosing,Vector Institute EpiVacCorona,"2 doses, intramuscular"
 Description,Vector Institute EpiVacCorona,Peptide antigens conjugated to a carrier protein and administered with aluminum hydroxide
@@ -252,7 +231,6 @@ Manufacture projections,Vector Institute EpiVacCorona,"5 million doses per year 
 Approval status,Vector Institute EpiVacCorona,Early use in Russia
 ,,
 Developer(s),Wuhan/Sinopharm vaccine,"Wuhan Institute of Biological Products, Sinopharm"
-Total number in registered trials,Wuhan/Sinopharm vaccine,"52,864"
 Platform,Wuhan/Sinopharm vaccine,Inactivated
 Dosing,Wuhan/Sinopharm vaccine,"2 doses, intramuscular"
 Description,Wuhan/Sinopharm vaccine,Inactivated vaccine adsorbed to 0.5-mg alum
