@@ -52,7 +52,7 @@ Key elements of the analysis code are as follows:
   - **Efficacy**: We report protective efficacy against COVID-19, severe COVID-19, and/or asymptomatic SARS-CoV-2 infection. Where available, we present the profile (age, ethnicity, and comorbidity prevalence) of the study population, as well as vaccine efficacy estimates stratified by relevant covariates (dose regimen, age group, ethnicity, and presence of comorbidities).
 
 ### Implementation tab
-* Updated multiple times  weekly
+* Updated multiple times weekly
 * Input data: *VAC_implementation.csv* and *VaC_LSHTM_landscape_summary.csv*
 * Sources:
   - Vaccine roll-out data obtained from [Our World in Data](https://ourworldindata.org/covid-vaccinations)

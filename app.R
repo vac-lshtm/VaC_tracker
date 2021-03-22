@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "15 March 2021"
-update_equity = "15 March 2021"
+update_full = "22 March 2021"
+update_equity = "22 March 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -103,7 +103,7 @@ ui <- bootstrapPage(
                           ),
                           h3("Efficacy trial map", align="center"),
                           HTML("<div class=\"text-center\"><i class=\"fas fa-globe-africa fa-4x\"></i></div>"),
-                          tags$p("Map of planned and ongoing efficacy trials", align="center"),
+                          tags$p("Map of planned and ongoing phase III trials", align="center"),
                           HTML("<div class=\"text-center\"><button class=\"btn btn-primary\" onclick=\"$('li:eq(3) a').tab('show');\" role=\"button\">View map</button></div>"),
                           tags$br()                          
                         ),
@@ -167,17 +167,17 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (225)" = "preclin",
-                                                                    "Phase I (27)" = "phasei",
-                                                                    "Phase I/II (25)" = "phasei_ii",
-                                                                    "Phase II (6)" = "phaseii",
-                                                                    "Phase III (18)" = "phaseiii",
+                                                                    "Phase I (28)" = "phasei",
+                                                                    "Phase I/II (24)" = "phasei_ii",
+                                                                    "Phase II (5)" = "phaseii",
+                                                                    "Phase III (20)" = "phaseiii",
                                                                     "Phase IV (5)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (297)" = "not_in_use",
+                                                        choices = c("No (298)" = "not_in_use",
                                                                     "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -188,7 +188,7 @@ ui <- bootstrapPage(
                                                                     "DNA (26)" = "dna",
                                                                     "Vector (non-replicating) (38)" = "nrvv",
                                                                     "Vector (replicating) (25)" = "rvv",
-                                                                    "Inactivated (20)" = "inact",
+                                                                    "Inactivated (21)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
                                                                     "Protein subunit (100)" = "ps",
                                                                     "Virus-like particle (22)" = "vlp",
@@ -289,13 +289,14 @@ ui <- bootstrapPage(
                           leafletOutput("efficacy_map", width="100%", height="100%"),
                           
                           absolutePanel(id = "controls", class = "panel panel-default",
-                                        top = 75, left = 55, width = 250, fixed=TRUE,
+                                        top = 75, left = 55, width = 260, fixed=TRUE,
                                         draggable = TRUE, height = "auto",
                                         
                                         actionButton('plotBtn', HTML('<i class="fa fa-bars fa"></i>'), "class"='btn btn-link btn-sm', "data-toggle"='collapse',
                                                      "data-target"="#controls_collapse"),
                                         
                                         tags$div(id = 'controls_collapse', class = "collapse in",
+                                                 tags$i("Phase III trials with N >1000 included."), tags$br(),
                                                  pickerInput("mapper_vaccine_select", h4("Select vaccine:"),
                                                              choices = as.character(unique(trials$Vaccine)),
                                                              selected = as.character(unique(trials$Vaccine))[1],
@@ -611,12 +612,11 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(4,12,14,16,18)],
+                                             selected = imp_list[c(3,7,8,10,11)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
-                                 "Vaccines undergoing phase III efficacy testing are included (see",tags$b("Clinical trials"),"and",tags$b("Trial map"),"tabs for further details).
-                                  Reported numbers in registered clinical trials exclude heterologous prime-boost studies and phase IV studies, both of which involve multiple candidates per study.",
+                                 "Vaccines in widespread use are included.",
                                  tags$br(), tags$br()
                       
                       ),
