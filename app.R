@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "22 March 2021"
-update_equity = "22 March 2021"
+update_full = "29 March 2021"
+update_equity = "29 March 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -167,31 +167,31 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (225)" = "preclin",
-                                                                    "Phase I (28)" = "phasei",
-                                                                    "Phase I/II (24)" = "phasei_ii",
+                                                                    "Phase I (27)" = "phasei",
+                                                                    "Phase I/II (25)" = "phasei_ii",
                                                                     "Phase II (5)" = "phaseii",
-                                                                    "Phase III (20)" = "phaseiii",
+                                                                    "Phase III (21)" = "phaseiii",
                                                                     "Phase IV (5)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (298)" = "not_in_use",
+                                                        choices = c("No (299)" = "not_in_use",
                                                                     "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (39)" = "rna",
+                                                        choices = c("RNA (38)" = "rna",
                                                                     "DNA (26)" = "dna",
                                                                     "Vector (non-replicating) (38)" = "nrvv",
                                                                     "Vector (replicating) (25)" = "rvv",
                                                                     "Inactivated (21)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (100)" = "ps",
-                                                                    "Virus-like particle (22)" = "vlp",
+                                                                    "Protein subunit (101)" = "ps",
+                                                                    "Virus-like particle (23)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
@@ -458,7 +458,7 @@ ui <- bootstrapPage(
                                      htmlOutput("safetyissue"),
                                      tags$br(),tags$br(),
                                      
-                                     conditionalPanel("input.select_phase == 'I/II' | input.select_trial == 'Gamaleya Gam-COVID-Vac phase III'",
+                                     conditionalPanel("input.select_phase == 'I/II' | input.select_trial == 'Gamaleya Gam-COVID-Vac phase III' | input.select_trial == 'Oxford ChAdOx1 phase III (report 2; Voysey 2021)'",
                                                       tags$h4("Antibody response"),
                                                       tags$em("We present antibody levels measured 28 days post-vaccination or the nearest available timepoint. 
                                                               Where multiple types of antibody were measured, we prioritise (i) antigen-specific ELISA (IgG); 
@@ -1015,13 +1015,14 @@ server <- function(input, output, session) {
     <a href=https://clinicaltrials.gov/ct2/show/NCT04444674 target="_blank">NCT04444674</a>'    
     
     # Modify Oxford phase III preprint to include 3 corresponding trials
-    eligible$`Trial number`[eligible$Reference=="Voysey; Lancet preprint 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
+    eligible$`Trial number`[eligible$Reference=="Voysey; Lancet 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04400838 target="_blank">NCT04400838</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04536051 target="_blank">NCT04536051</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04444674 target="_blank">NCT04444674</a>'    
 
     # Modify AZLB ZF2001 I/II to include 2 corresponding trials
-    eligible$`Trial number`[eligible$Reference=="Yang; medRxiv 2020"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04445194 target="_blank">NCT04445194</a><br>
-    <a href=https://clinicaltrials.gov/ct2/show/NCT04466085 target="_blank">NCT04466085.</a>'     
+    eligible$`Trial number`[eligible$Reference=="Yang; Lancet Infect Dis 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04445194 target="_blank">NCT04445194</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04466085 target="_blank">NCT04466085</a>'     
     
     eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
     eligible = eligible %>% select(-c(`Reference link`, Link, Platform))
@@ -1051,7 +1052,7 @@ server <- function(input, output, session) {
       # Insert both trial numbers for Gamaleya phase I/II
       HTML('<a href=https://clinicaltrials.gov/ct2/show/NCT04436471 target="_blank">NCT04436471</a><br>
            <a href=https://clinicaltrials.gov/ct2/show/NCT04437875 target="_blank">NCT04437875</a>') 
-    } else if (reactive_db()$Identifier[1] == "Oxford ChAdOx1 phase III") {
+    } else if (reactive_db()$Identifier[1] == "Oxford ChAdOx1 phase III (report 1; Voysey 2020)" | reactive_db()$Identifier[1] == "Oxford ChAdOx1 phase III (report 2; Voysey 2021)") {
       # Insert all trial numbers for Oxford phase III
       HTML('<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
            <a href=https://clinicaltrials.gov/ct2/show/NCT04400838 target="_blank">NCT04400838</a><br>
@@ -1265,11 +1266,13 @@ server <- function(input, output, session) {
             plot.title = element_text(size = 14, face = "italic"), axis.title.y = element_text(size = 13))
     
     # create grid plot
-    if (all(db_plot$Responseplot=="N/A")) { plot_grid(g1, g2, ncol=3) } 
-    else if (all(db_plot$Levelpre95CI=="N/A")) { plot_grid(g2 + ylab(db_plot$Yaxislabel[1]), g3, ncol=3) } 
+    if (all(db_plot$Levelpre95CI!="N/A") & all(db_plot$Levelpost95CI!="N/A") & all(db_plot$Responseplot=="N/A")) { plot_grid(g1, g2, ncol=3) } 
+    else if (all(db_plot$Levelpre95CI=="N/A") & all(db_plot$Levelpost95CI!="N/A") & all(db_plot$Responseplot=="N/A")) { plot_grid(g2 + ylab(db_plot$Yaxislabel[1]), ncol=3) } 
+    else if (all(db_plot$Levelpre95CI=="N/A") & all(db_plot$Levelpost95CI!="N/A") & all(db_plot$Responseplot!="N/A")) { plot_grid(g2 + ylab(db_plot$Yaxislabel[1]), g3, ncol=3) } 
+    else if (all(db_plot$Levelpre95CI=="N/A") & all(db_plot$Levelpost95CI=="N/A") & all(db_plot$Responseplot!="N/A")) { plot_grid(g3, ncol=3) } 
     else { plot_grid(g1, g2, g3, ncol=3) }
   })
-  
+
   output$immunogenicity_table <- DT::renderDataTable({
     db_plot = db_outcome()
     summary <- data.frame(

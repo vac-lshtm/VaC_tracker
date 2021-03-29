@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date("2021-03-22")
+current_date = as.Date("2021-03-29")
 
 ### Figure --------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n
   facet_grid(Platform~., scales = "free", space='free') + 
   geom_text(nudge_x = 10, nudge_y = 0.05, show.legend = FALSE, size=5) +
   ylab("") + xlab("") + ggtitle("N countries\nreporting use\n") + 
-  scale_x_continuous(limits=c(0,100), breaks=c(0,50,100)) +
+  scale_x_continuous(limits=c(0,100), breaks=c(0,50,100,150)) +
   theme(text = element_text(size = 15), axis.text = element_text(size=15), legend.position="none",
         axis.text.y = element_blank(), title = element_text(size = 12),
         strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",
@@ -133,6 +133,7 @@ owid_vac$date = as.Date(owid_vac$date)
 owid_vac = merge(owid_vac, owid[,c("iso_code", "vaccines")], by = "iso_code")
 date = seq(as.Date("2021-01-01"), current_date, by="days")
 country_list = unique(owid_vac$location) 
+#write.csv(owid_vac, "owid_vac.csv")
 
 equity = NULL
 for (i in 1:length(country_list)) {
