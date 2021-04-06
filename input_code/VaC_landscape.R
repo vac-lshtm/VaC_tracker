@@ -183,19 +183,21 @@ timeline$style[timeline$subgroup=="Vector (non-replicating)" & grepl("IV", timel
 timeline$style[timeline$subgroup=="Vector (replicating)" & grepl("IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_4[1],";background-color:",pal_4[5],";color:",pal_4[1],";")
 timeline$style[timeline$subgroup=="Inactivated" & grepl("IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_5[1],";background-color:",pal_5[5],";color:",pal_5[1],";")
 timeline$style[timeline$subgroup=="Live-attenuated" & grepl("IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_6[1],";background-color:",pal_6[5],";color:",pal_6[1],";")
-timeline$style[timeline$subgroup=="Protein subunit" & grepl("IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_7[1],";background-color:",pal_7[5],";color:",pal_7[1],";")
+timeline$style[timeline$subgroup=="Protein subunit" & grepl(" IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_7[1],";background-color:",pal_7[5],";color:",pal_7[1],";")
 timeline$style[timeline$subgroup=="Virus-like particle" & grepl("IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_8[1],";background-color:",pal_8[5],";color:",pal_8[1],";")
 timeline$style[timeline$subgroup=="Other/Unknown" & grepl("IV", timeline$content)] = paste0("font-size:12px;border-color:",pal_9[1],";background-color:",pal_9[5],";color:",pal_9[1],";")
 
 # add style for terminated timeline row
 timeline$style[grepl("Programme halted", timeline$content)] = paste0("font-size:12px;border-color:",pal_9[5],";background-color:",pal_9[1],";color:",pal_9[5],";")
 
-# summary inputs for ui
-total_count = nrow(landscape)
-clinical_count = sum(landscape$Phase!="Pre-clinical")
-
 
 ### Summary plot --------------------------------------------------------------------
+
+# summary inputs for ui
+landscape_all = landscape
+landscape = subset(landscape_all, Phase!="Terminated")
+total_count = nrow(landscape)
+clinical_count = sum(landscape$Phase!="Pre-clinical")
 
 # combine phases II/III with phase III for plotting purposes
 landscape$Phase[landscape$Phase=="Phase II/III"] = "Phase III"

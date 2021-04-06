@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "29 March 2021"
-update_equity = "29 March 2021"
+update_full = "06 April 2021"
+update_equity = "06 April 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -46,7 +46,6 @@ source("input_code/VaC_implementation.R")
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)
-
 
 
 ### UI -------------------------------------------------------------------------------------
@@ -166,31 +165,31 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (225)" = "preclin",
-                                                                    "Phase I (27)" = "phasei",
-                                                                    "Phase I/II (25)" = "phasei_ii",
-                                                                    "Phase II (5)" = "phaseii",
-                                                                    "Phase III (21)" = "phaseiii",
-                                                                    "Phase IV (5)" = "phaseiv"),
+                                                                    "Pre-clinical (227)" = "preclin",
+                                                                    "Phase I (26)" = "phasei",
+                                                                    "Phase I/II (26)" = "phasei_ii",
+                                                                    "Phase II (6)" = "phaseii",
+                                                                    "Phase III (22)" = "phaseiii",
+                                                                    "Phase IV (4)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (299)" = "not_in_use",
+                                                        choices = c("No (298)" = "not_in_use",
                                                                     "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (38)" = "rna",
+                                                        choices = c("RNA (37)" = "rna",
                                                                     "DNA (26)" = "dna",
-                                                                    "Vector (non-replicating) (38)" = "nrvv",
-                                                                    "Vector (replicating) (25)" = "rvv",
-                                                                    "Inactivated (21)" = "inact",
+                                                                    "Vector (non-replicating) (39)" = "nrvv",
+                                                                    "Vector (replicating) (24)" = "rvv",
+                                                                    "Inactivated (22)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (101)" = "ps",
+                                                                    "Protein subunit (100)" = "ps",
                                                                     "Virus-like particle (23)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
@@ -812,8 +811,8 @@ server <- function(input, output, session) {
     })
     output$mapper_country_plot <- renderPlot({
       country_select = as.character(mapper_reactive_db()$Location_clean[1])
-      start_date = as.Date(mapper_reactive_db()$Start_date[1],"%d/%m/%Y") 
-      plot_start = as.Date("01/05/2020", "%d/%m/%Y")
+      start_date = as.Date(mapper_reactive_db()$Start_date[1],"%d/%m/%y") 
+      plot_start = as.Date("01/05/2020", "%d/%m/%y")
       plot_df_new = subset(cv_cases, date>=plot_start & country==country_select)
       grad_df <- data.frame(yintercept = seq(0,200, length.out = 200), alpha = c(seq(0.2, 0, length.out = 150), rep(0,50)))
       
@@ -823,7 +822,8 @@ server <- function(input, output, session) {
         geom_line(arrow = arrow(length=unit(0.20,"cm"), ends="last", type = "closed"), size=0.5, colour = covid_col) + 
         ylab("cases per million") + theme_bw() + ylim(0,1500) + 
         theme(legend.title = element_blank(), panel.grid.major = element_blank(), legend.position = "", plot.title = element_text(size=10), 
-              plot.margin = margin(5, 12, 5, 5)) + theme(text = element_text(size=13)) 
+              plot.margin = margin(5, 12, 5, 5)) + theme(text = element_text(size=13)) +
+        scale_x_date(labels = date_format("%b %y"))
     }, res = 80)
     
     # map updates
@@ -922,10 +922,10 @@ server <- function(input, output, session) {
     })
     output$mapper_country_plot <- renderPlot({
       country_select = as.character(mapper_reactive_db_country()$Location_clean[1])
-      if (is.na(mapper_reactive_db_country()$Start_date[1])) { start_date = as.Date("01/09/2020", "%d/%m/%Y") } else {
-        start_date = as.Date(mapper_reactive_db_country()$Start_date[1],"%d/%m/%Y") 
+      if (is.na(mapper_reactive_db_country()$Start_date[1])) { start_date = as.Date("01/09/2020", "%d/%m/%y") } else {
+        start_date = as.Date(mapper_reactive_db_country()$Start_date[1],"%d/%m/%y") 
       }
-      plot_start = as.Date("01/05/2020", "%d/%m/%Y")
+      plot_start = as.Date("01/05/2020", "%d/%m/%y")
       plot_df_new = subset(cv_cases, date>=plot_start & country==country_select)
       grad_df <- data.frame(yintercept = seq(0,200, length.out = 200), alpha = c(seq(0.2, 0, length.out = 150), rep(0,50)))
       
@@ -935,7 +935,8 @@ server <- function(input, output, session) {
         geom_line(arrow = arrow(length=unit(0.20,"cm"), ends="last", type = "closed"), size=0.5, colour = covid_col) + 
         ylab("cases per million") + theme_bw() + ylim(0,1500) + 
         theme(legend.title = element_blank(), panel.grid.major = element_blank(), legend.position = "", plot.title = element_text(size=10), 
-              plot.margin = margin(5, 12, 5, 5)) + theme(text = element_text(size=13)) 
+              plot.margin = margin(5, 12, 5, 5)) + theme(text = element_text(size=13)) +
+        scale_x_date(labels = date_format("%b %y"))
       
       if (is.na(mapper_reactive_db_country()$Start_date[1])) { g1 } else {
         g1 + geom_vline(xintercept=start_date, size=0.5, colour=active_col) +
