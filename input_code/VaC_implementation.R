@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date("2021-04-06")
+current_date = as.Date("2021-04-15")
 
 ### Figure --------------------------------------------------------------------
 
@@ -100,9 +100,9 @@ g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n
   scale_fill_manual(values = c("RNA" = pal_1[2], "DNA" = pal_2[2], "Vector (nr)" = pal_3[2], "Vector (r)" = pal_4[2], 
                                "Inactivated" = pal_5[2], "Live-attenuated" = pal_6[2], "Subunit" = pal_7[2], "VLP" = pal_8[2], "Other" = pal_9[2])) +  
   facet_grid(Platform~., scales = "free", space='free') + 
-  geom_text(nudge_x = 10, nudge_y = 0.1, show.legend = FALSE, size=5) +
+  geom_text(nudge_x = 20, nudge_y = 0.1, show.legend = FALSE, size=5) +
   ylab("") + xlab("") + ggtitle("N countries\nreporting use\n") + 
-  scale_x_continuous(limits=c(0,125), breaks=c(0,50,100,150)) +
+  scale_x_continuous(limits=c(0,150), breaks=c(0,50,100,150)) +
   theme(text = element_text(size = 15), axis.text = element_text(size=15), legend.position="none",
         axis.text.y = element_blank(), title = element_text(size = 12),
         strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",

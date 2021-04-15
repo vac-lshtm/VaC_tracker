@@ -32,8 +32,8 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "06 April 2021"
-update_equity = "06 April 2021"
+update_full = "12 April 2021"
+update_equity = "15 April 2021"
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -165,32 +165,38 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (227)" = "preclin",
-                                                                    "Phase I (26)" = "phasei",
+                                                                    "Pre-clinical (226)" = "preclin",
+                                                                    "Phase I (28)" = "phasei",
                                                                     "Phase I/II (26)" = "phasei_ii",
                                                                     "Phase II (6)" = "phaseii",
-                                                                    "Phase III (22)" = "phaseiii",
-                                                                    "Phase IV (4)" = "phaseiv"),
+                                                                    "Phase III (20)" = "phaseiii",
+                                                                    "Phase IV (6)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (298)" = "not_in_use",
+                                                        choices = c("No (299)" = "not_in_use",
                                                                     "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
+                                     tags$br(),
+                                     
+                                     checkboxGroupInput(inputId = "pub_paper",
+                                                        label = "Published results",
+                                                        choices = c("Filter" = "pub_available"),
+                                                        selected = NULL),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
                                                         choices = c("RNA (37)" = "rna",
-                                                                    "DNA (26)" = "dna",
+                                                                    "DNA (27)" = "dna",
                                                                     "Vector (non-replicating) (39)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (22)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (100)" = "ps",
-                                                                    "Virus-like particle (23)" = "vlp",
+                                                                    "Protein subunit (99)" = "ps",
+                                                                    "Virus-like particle (24)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
@@ -219,6 +225,7 @@ ui <- bootstrapPage(
                           tags$br(),tags$br(),
                           
                           "All data and code are available via the LSHTM Vaccine Centre's", tags$a(href="https://github.com/vac-lshtm/VaC_tracker", "Github page.", target="_blank"),
+                          "Click on trial numbers and publication IDs to access the published protocols and papers.",
                           tags$br(),tags$br(),
                           
                           "If you have any queries or wish to inform us of a candidate that is not included, please contact", HTML('<a href = "mailto: vaccines@lshtm.ac.uk">vaccines@lshtm.ac.uk.</a>'),
@@ -250,7 +257,7 @@ ui <- bootstrapPage(
                       tags$br(),tags$br(),
                       
                       pickerInput("trial_select_subset", h4("Select subset:"),
-                                  choices = c("All trials", "Trials involving pregnant women", "Trials involving <18s", "Heterologous prime-boost trials"),
+                                  choices = c("All trials", "Trials involving pregnant women", "Trials involving <18s", "Heterologous prime-boost trials", "Variant of concern"),
                                   selected = "All trials",
                                   multiple = FALSE),
                       tags$br(),
@@ -332,16 +339,16 @@ ui <- bootstrapPage(
                       sidebarLayout(
                         sidebarPanel(width = 3,
                                      
-                                     pickerInput("select_phase", "Phase:",   
-                                                 choices = as.character(c("I/II", "III")), 
+                                     pickerInput("select_phase", "Primary outcome:",   
+                                                 choices = as.character(c("Immunogenicity", "Efficacy")), 
                                                  options = list(`actions-box` = TRUE),
-                                                 selected = "III",
+                                                 selected = "Efficacy",
                                                  multiple = FALSE),
                                      
                                      pickerInput("select_trial", "Trial:",   
-                                                 choices = as.character(subset(db, Phasegroup=="III")$Identifier), 
+                                                 choices = as.character(subset(db, Phasegroup=="Efficacy")$Identifier), 
                                                  options = list(`actions-box` = TRUE),
-                                                 selected = as.character(subset(db, Phasegroup=="III")$Identifier)[1],
+                                                 selected = as.character(subset(db, Phasegroup=="Efficacy")$Identifier)[1],
                                                  multiple = FALSE),
                                      
                                      tags$strong("Developer(s):"), htmlOutput("trial_developer"), tags$br(),
@@ -395,10 +402,10 @@ ui <- bootstrapPage(
                                      DT::dataTableOutput("eligible_studies", width="100%"),
                                      tags$br(),
                                      tags$b("Abbreviations:"),
-                                     tags$p("BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
+                                     tags$p("AZLB: Anhui Zhifei Longcom Biopharmaceutical; BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
                                      tags$b("Notes:"),
-                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), and Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020)."
-                                      #     Paper by Logunov et al (2021) had not been indexed on PubMed as of 01 Feb 2021 and is therefore not included in the search log below." 
+                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020), and AZLB ZF2001 (Yang; Lancet Infect Dis 2021)."
+                                       #   Paper by Emary et al (2021) had not been indexed on PubMed as of 05 Apr 2021 and is therefore not included in the search log below." 
                                      ),
                                      tags$br(),
                                      
@@ -416,7 +423,7 @@ ui <- bootstrapPage(
                                      tags$br(),tags$h4("Trial attributes"),
                                      DT::dataTableOutput("trial_attributes", width="100%"),                           
                                      
-                                     conditionalPanel("input.select_phase == 'III'",
+                                     conditionalPanel("input.select_phase == 'Efficacy'",
                                                       tags$br(),tags$h4("Vaccine efficacy"),
                                                       tags$em("We present protective efficacy against symptomatic COVID-19, severe COVID-19, and/or asymptomatic SARS-CoV-2 infection."),
                                                       tags$br(),tags$br(),
@@ -457,7 +464,11 @@ ui <- bootstrapPage(
                                      htmlOutput("safetyissue"),
                                      tags$br(),tags$br(),
                                      
-                                     conditionalPanel("input.select_phase == 'I/II' | input.select_trial == 'Gamaleya Gam-COVID-Vac phase III' | input.select_trial == 'Oxford ChAdOx1 phase III (report 2; Voysey 2021)'",
+                                     conditionalPanel("input.select_phase == 'Immunogenicity' | 
+                                                          input.select_trial == 'Gamaleya Gam-COVID-Vac phase III' | 
+                                                          input.select_trial == 'Oxford ChAdOx1 phase III (report 2; Voysey 2021)' | 
+                                                          input.select_trial == 'Oxford ChAdOx1 phase I/II (report 3 - South Africa; Madhi 2021)' |  
+                                                          input.select_trial == 'Oxford ChAdOx1 phase II/III (report 4 - B.1.1.7; Emary 2021)'",
                                                       tags$h4("Antibody response"),
                                                       tags$em("We present antibody levels measured 28 days post-vaccination or the nearest available timepoint. 
                                                               Where multiple types of antibody were measured, we prioritise (i) antigen-specific ELISA (IgG); 
@@ -704,6 +715,8 @@ server <- function(input, output, session) {
     if ("not_in_use" %in% input$in_use==FALSE) { timeline = subset(timeline, use!="No") }
     if ("in_use" %in% input$in_use==FALSE) { timeline = subset(timeline, use!="Yes") }
     
+    if ("pub_available" %in% input$pub_paper==TRUE) { timeline = subset(timeline, pub=="yes") }
+    
     if ("rna" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="RNA") }
     if ("dna" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="DNA") }
     if ("nrvv" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="Vector (non-replicating)") }
@@ -747,9 +760,10 @@ server <- function(input, output, session) {
     if (input$trial_select_subset=="All trials") { table_selected = table }
     if (input$trial_select_subset=="Trials involving pregnant women") { table_selected = subset(table, Pregnancy==1) }
     if (input$trial_select_subset=="Trials involving <18s") { table_selected = subset(table, Children==1) }
-    if (input$trial_select_subset=="Heterologous prime-boost trials") { table_selected = subset(table, `Prime boost`==1) }
+    if (input$trial_select_subset=="Heterologous prime-boost trials") { table_selected = subset(table, `Heterologous prime boost`==1) }
+    if (input$trial_select_subset=="Variant of concern") { table_selected = subset(table, `Variant of concern`==1) }
     
-    DT::datatable(table_selected %>% select(-c(Institutes, Name, Link, Pregnancy, Children, `Prime boost`)), rownames=F, escape = FALSE, 
+    DT::datatable(table_selected %>% select(-c(Institutes, Name, Link, Pregnancy, Children, `Heterologous prime boost`, `Variant of concern`, Published, Paper)), rownames=F, escape = FALSE, 
                   options = list(ordering=T, pageLength = 20,
                                  lengthMenu = c(20, 40, 60))) %>%
       formatStyle(columns = c(1:13), fontSize = '80%')  %>%
@@ -762,7 +776,7 @@ server <- function(input, output, session) {
   output$downloadCsv <- downloadHandler(
     filename = function() { paste0("VaC_LSHTM_Covid_vaccine_trials_",str_replace_all(update_full, " ", ""),".xlsx") },
     content = function(file) {
-      write_xlsx(fread("input_data/VaC_LSHTM_trials.csv") %>% select(-c(Link, Name, Pregnancy, Children, `Prime boost`)), file)
+      write_xlsx(fread("input_data/VaC_LSHTM_trials.csv") %>% select(-c(Link, Name, Pregnancy, Children, `Heterologous prime boost`, `Variant of concern`, Published, Paper)), file)
     }
   )
   
@@ -922,8 +936,8 @@ server <- function(input, output, session) {
     })
     output$mapper_country_plot <- renderPlot({
       country_select = as.character(mapper_reactive_db_country()$Location_clean[1])
-      if (is.na(mapper_reactive_db_country()$Start_date[1])) { start_date = as.Date("01/09/2020", "%d/%m/%y") } else {
-        start_date = as.Date(mapper_reactive_db_country()$Start_date[1],"%d/%m/%y") 
+      if (is.na(mapper_reactive_db_country()$Start_date[1])) { start_date = as.Date("01/09/2020", "%d/%m/%Y") } else {
+        start_date = as.Date(mapper_reactive_db_country()$Start_date[1],"%d/%m/%Y") 
       }
       plot_start = as.Date("01/05/2020", "%d/%m/%y")
       plot_df_new = subset(cv_cases, date>=plot_start & country==country_select)
@@ -1023,7 +1037,11 @@ server <- function(input, output, session) {
 
     # Modify AZLB ZF2001 I/II to include 2 corresponding trials
     eligible$`Trial number`[eligible$Reference=="Yang; Lancet Infect Dis 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04445194 target="_blank">NCT04445194</a><br>
-    <a href=https://clinicaltrials.gov/ct2/show/NCT04466085 target="_blank">NCT04466085</a>'     
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04466085 target="_blank">NCT04466085</a>' 
+    
+    # Modify Shenzhen Kangtai KCONVAC  phase I to include 2 corresponding trials
+    eligible$`Trial number`[eligible$Reference=="Pan; medRxiv 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04758273 target="_blank">NCT04758273</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04756323 target="_blank">NCT04756323</a>' 
     
     eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
     eligible = eligible %>% select(-c(`Reference link`, Link, Platform))
@@ -1128,7 +1146,7 @@ server <- function(input, output, session) {
     g1 = ggplot(subset(db_piecharts, profile_plotgroup=="age"), aes(x="", y=as.numeric(Efficacyprofileplotpercentage), fill=Efficacyprofileplotgroup)) +
       geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + theme_minimal() + guides(fill=guide_legend(title="Age (y)")) +
       scale_fill_brewer(palette = "Spectral") + theme(legend.text=element_text(size=9), legend.title=element_text(size=9)) +
-      ggtitle(paste0("N = ",format(as.numeric(db_piecharts$EfficacyN[1]),big.mark=","))) + theme(plot.title = element_text(hjust = -1.9, vjust = 4, face="italic", size=11)) + 
+      ggtitle(paste0("N = ",format(as.numeric(db_piecharts$EfficacyN[1]),big.mark=","))) + theme(plot.title = element_text(hjust = -0, vjust = 4, face="italic", size=11)) + 
       theme(legend.position = "left", axis.text.x=element_blank(), panel.border = element_blank(), axis.title.x = element_blank(), axis.title.y = element_blank(), panel.grid=element_blank()) +
       theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))
     
@@ -1159,7 +1177,7 @@ server <- function(input, output, session) {
   }, res = 100)
   
   output$efficacy_table <- DT::renderDataTable({
-    db_efficacy <- reactive_db() 
+    db_efficacy <- subset(reactive_db(), !is.na(Efficacyendpoint))
     summary <- data.frame(
       "Group" =  db_efficacy$Efficacysubset,
       "Endpoint" =  db_efficacy$Efficacystratum,
