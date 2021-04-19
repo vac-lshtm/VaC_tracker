@@ -4,7 +4,7 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date("2021-04-15")
+current_date = as.Date(Sys.Date()) #"2021-04-19"
 
 ### Figure --------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n
   facet_grid(Platform~., scales = "free", space='free') + 
   geom_text(nudge_x = 20, nudge_y = 0.1, show.legend = FALSE, size=5) +
   ylab("") + xlab("") + ggtitle("N countries\nreporting use\n") + 
-  scale_x_continuous(limits=c(0,150), breaks=c(0,50,100,150)) +
+  scale_x_continuous(limits=c(0,175), breaks=c(0,50,100,150)) +
   theme(text = element_text(size = 15), axis.text = element_text(size=15), legend.position="none",
         axis.text.y = element_blank(), title = element_text(size = 12),
         strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",
