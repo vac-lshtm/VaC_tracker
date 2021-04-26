@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "19 April 2021"
+update_full = "26 April 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -166,17 +166,17 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (225)" = "preclin",
-                                                                    "Phase I (28)" = "phasei",
+                                                                    "Phase I (27)" = "phasei",
                                                                     "Phase I/II (26)" = "phasei_ii",
-                                                                    "Phase II (7)" = "phaseii",
-                                                                    "Phase III (21)" = "phaseiii",
+                                                                    "Phase II (8)" = "phaseii",
+                                                                    "Phase III (22)" = "phaseiii",
                                                                     "Phase IV (6)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (300)" = "not_in_use",
+                                                        choices = c("No (301)" = "not_in_use",
                                                                     "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -195,7 +195,7 @@ ui <- bootstrapPage(
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (22)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (99)" = "ps",
+                                                                    "Protein subunit (100)" = "ps",
                                                                     "Virus-like particle (24)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
