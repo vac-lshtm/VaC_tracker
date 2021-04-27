@@ -15,10 +15,10 @@ Platform,Bharat Covaxin/BBV152,Inactivated
 Dosing,Bharat Covaxin/BBV152,"2 doses, intramuscular"
 Description,Bharat Covaxin/BBV152,Inactivated vaccine administered with imidazoquinoline adjuvant (TLR7/8 agonist)
 Published results,Bharat Covaxin/BBV152,"Phase I, phase II - see <b>Living review</b>"
-Efficacy data,Bharat Covaxin/BBV152,Pending
+Efficacy data,Bharat Covaxin/BBV152,"Vaccine efficacy against COVID-19 reported to be 81% in a press release on <a href=""https://www.bharatbiotech.com/images/press/covaxin-phase3-efficacy-results.pdf"";  target=""_blank"">03 Mar 2021</a>); estimates based on 43 confirmed cases"
 Storage requirements,Bharat Covaxin/BBV152,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Bharat Covaxin/BBV152,No score available
-Manufacture projections,Bharat Covaxin/BBV152,"No information on company website; up to 700 million doses in 2021 according to media reports (<a href=""https://uk.reuters.com/article/us-health-coronavirus-india-vaccine/indias-bharat-biotech-aims-to-make-700-million-doses-of-covid-19-vaccine-in-2021-idUSKBN2991JD"" target=""_blank"">04 Jan 2021</a>) "
+Manufacture projections,Bharat Covaxin/BBV152,"Up to 700 million doses in 2021 according to media reports (<a href=""https://uk.reuters.com/article/us-health-coronavirus-india-vaccine/indias-bharat-biotech-aims-to-make-700-million-doses-of-covid-19-vaccine-in-2021-idUSKBN2991JD"" target=""_blank"">04 Jan 2021</a>) "
 Approval status,Bharat Covaxin/BBV152,"Emergency use in India, Iran, and Zimbabwe"
 ,,
 Developer(s),BioNTech/Pfizer BNT162b2,"BioNTech, Pfizer, Fosun Pharma"
@@ -29,7 +29,7 @@ Published results,BioNTech/Pfizer BNT162b2,"Phase I/II, phase III - see <b>Livin
 Efficacy data,BioNTech/Pfizer BNT162b2,Vaccine efficacy against COVID-19 of 95% based on primary efficacy analysis of 170 confirmed cases - see <b>Living review</b>
 Storage requirements,BioNTech/Pfizer BNT162b2,Ultra-cold (-60°C to -80°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",BioNTech/Pfizer BNT162b2,BioNTech and Pfizer both given scores of 3 out of 20
-Manufacture projections,BioNTech/Pfizer BNT162b2,"Up to 2 billion doses in 2021 (<a href=""https://www.reuters.com/article/us-pfizer-results-idUSKBN2A21EO"" target=""_blank"">02 Feb 2021</a>) "
+Manufacture projections,BioNTech/Pfizer BNT162b2,"Up to 2.5 billion doses in 2021 (<a href=""https://www.reuters.com/article/uk-health-coronavirus-biontech-target-idUKKBN2BM1A4"" target=""_blank"">30 Mar 2021</a>) "
 Approval status,BioNTech/Pfizer BNT162b2,"Full or emergency use in numerous countries; granted emergency use approval by the WHO on <a href=""https://www.who.int/news/item/31-12-2020-who-issues-its-first-emergency-use-validation-for-a-covid-19-vaccine-and-emphasizes-need-for-equitable-global-access"" target=""_blank"">31 Dec 2020</a>"
 ,,
 Developer(s),Beijing/Sinopharm BBIBP-CorV,"Beijing Institute of Biological Products, Sinopharm"
@@ -40,7 +40,7 @@ Published results,Beijing/Sinopharm BBIBP-CorV,Phase I/II - see <b>Living review
 Efficacy data,Beijing/Sinopharm BBIBP-CorV,"Vaccine efficacy against COVID-19 reported to be 79% in a press release on <a href=""http://www.bjbpi.com/news_list.asp?id=787"" target=""_blank"">30 Dec 2020</a>); no supporting details provided"
 Storage requirements,Beijing/Sinopharm BBIBP-CorV,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Beijing/Sinopharm BBIBP-CorV,No score available
-Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"No information on company website; up to 1 billion doses in 2021 according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-china-vaccine/sinopharm-says-may-be-able-to-make-over-one-billion-coronavirus-vaccine-doses-in-2021-idINKBN2750VB"" target=""_blank"">20 Oct 2020</a>)"
+Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"Up to 1 billion doses in 2021 according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-china-vaccine/sinopharm-says-may-be-able-to-make-over-one-billion-coronavirus-vaccine-doses-in-2021-idINKBN2750VB"" target=""_blank"">20 Oct 2020</a>)"
 Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in numerous countries, including China, UAE, Bahrain, Egypt, and Hungary"
 ,,
 Developer(s),Cansino Ad5-nCoV,"CanSino Biological Inc, Beijing Institute of Biotechnology"
@@ -72,8 +72,8 @@ Description,Gamaleya Gam-COVID-Vac/Sputnik V,Recombinant Ad26 (prime) and recomb
 Published results,Gamaleya Gam-COVID-Vac/Sputnik V,Phase I/II - see <b>Living review</b>
 Efficacy data,Gamaleya Gam-COVID-Vac/Sputnik V,Vaccine efficacy against COVID-19 of 92% based on primary efficacy analysis of 78 confirmed cases - see <b>Living review</b>
 Storage requirements,Gamaleya Gam-COVID-Vac/Sputnik V,Being produced in lyophilised formulation requiring refrigeration (2°C to 8°C) or frozen formulation (maximum -18°C)
-"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Gamaleya Gam-COVID-Vac/Sputnik V,Sputnik V given score of 0 out of 20
-Manufacture projections,Gamaleya Gam-COVID-Vac/Sputnik V,"No information on institute website; up to 1.4 billion doses in 2021 according to BMJ report (<a href=""https://www.bmj.com/content/372/bmj.n743"" target=""_blank"">19 Mar 2021</a>) "
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Gamaleya Gam-COVID-Vac/Sputnik V,Sputnik V given score of 2 out of 20
+Manufacture projections,Gamaleya Gam-COVID-Vac/Sputnik V,"Up to 1.4 billion doses in 2021 according to BMJ report (<a href=""https://www.bmj.com/content/372/bmj.n743"" target=""_blank"">19 Mar 2021</a>) "
 Approval status,Gamaleya Gam-COVID-Vac/Sputnik V,"Early or emergency use in numerous countries, including Russia, Belarus, Argentina, Serbia, and Algeria"
 ,,
 Developer(s),Janssen Ad26.COV2.S,Janssen Pharmaceutical Companies
@@ -81,9 +81,9 @@ Platform,Janssen Ad26.COV2.S,Non-replicating viral vector
 Dosing,Janssen Ad26.COV2.S,"1 or 2 doses (to be determined), intramuscular"
 Description,Janssen Ad26.COV2.S,Ad26 vector expressing stabilised pre-fusion spike (S) protein
 Published results,Janssen Ad26.COV2.S,Phase I/II - see <b>Living review</b>
-Efficacy data,Janssen Ad26.COV2.S,"Vaccine efficacy against moderate to severe COVID-19 reported to be 66% in a press release on <a href=""https://www.jnj.com/johnson-johnson-announces-single-shot-janssen-covid-19-vaccine-candidate-met-primary-endpoints-in-interim-analysis-of-its-phase-3-ensemble-trial"" target=""_blank"">29 Jan 2021</a>; estimates based on 468 confirmed cases;"
+Efficacy data,Janssen Ad26.COV2.S,"Vaccine efficacy against COVID-19 of 67% after single dose based on primary efficacy analysis of 464 confirmed cases (<a href=""https://www.nejm.org/doi/full/10.1056/NEJMoa2101544"" target=""_blank"">21 Apr 2021</a>) "
 Storage requirements,Janssen Ad26.COV2.S,Refrigeration (2°C to 8°C)
-"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Janssen Ad26.COV2.S,Johnson & Johnson given score of 6 out of 20
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Janssen Ad26.COV2.S,Johnson & Johnson given score of 9 out of 20
 Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021 (<a href=""https://www.jnj.com/innovation/questions-about-johnson-johnson-investigational-covid-19-vaccine"" target=""_blank"">05 Jan 2021</a>) "
 Approval status,Janssen Ad26.COV2.S,"Early or emergency use in South Africa, Bahrain, and USA"
 ,,
@@ -106,7 +106,7 @@ Published results,Oxford/AstraZeneca ChAdOx1-S,"Phase I/II, phase II, phase III 
 Efficacy data,Oxford/AstraZeneca ChAdOx1-S,Vaccine efficacy against COVID-19 reported to be 62–90% based on interim data from 131 cases - see <b>Living review</b>
 Storage requirements,Oxford/AstraZeneca ChAdOx1-S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Oxford/AstraZeneca ChAdOx1-S,AstraZeneca given score of 7 out of 20
-Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<a href=""https://www.astrazeneca.com/media-centre/press-releases/2020/astrazenecas-covid-19-vaccine-authorised-in-uk.html"" target=""_blank"">30 Dec 2020</a>)"
+Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<a href=""https://www.astrazeneca.com/what-science-can-do/topics/technologies/pushing-boundaries-to-deliver-covid-19-vaccine-accross-the-globe.html"" target=""_blank"">25 Mar 2021</a>)"
 Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, EU, India, Argentina, Dominican Republic, and El Salvador"
 ,,
 Developer(s),Sinovac CoronaVac,Sinovac
@@ -114,10 +114,10 @@ Platform,Sinovac CoronaVac,Inactivated
 Dosing,Sinovac CoronaVac,"2 doses, intramuscular"
 Description,Sinovac CoronaVac,Inactivated vaccine adiministered 
 Published results,Sinovac CoronaVac,Phase I/II - see <b>Living review</b>
-Efficacy data,Sinovac CoronaVac,Pending
+Efficacy data,Sinovac CoronaVac,"Vaccine efficacy against COVID-19 reported to be 50% in a press release on <a href=""http://www.sinovac.com/?optionid=754&auto_id=927"" target=""_blank"">03 Apr 2021</a>); estimates based on 85 confirmed cases from phase III trial in Brazil; in Turkey, vaccine efficacy was reported to be 91% but no furter details are currently available"
 Storage requirements,Sinovac CoronaVac,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Sinovac CoronaVac,No score available
-Manufacture projections,Sinovac CoronaVac,"No information on institute website; up to 2 billion doses per year according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-vaccine-sinovac-idUSKCN2AV0B2"" target=""_blank"">03 Mar 2021</a>) "
+Manufacture projections,Sinovac CoronaVac,"Up to 2 billion doses per year (<a href=""https://www.reuters.com/world/china/china-sinovac-says-it-reached-2-bln-doses-annual-capacity-covid-19-vaccine-2021-04-02/"" target=""_blank"">02 Apr 2021</a>) "
 Approval status,Sinovac CoronaVac,"Full or emergency use in numerous countries, including China, Azerbaijan, Brazil, Chile, and Colombia"
 ,,
 Developer(s),Vector Institute EpiVacCorona,Vector Institute
@@ -128,7 +128,7 @@ Published results,Vector Institute EpiVacCorona,None
 Efficacy data,Vector Institute EpiVacCorona,Pending
 Storage requirements,Vector Institute EpiVacCorona,Pending - refrigeration (2°C to 8°C) is typical for protein subunit vaccines
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Vector Institute EpiVacCorona,No score available
-Manufacture projections,Vector Institute EpiVacCorona,"5 million doses per year according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-russia-cases-idUSKBN2870MO"" target=""_blank"">27 Nov 2020</a>) "
+Manufacture projections,Vector Institute EpiVacCorona,"5 million doses per year (<a href=""https://www.reuters.com/article/us-health-coronavirus-russia-cases-idUSKBN2870MO"" target=""_blank"">27 Nov 2020</a>) "
 Approval status,Vector Institute EpiVacCorona,Early use in Russia
 ,,
 Developer(s),Wuhan/Sinopharm vaccine,"Wuhan Institute of Biological Products, Sinopharm"
@@ -139,5 +139,5 @@ Published results,Wuhan/Sinopharm vaccine,Phase I/II - see <b>Living review</b>
 Efficacy data,Wuhan/Sinopharm vaccine,Pending
 Storage requirements,Wuhan/Sinopharm vaccine,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Wuhan/Sinopharm vaccine,No score available
-Manufacture projections,Wuhan/Sinopharm vaccine,"No information on institute website; up to 600 million doses per year according to media reports (<a href=""https://www.globaltimes.cn/page/202101/1212482.shtml"" target=""_blank"">11 Jan 2021</a>) "
+Manufacture projections,Wuhan/Sinopharm vaccine,"Up to 600 million doses per year (<a href=""https://www.globaltimes.cn/page/202101/1212482.shtml"" target=""_blank"">11 Jan 2021</a>) "
 Approval status,Wuhan/Sinopharm vaccine,Limited use in China and UAE
