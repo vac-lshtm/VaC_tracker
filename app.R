@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "26 April 2021"
+update_full = "04 May 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -165,18 +165,18 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (225)" = "preclin",
-                                                                    "Phase I (27)" = "phasei",
-                                                                    "Phase I/II (26)" = "phasei_ii",
+                                                                    "Pre-clinical (224)" = "preclin",
+                                                                    "Phase I (29)" = "phasei",
+                                                                    "Phase I/II (27)" = "phasei_ii",
                                                                     "Phase II (8)" = "phaseii",
                                                                     "Phase III (22)" = "phaseiii",
-                                                                    "Phase IV (6)" = "phaseiv"),
+                                                                    "Phase IV (7)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (301)" = "not_in_use",
+                                                        choices = c("No (304)" = "not_in_use",
                                                                     "Yes (13)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -192,10 +192,10 @@ ui <- bootstrapPage(
                                                         choices = c("RNA (37)" = "rna",
                                                                     "DNA (27)" = "dna",
                                                                     "Vector (non-replicating) (40)" = "nrvv",
-                                                                    "Vector (replicating) (24)" = "rvv",
-                                                                    "Inactivated (22)" = "inact",
+                                                                    "Vector (replicating) (25)" = "rvv",
+                                                                    "Inactivated (23)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (100)" = "ps",
+                                                                    "Protein subunit (101)" = "ps",
                                                                     "Virus-like particle (24)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
@@ -271,12 +271,16 @@ ui <- bootstrapPage(
                         AZLB: Anhui Zhifei Longcom Biopharmaceutical;
                         BIBP: Beijing Institute of Biological Products; 
                         BWBP: Beijing Wantai Biological Pharmacy;
-                        CAMS: Chinese Academy of Medical Sciences; 
+                        CAMS: Chinese Academy of Medical Sciences;
+                        CIGB: Center for Genetic Engineering and Biotechnology; 
                         FBRI SRC VB: Federal Budgetary Research Institution State Research Center of Virology and Biotechnology;
                         KBP: Kentucky BioProcessing;
                         LV-SMENP-DC: vaccine comprising dendritic cells (DCs) modified with lentivirus (LV) vectors expressing 'SMENP' minigene;
+                        NVSI: National Vaccine and Serum Institute; 
+                        ODIR: Organization of Defensive Innovation and Research; 
                         PLA-AMS: People's Liberation Army Academy of Military Science; 
                         SGMI: Shenzhen Geno-Immune Medical Institute; 
+                        STRC: Scientific and Technological Research Council of Turkey; 
                         WIBP: Wuhan Institute of Biological Products.", style="font-size:13px;"),
                       tags$br(),
                       downloadButton("downloadCsv", "Download data", class="download_button"), 
@@ -622,7 +626,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(3,7,8,10,11)],
+                                             selected = imp_list[c(3,7,8,10,12)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -1040,7 +1044,7 @@ server <- function(input, output, session) {
     <a href=https://clinicaltrials.gov/ct2/show/NCT04466085 target="_blank">NCT04466085</a>' 
     
     # Modify Shenzhen Kangtai KCONVAC  phase I to include 2 corresponding trials
-    eligible$`Trial number`[eligible$Reference=="Pan; medRxiv 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04758273 target="_blank">NCT04758273</a><br>
+    eligible$`Trial number`[eligible$Reference=="Pan; Chin Med J 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04758273 target="_blank">NCT04758273</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04756323 target="_blank">NCT04756323</a>' 
     
     eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")

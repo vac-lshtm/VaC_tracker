@@ -44,6 +44,10 @@ timeline_clinical$subgroup[timeline_clinical$subgroup=="Vector (non-replicating)
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Sinovac<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Inactivated/Vector (non-replicating)"] = "RNA"
 timeline_clinical$group[timeline_clinical$group=="Moderna<br>NIAID<br>BioNTech<br>Pfizer<br>Fosun Pharma"] = "Moderna<br>NIAID"
+timeline_clinical$group[timeline_clinical$group=="Valneva<br>Dynavax<br>University of Oxford<br>AstraZeneca"] = "Valneva<br>Dynavax"
+timeline_clinical$subgroup[timeline_clinical$subgroup=="Inactivated/Vector (non-replicating)"] = "Inactivated"
+timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
+timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Vector (non-replicating)"] = "RNA"
 
 # merge clinical and preclinical timelines
 timeline_clinical = merge(timeline_clinical, timeline_preclinical[,c("group", "stage", "use")], all.x = TRUE, by = "group")
@@ -56,7 +60,7 @@ timeline = timeline %>%
           start = '16/07/2020', end = '16/06/2021', stage = "Phase IV", use="Yes") %>% 
   add_row(group = "Wuhan Institute of Biological Products<br>Sinopharm", subgroup = "Inactivated", 
           content = '<b>WIBP/BIBP vaccines</b><br>Phase III, Peru <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04612972" style="color:#006d2c" target="_blank">NCT04612972</a>', 
-          start = '10/09/2020', end = '31/12/2020', stage = "Phase IV", use="Yes") %>%
+          start = '10/09/2020', end = '31/12/2020', stage = "Phase III", use="Yes") %>%
   
   # add separate timeline inputs for Oxford/Pfizer prime-boost trial 
   add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
@@ -130,7 +134,28 @@ timeline = timeline %>%
   # add timeline input for phase III NCT04805125
   add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 
           content = '<b>mRNA-1273/BNT162</b><br>Phase III, Switzerland <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04805125" style="color:#006d2c" target="_blank">NCT04805125</a>', 
-          start = '19/04/2021', end = '31/07/2022', stage = "Phase IV", use="Yes")
+          start = '19/04/2021', end = '31/07/2022', stage = "Phase IV", use="Yes") %>% 
+
+  # add timeline input for phase III NCT04864561
+  add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
+          content = '<b>VLA2001/ChAdOx1-S</b><br>Phase III, UK <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04864561" style="color:#006d2c" target="_blank">NCT04864561</a>', 
+          start = '26/04/2021', end = '15/07/2021', stage = "Phase IV", use="Yes") %>% 
+  
+  # add timeline input for phase II NCT04860739
+  add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
+          content = '<b>BNT162 (b2)/ChAdOx1-S</b><br>Phase II, Spain <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04860739" style="color:#006d2c" target="_blank">NCT04860739</a>', 
+          start = '24/04/2021', end = '20/05/2021', stage = "Phase IV", use="Yes") %>% 
+  
+  # add timeline input for phase IV EUCTR2021-000893-27-BE
+  add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 
+          content = '<b>mRNA-1273/BNT162 (b2)</b><br>Phase IV, Belgium <i>(Ongoing)</i><br><a href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2021-000893-27/BE" style="color:#006d2c" target="_blank">EUCTR2021-000893-27-BE</a>', 
+          start = '27/04/2021', end = '', stage = "Phase IV", use="Yes") %>% 
+  
+  # add timeline input for phase IV EUCTR2021-000930-32-BE
+  add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 
+          content = '<b>mRNA-1273/BNT162 (b2)</b><br>Phase IV, Belgium <i>(Ongoing)</i><br><a href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2021-000930-32/BE" style="color:#006d2c" target="_blank">EUCTR2021-000930-32-BE</a>', 
+          start = '27/04/2021', end = '', stage = "Phase IV", use="Yes")
+  
   
 # set factor levels
 timeline$subgroup = factor(timeline$subgroup, levels=c("RNA", "DNA", "Vector (non-replicating)", "Vector (replicating)", "Inactivated", "Live-attenuated",
@@ -219,12 +244,14 @@ timeline$style[grepl("Programme halted", timeline$content)] = paste0("font-size:
 
 # amend hyperlink colour for subsets with dark backgrounds
 timeline$content[grepl(" IV", timeline$content)] = str_replace_all(timeline$content[grepl(" IV", timeline$content)], "#006d2c", "#99d8c9")
+timeline$content[timeline$subgroup=="Live-attenuated"] = str_replace_all(timeline$content[timeline$subgroup=="Live-attenuated"], "#006d2c", "#99d8c9")
 timeline$content[timeline$subgroup=="DNA"] = str_replace_all(timeline$content[timeline$subgroup=="DNA"], "#006d2c", "#99d8c9")
 timeline$content[timeline$subgroup=="Virus-like particle"] = str_replace_all(timeline$content[timeline$subgroup=="Virus-like particle"], "#006d2c", "#99d8c9")
 timeline$content[timeline$subgroup=="Vector (replicating)"] = str_replace_all(timeline$content[timeline$subgroup=="Vector (replicating)"], "#006d2c", "#99d8c9")
 timeline$content[timeline$subgroup=="RNA" & grepl("III", timeline$content)] = str_replace_all(timeline$content[timeline$subgroup=="RNA" & grepl("III", timeline$content)], "#006d2c", "#99d8c9")
 timeline$content[timeline$subgroup=="Inactivated" & grepl("III", timeline$content)] = str_replace_all(timeline$content[timeline$subgroup=="Inactivated" & grepl("III", timeline$content)], "#006d2c", "#99d8c9")
 timeline$content[timeline$subgroup=="Protein subunit" & grepl("III", timeline$content)] = str_replace_all(timeline$content[timeline$subgroup=="Protein subunit" & grepl("III", timeline$content)], "#006d2c", "#99d8c9")
+timeline$content[grepl("Programme halted", timeline$content)] = str_replace_all(timeline$content[grepl("Programme halted", timeline$content)], "#99d8c9", "#006d2c")
 
 ### Summary plot --------------------------------------------------------------------
 
