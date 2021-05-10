@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "04 May 2021"
+update_full = "10 May 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -165,9 +165,9 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (224)" = "preclin",
+                                                                    "Pre-clinical (223)" = "preclin",
                                                                     "Phase I (29)" = "phasei",
-                                                                    "Phase I/II (27)" = "phasei_ii",
+                                                                    "Phase I/II (28)" = "phasei_ii",
                                                                     "Phase II (8)" = "phaseii",
                                                                     "Phase III (22)" = "phaseiii",
                                                                     "Phase IV (7)" = "phaseiv"),
@@ -958,8 +958,8 @@ server <- function(input, output, session) {
       
       if (is.na(mapper_reactive_db_country()$Start_date[1])) { g1 } else {
         g1 + geom_vline(xintercept=start_date, size=0.5, colour=active_col) +
-          annotate("segment", x = start_date, xend = start_date+20, y = 1000, yend = 1000, colour = active_col, size = 0.5, alpha=1, arrow=arrow(length=unit(0.20,"cm"), type = "closed")) +
-          annotate("text", x = start_date+5, y = 1150, label = c("start date") , color= active_col, size=4, fontface="italic", hjust = 0)
+          annotate("segment", x = start_date, xend = start_date+25, y = 1000, yend = 1000, colour = active_col, size = 0.5, alpha=1, arrow=arrow(length=unit(0.20,"cm"), type = "closed")) +
+          annotate("text", x = start_date+10, y = 1150, label = c("start date") , color= active_col, size=4, fontface="italic", hjust = 0)
       }
     }, res = 80)
   })
@@ -1737,7 +1737,7 @@ server <- function(input, output, session) {
   outputOptions(output, "equity_plot", suspendWhenHidden = FALSE)
 }
 
-shinyApp(ui = ui, server = server)
-#runApp(shinyApp(ui, server), launch.browser = TRUE)
+#shinyApp(ui = ui, server = server)
+runApp(shinyApp(ui, server), launch.browser = TRUE)
 #library(rsconnect)
 #deployApp(account="vac-lshtm")

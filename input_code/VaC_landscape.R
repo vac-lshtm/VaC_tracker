@@ -60,8 +60,8 @@ timeline = timeline %>%
           start = '16/07/2020', end = '16/06/2021', stage = "Phase IV", use="Yes") %>% 
   add_row(group = "Wuhan Institute of Biological Products<br>Sinopharm", subgroup = "Inactivated", 
           content = '<b>WIBP/BIBP vaccines</b><br>Phase III, Peru <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04612972" style="color:#006d2c" target="_blank">NCT04612972</a>', 
-          start = '10/09/2020', end = '31/12/2020', stage = "Phase III", use="Yes") %>%
-  
+          start = '09/09/2020', end = '19/02/2021', stage = "Phase III", use="Yes") %>%
+
   # add separate timeline inputs for Oxford/Pfizer prime-boost trial 
   add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
           content = '<b>BNT162/ChAdOx1-S prime-boost</b><br>Phase II, UK <i>(No longer recruiting)</i><br><a href="https://www.isrctn.com/ISRCTN69254139" style="color:#006d2c" target="_blank">ISRCTN69254139</a>', 
@@ -125,11 +125,6 @@ timeline = timeline %>%
   add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 
         content = '<b>mRNA-1273/BNT162</b><br>Phase I, USA <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04839315" style="color:#006d2c" target="_blank">NCT04839315</a>', 
         start = '15/02/2021', end = '31/12/2021', stage = "Phase IV", use="Yes") %>% 
-
-  # add timeline input for phase IV NCT04852861
-  add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 
-        content = '<b>mRNA-1273/BNT162</b><br>Phase IV, Pending <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04852861" style="color:#006d2c" target="_blank">NCT04852861</a>', 
-        start = '03/05/2021', end = '30/06/2021', stage = "Phase IV", use="Yes") %>% 
   
   # add timeline input for phase III NCT04805125
   add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 

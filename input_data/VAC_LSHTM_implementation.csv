@@ -41,7 +41,7 @@ Efficacy data,Beijing/Sinopharm BBIBP-CorV,"Vaccine efficacy against COVID-19 re
 Storage requirements,Beijing/Sinopharm BBIBP-CorV,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Beijing/Sinopharm BBIBP-CorV,No score available
 Manufacture projections,Beijing/Sinopharm BBIBP-CorV,"Up to 1 billion doses in 2021 according to media reports (<a href=""https://www.reuters.com/article/us-health-coronavirus-china-vaccine/sinopharm-says-may-be-able-to-make-over-one-billion-coronavirus-vaccine-doses-in-2021-idINKBN2750VB"" target=""_blank"">20 Oct 2020</a>)"
-Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in numerous countries, including China, UAE, Bahrain, Egypt, and Hungary"
+Approval status,Beijing/Sinopharm BBIBP-CorV,"Full or emergency use in numerous countries, including China, UAE, Bahrain, Egypt, and Hungary; granted emergency use approval by the WHO on <a href=""https://www.who.int/news/item/07-05-2021-who-lists-additional-covid-19-vaccine-for-emergency-use-and-issues-interim-policy-recommendations"" target=""_blank"">07 May 2021</a>"
 ,,
 Developer(s),Cansino Ad5-nCoV,"CanSino Biological Inc, Beijing Institute of Biotechnology"
 Platform,Cansino Ad5-nCoV,Non-replicating viral vector
@@ -85,7 +85,7 @@ Efficacy data,Janssen Ad26.COV2.S,"Vaccine efficacy against COVID-19 of 67% afte
 Storage requirements,Janssen Ad26.COV2.S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Janssen Ad26.COV2.S,Johnson & Johnson given score of 9 out of 20
 Manufacture projections,Janssen Ad26.COV2.S,"1 billion doses per year as of 2021 (<a href=""https://www.jnj.com/innovation/questions-about-johnson-johnson-investigational-covid-19-vaccine"" target=""_blank"">05 Jan 2021</a>) "
-Approval status,Janssen Ad26.COV2.S,"Early or emergency use in South Africa, Bahrain, and USA"
+Approval status,Janssen Ad26.COV2.S,"Early or emergency use in South Africa, Bahrain, and USA; granted emergency use approval by the WHO on <a href=""https://extranet.who.int/pqweb/vaccines/who-recommendation-janssen-cilag-international-nv-belgium-covid-19-vaccine-ad26cov2-s"" target=""_blank"">12 Mar 2021</a>"
 ,,
 Developer(s),Moderna mRNA-1273,"Moderna, NIAID"
 Platform,Moderna mRNA-1273,RNA
@@ -96,7 +96,7 @@ Efficacy data,Moderna mRNA-1273,Vaccine efficacy against COVID-19 of 94% based o
 Storage requirements,Moderna mRNA-1273,Refrigeration (2°C to 8°C) for up to 30 days or frozen (-15°C to -25°C) for long-term storage
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Moderna mRNA-1273,Moderna given score of 2 out of 20
 Manufacture projections,Moderna mRNA-1273,"Up to 1 billion doses in 2021 and 1.4 billion doses in 2022 (<a href=""https://investors.modernatx.com/news-releases/news-release-details/moderna-announces-additional-capital-investments-increase-global"" target=""_blank"">24 Feb 2021</a>) "
-Approval status,Moderna mRNA-1273,"Full or emergency use in numerous countries, including USA, Canada, EU, UK, and Israel"
+Approval status,Moderna mRNA-1273,"Full or emergency use in numerous countries, including USA, Canada, EU, UK, and Israel; granted emergency use approval by the WHO on <a href=""https://extranet.who.int/pqweb/vaccines/covid-19-mrna-vaccine-nucleoside-modified"" target=""_blank"">30 Apr 2021</a>"
 ,,
 Developer(s),Oxford/AstraZeneca ChAdOx1-S,"University of Oxford, AstraZeneca"
 Platform,Oxford/AstraZeneca ChAdOx1-S,Non-replicating viral vector
@@ -107,7 +107,7 @@ Efficacy data,Oxford/AstraZeneca ChAdOx1-S,Vaccine efficacy against COVID-19 rep
 Storage requirements,Oxford/AstraZeneca ChAdOx1-S,Refrigeration (2°C to 8°C)
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Oxford/AstraZeneca ChAdOx1-S,AstraZeneca given score of 7 out of 20
 Manufacture projections,Oxford/AstraZeneca ChAdOx1-S,"3 billion doses in 2021 (<a href=""https://www.astrazeneca.com/what-science-can-do/topics/technologies/pushing-boundaries-to-deliver-covid-19-vaccine-accross-the-globe.html"" target=""_blank"">25 Mar 2021</a>)"
-Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, EU, India, Argentina, Dominican Republic, and El Salvador"
+Approval status,Oxford/AstraZeneca ChAdOx1-S,"Emergency use in numerous countries, including UK, EU, India, Argentina, Dominican Republic, and El Salvador; granted emergency use approval by the WHO on <a href=""https://extranet.who.int/pqweb/vaccines/covid-19-vaccine-chadox1-s-recombinant"" target=""_blank"">15 Feb 2021</a>"
 ,,
 Developer(s),Research Institute for Biological Safety Problems QazCovid-in,"Research Institute for Biological Safety Problems, Kazakhstan"
 Platform,Research Institute for Biological Safety Problems QazCovid-in,Inactivated
