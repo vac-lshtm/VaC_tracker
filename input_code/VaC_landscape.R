@@ -34,6 +34,7 @@ timeline_clinical$content = str_remove(timeline_clinical$content, "<br>NA")
 
 # assign trials featuring multiple vaccines to first institute
 timeline_clinical$group = as.character(timeline_clinical$group)
+timeline_clinical$subgroup = as.character(timeline_clinical$subgroup)
 timeline_clinical$group[timeline_clinical$group=="Beijing Institute of Biological Products<br>Wuhan Institute of Biological Products<br>Sinopharm"] = "Beijing Institute of Biological Products<br>Sinopharm"
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$group[timeline_clinical$group=="University of Oxford<br>AstraZeneca<br>Gamaleya Research Institute"] = "University of Oxford<br>AstraZeneca"
@@ -48,6 +49,8 @@ timeline_clinical$group[timeline_clinical$group=="Valneva<br>Dynavax<br>Universi
 timeline_clinical$subgroup[timeline_clinical$subgroup=="Inactivated/Vector (non-replicating)"] = "Inactivated"
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Vector (non-replicating)"] = "RNA"
+timeline_clinical$group[timeline_clinical$group=="University of Oxford<br>AstraZeneca<br>Beijing Institute of Biological Products<br>Sinopharm"] = "University of Oxford<br>AstraZeneca"
+timeline_clinical$subgroup[timeline_clinical$subgroup=="Vector (non-replicating)/Inactivated"] = "Vector (non-replicating)"
 
 # merge clinical and preclinical timelines
 timeline_clinical = merge(timeline_clinical, timeline_preclinical[,c("group", "stage", "use")], all.x = TRUE, by = "group")
@@ -149,7 +152,12 @@ timeline = timeline %>%
   # add timeline input for phase IV EUCTR2021-000930-32-BE
   add_row(group = "BioNTech<br>Pfizer<br>Fosun Pharma", subgroup = "RNA", 
           content = '<b>mRNA-1273/BNT162 (b2)</b><br>Phase IV, Belgium <i>(Ongoing)</i><br><a href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2021-000930-32/BE" style="color:#006d2c" target="_blank">EUCTR2021-000930-32-BE</a>', 
-          start = '27/04/2021', end = '', stage = "Phase IV", use="Yes")
+          start = '27/04/2021', end = '', stage = "Phase IV", use="Yes") %>% 
+
+  # add timeline input for phase II/III NCT04885764
+  add_row(group = "Beijing Institute of Biological Products<br>Sinopharm", subgroup = "Inactivated", 
+          content = '<b>ChAdOx1-S/BBIBP-CorV</b><br>Phase II/III, Egypt <i>(Recruiting)</i><br><a href=""https://clinicaltrials.gov/ct2/show/NCT04885764" style="color:#006d2c" target="_blank">NCT04885764</a>', 
+          start = '23/02/2021', end = '01/10/2021', stage = "Phase IV", use="Yes")
   
   
 # set factor levels

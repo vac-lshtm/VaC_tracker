@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "10 May 2021"
+update_full = "17 May 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -61,7 +61,7 @@ ui <- bootstrapPage(
              
              tabPanel("Home",
                       tags$div(
-                        "Last updated on ",tags$b(paste0(update_equity,".")),tags$br(),tags$br(),
+                        "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
                         
                         #tags$b("*** Update:"),"See",tags$b("Implementation"),"tab for new feature tracking the equity of vaccine roll-out.",tags$b("***"),tags$br(),tags$br(),
                         
@@ -71,12 +71,10 @@ ui <- bootstrapPage(
                         "First launched in April 2020, this tracker was developed by the", a("Vaccine Centre", href="https://www.lshtm.ac.uk/research/centres/vaccine-centre", target="_blank"),
                         "at the", a("London School of Hygiene & Tropical Medicine", href="https://www.lshtm.ac.uk", target="_blank"), "to follow candidates as they progress through the development pipeline.",
                         "Read our", a("Correspondence", href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(21)00043-7/fulltext", target="_blank"),"in",em("Lancet Global Health"),"for further details.",
-                        tags$br(),tags$br(),
-                        
                         "All data and code are available via the LSHTM Vaccine Centre's", tags$a(href="https://github.com/vac-lshtm/VaC_tracker", "Github page.", target="_blank"),
                         tags$br(),tags$br(),
                         
-                        "Citation details: Shrotri, Swinnen, Kampmann, Parker (2021). An interactive website tracking COVID-19 vaccine development.",tags$i("Lancet Glob Health;"),"epub ahead of print.",
+                        "Citation details: Shrotri, Swinnen, Kampmann, Parker (2021). An interactive website tracking COVID-19 vaccine development.",tags$i("Lancet Glob Health;"),"9(5):e590-e592.",
                         tags$br(),tags$br(),
                         
                         actionButton("twitter_share", label = "Share", icon = icon("twitter"),class = "btn btn-warning",
@@ -166,10 +164,10 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (29)" = "phasei",
-                                                                    "Phase I/II (28)" = "phasei_ii",
-                                                                    "Phase II (8)" = "phaseii",
-                                                                    "Phase III (22)" = "phaseiii",
+                                                                    "Phase I (30)" = "phasei",
+                                                                    "Phase I/II (29)" = "phasei_ii",
+                                                                    "Phase II (7)" = "phaseii",
+                                                                    "Phase III (23)" = "phaseiii",
                                                                     "Phase IV (7)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
@@ -177,7 +175,7 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
                                                         choices = c("No (304)" = "not_in_use",
-                                                                    "Yes (13)" = "in_use"),
+                                                                    "Yes (15)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -189,14 +187,14 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (37)" = "rna",
+                                                        choices = c("RNA (38)" = "rna",
                                                                     "DNA (27)" = "dna",
                                                                     "Vector (non-replicating) (40)" = "nrvv",
-                                                                    "Vector (replicating) (25)" = "rvv",
-                                                                    "Inactivated (23)" = "inact",
+                                                                    "Vector (replicating) (24)" = "rvv",
+                                                                    "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
                                                                     "Protein subunit (101)" = "ps",
-                                                                    "Virus-like particle (24)" = "vlp",
+                                                                    "Virus-like particle (25)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
@@ -569,8 +567,7 @@ ui <- bootstrapPage(
              ###########################
              
              tabPanel("Implementation",
-                      "Last updated on ",tags$b(paste0(update_equity,".")),
-                      tags$br(),tags$br(),
+                    #  "Last updated on ",tags$b(paste0(update_equity,".")),tags$br(),tags$br(),
                       
                       h4("Equity of vaccine roll-out"),
                       "Vaccines against COVID-19 are now being rolled out across the globe. However, we are falling considerably short of achieving equitable global distribution.
@@ -617,7 +614,7 @@ ui <- bootstrapPage(
                       tags$br(),
                       plotOutput("summary_matrix", height="750px", width="950px"),
                       tags$br(),
-                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
+                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; CIGB: Center for Genetic Engineering and Biotechnology; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
                       Candidates in phase III testing and/or widespread use are included. 
                       Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
                       tags$br(), tags$br(),
@@ -626,7 +623,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(3,7,8,10,12)],
+                                             selected = imp_list[c(3,8,9,10,11)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -1737,7 +1734,7 @@ server <- function(input, output, session) {
   outputOptions(output, "equity_plot", suspendWhenHidden = FALSE)
 }
 
-#shinyApp(ui = ui, server = server)
-runApp(shinyApp(ui, server), launch.browser = TRUE)
+shinyApp(ui = ui, server = server)
+#runApp(shinyApp(ui, server), launch.browser = TRUE)
 #library(rsconnect)
 #deployApp(account="vac-lshtm")
