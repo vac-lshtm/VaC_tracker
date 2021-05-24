@@ -87,6 +87,17 @@ Storage requirements,Gamaleya Gam-COVID-Vac/Sputnik V,Being produced in lyophili
 Manufacture projections,Gamaleya Gam-COVID-Vac/Sputnik V,"Up to 1.4 billion doses in 2021 according to BMJ report (<a href=""https://www.bmj.com/content/372/bmj.n743"" target=""_blank"">19 Mar 2021</a>) "
 Approval status,Gamaleya Gam-COVID-Vac/Sputnik V,"Early or emergency use in numerous countries, including Russia, Belarus, Argentina, Serbia, and Algeria"
 ,,
+Developer(s),Finlay Soberana 02,Instituto Finlay de Vacunas Soberana 02
+Platform,Finlay Soberana 02,Protein subunit
+Dosing,Finlay Soberana 02,"2 or 3 doses, intramuscular"
+Description,Finlay Soberana 02,RBD administered chemically conjugate to tetanus toxoid
+Published results,Finlay Soberana 02,None
+Efficacy data,Finlay Soberana 02,Pending
+Storage requirements,Finlay Soberana 02,Pending - refrigeration (2°C to 8°C) is typical for protein subunit vaccines
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Finlay Soberana 02,No score available
+Manufacture projections,Finlay Soberana 02,Pending
+Approval status,Finlay Soberana 02,Early use in Cuba
+,,
 Developer(s),Janssen Ad26.COV2.S,Janssen Pharmaceutical Companies
 Platform,Janssen Ad26.COV2.S,Non-replicating viral vector
 Dosing,Janssen Ad26.COV2.S,"1 or 2 doses (to be determined), intramuscular"
@@ -130,6 +141,17 @@ Storage requirements,Research Institute for Biological Safety Problems QazCovid-
 "<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Research Institute for Biological Safety Problems QazCovid-in,No score available
 Manufacture projections,Research Institute for Biological Safety Problems QazCovid-in,Pending
 Approval status,Research Institute for Biological Safety Problems QazCovid-in,Early use in Kazakhstan
+,,
+Developer(s),Shenzhen Kangtai KCONVAC,Shenzhen Kangtai Biological Products Co Ltd
+Platform,Shenzhen Kangtai KCONVAC,Inactivated
+Dosing,Shenzhen Kangtai KCONVAC,"2 doses, intramuscular"
+Description,Shenzhen Kangtai KCONVAC,Inactivated vaccine adiministered 
+Published results,Shenzhen Kangtai KCONVAC,"Phase I, phase II - see <b>Living review</b>"
+Efficacy data,Shenzhen Kangtai KCONVAC,Pending
+Storage requirements,Shenzhen Kangtai KCONVAC,Pending - refrigeration (2°C to 8°C) is typical for inactivated vaccines
+"<a href=""https://www.one.org/international/vaccine-access-test/"" target=""_blank"">ONE Vaccine Access Test score</a>",Shenzhen Kangtai KCONVAC,No score available
+Manufacture projections,Shenzhen Kangtai KCONVAC,Pending
+Approval status,Shenzhen Kangtai KCONVAC,Emergency use in China
 ,,
 Developer(s),Sinovac CoronaVac,Sinovac
 Platform,Sinovac CoronaVac,Inactivated

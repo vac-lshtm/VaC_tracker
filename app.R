@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "17 May 2021"
+update_full = "24 May 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -164,8 +164,8 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (30)" = "phasei",
-                                                                    "Phase I/II (29)" = "phasei_ii",
+                                                                    "Phase I (29)" = "phasei",
+                                                                    "Phase I/II (31)" = "phasei_ii",
                                                                     "Phase II (7)" = "phaseii",
                                                                     "Phase III (23)" = "phaseiii",
                                                                     "Phase IV (7)" = "phaseiv"),
@@ -174,8 +174,8 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (304)" = "not_in_use",
-                                                                    "Yes (15)" = "in_use"),
+                                                        choices = c("No (303)" = "not_in_use",
+                                                                    "Yes (17)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -195,7 +195,7 @@ ui <- bootstrapPage(
                                                                     "Live-attenuated (3)" = "live", 
                                                                     "Protein subunit (101)" = "ps",
                                                                     "Virus-like particle (25)" = "vlp",
-                                                                    "Other/Unknown (37)" = "unknown"),
+                                                                    "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
                                      tags$br(),
                                      
@@ -612,7 +612,7 @@ ui <- bootstrapPage(
                       tags$br(),tags$br(),
                       h4("Testing and implementation status of front-running candidates"),
                       tags$br(),
-                      plotOutput("summary_matrix", height="750px", width="950px"),
+                      plotOutput("summary_matrix", height="900px", width="950px"),
                       tags$br(),
                       "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; CIGB: Center for Genetic Engineering and Biotechnology; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
                       Candidates in phase III testing and/or widespread use are included. 
@@ -623,7 +623,7 @@ ui <- bootstrapPage(
                                  pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
                                              choices = as.character(imp_list), 
                                              options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[c(3,8,9,10,11)],
+                                             selected = imp_list[sample(1:17, 5, replace = FALSE, prob = NULL)],
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
@@ -1050,7 +1050,7 @@ server <- function(input, output, session) {
     eligible$`Data extraction`[eligible$`Data extraction`=="In progress"] = "<em><span style=\"color:orange\">In progress</span></em>"
     eligible$`Data extraction`[eligible$`Data extraction`=="In progress (complete for preprint)"] = "<em><span style=\"color:orange\">In progress (complete for preprint)</span></em>"
     DT::datatable(eligible,  extensions = 'RowGroup', rownames=F, escape = FALSE, 
-                  options = list(dom = 't', ordering=F, rowGroup = list(dataSrc = 2), pageLength = 50, columnDefs = list(list(visible=FALSE, targets=2)))) %>%
+                  options = list(dom = 't', ordering=F, rowGroup = list(dataSrc = 2), pageLength = 100, columnDefs = list(list(visible=FALSE, targets=2)))) %>%
       formatStyle(columns = c(1:8), fontSize = '80%') 
   })
 

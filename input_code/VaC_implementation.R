@@ -64,7 +64,7 @@ g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) +
   scale_fill_manual(values = c("RNA" = pal_1[2], "DNA" = pal_2[2], "Vector (nr)" = pal_3[2], "Vector (r)" = pal_4[2], 
                                "Inactivated" = pal_5[2], "Live-attenuated" = pal_6[2], "Subunit" = pal_7[2], "VLP" = pal_8[2], "Other" = pal_9[2])) + 
   facet_grid(Platform~., scales = "free", space='free') + 
-  ylab("") + xlab("") + ggtitle("N doses\navailable, 2021\n") + 
+  ylab("") + xlab("") + ggtitle("N doses\nproduced per year\n") + 
   scale_x_log10(limits=c(10^6,10^10), labels = trans_format("log10", math_format(10^.x)), oob = rescale_none) +
   theme(legend.position = "none", text = element_text(size = 15), axis.text.y = element_blank(), title = element_text(size = 12), 
         axis.text = element_text(size=15), 
@@ -84,28 +84,31 @@ owid = subset(owid, iso_code!="")
 
 # calculate N reporting countries reporting use for each vaccine candidate
 s$n_country = NA
+s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines))
 s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
 s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("Pfizer/BioNTech", owid$vaccines))
-s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
-s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik V", owid$vaccines))
-s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines))
-s$n_country[s$Institutes=="Wuhan/Sinopharm vaccine"] = sum(grepl("Sinopharm/Wuhan", owid$vaccines))
-s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
-s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford/AstraZeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
-s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
-s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
+s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines) | grepl("Sinopharm/HayatVax", owid$vaccines))
 s$n_country[s$Institutes=="Cansino Ad5-nCoV"] = sum(grepl("CanSino", owid$vaccines))
 s$n_country[s$Institutes=="CIGB CIGB-66/Abdala"] = sum(grepl("Abdala", owid$vaccines))
-
+# No row for Chumakov vaccine
+s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik V", owid$vaccines))
+s$n_country[s$Institutes=="Instituto Finlay de Vacunas Soberana 02"] = sum(grepl("Soberana02", owid$vaccines))
+s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
+s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
+s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford/AstraZeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
+s$n_country[s$Institutes=="RIBSP Kazakhstan QazCovid-in"] = sum(grepl("QazVac", owid$vaccines))
+s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
+s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
+s$n_country[s$Institutes=="Wuhan/Sinopharm vaccine"] = sum(grepl("Sinopharm/Wuhan", owid$vaccines))
 
 # create plot of N countries reporting use (plot panel 3)
 g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n_country)) + geom_bar(stat = "identity") + theme_bw() +
   scale_fill_manual(values = c("RNA" = pal_1[2], "DNA" = pal_2[2], "Vector (nr)" = pal_3[2], "Vector (r)" = pal_4[2], 
                                "Inactivated" = pal_5[2], "Live-attenuated" = pal_6[2], "Subunit" = pal_7[2], "VLP" = pal_8[2], "Other" = pal_9[2])) +  
   facet_grid(Platform~., scales = "free", space='free') + 
-  geom_text(nudge_x = 20, nudge_y = 0.1, show.legend = FALSE, size=5) +
+  geom_text(nudge_x = 30, nudge_y = 0.1, show.legend = FALSE, size=5) +
   ylab("") + xlab("") + ggtitle("N countries\nreporting use\n") + 
-  scale_x_continuous(limits=c(0,175), breaks=c(0,50,100,150)) +
+  scale_x_continuous(limits=c(0,220), breaks=c(0,50,100,150)) +
   theme(text = element_text(size = 15), axis.text = element_text(size=15), legend.position="none",
         axis.text.y = element_blank(), title = element_text(size = 12),
         strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",
