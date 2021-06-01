@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "24 May 2021"
+update_full = "01 June 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -163,10 +163,10 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (29)" = "phasei",
+                                                                    "Pre-clinical (224)" = "preclin",
+                                                                    "Phase I (28)" = "phasei",
                                                                     "Phase I/II (31)" = "phasei_ii",
-                                                                    "Phase II (7)" = "phaseii",
+                                                                    "Phase II (8)" = "phaseii",
                                                                     "Phase III (23)" = "phaseiii",
                                                                     "Phase IV (7)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
@@ -174,7 +174,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (303)" = "not_in_use",
+                                                        choices = c("No (304)" = "not_in_use",
                                                                     "Yes (17)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -193,7 +193,7 @@ ui <- bootstrapPage(
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (101)" = "ps",
+                                                                    "Protein subunit (102)" = "ps",
                                                                     "Virus-like particle (25)" = "vlp",
                                                                     "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
@@ -1250,6 +1250,7 @@ server <- function(input, output, session) {
     if (reactive_db()$Platform[1]=="Virus-like particle") { palette = brewer.pal(9, "Purples")[c(9:3, 3:8)] }
     
     ngroup = length(unique(db_plot$Plotgroup))
+    if (y_upperlim<1000) { y_upperlim=1000 }
     if (y_upperlim==1000) { nudge = 0.06 } else { nudge = 0.07 }
     
     # plot continuous outcome (pre)
@@ -1380,7 +1381,7 @@ server <- function(input, output, session) {
       
       y_lowerlim = 10^floor(log10(min(c(as.numeric(db_plot$Lowerpre), as.numeric(db_plot$Lowerpost)), na.rm=T)))
       y_upperlim = 10^ceiling(log10(max(c(as.numeric(db_plot$Upperpre), as.numeric(db_plot$Upperpost)), na.rm=T)))
-      
+
       if (y_upperlim==1000) { nudge = 0.06 } else if (y_upperlim==1) { nudge = 0.5 } else { nudge = 0.07 }
       
       # plot continuous outcome (pre)
