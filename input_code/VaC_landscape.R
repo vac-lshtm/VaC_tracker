@@ -183,9 +183,9 @@ timeline = timeline %>%
           start = '23/02/2021', end = '01/10/2021', stage = "Phase IV", use="Yes") %>% 
   
   # add timeline input for phase IV NCT04878211
-  add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
-          content = '<b>BNT162/mRNA-1273</b><br>Phase IV, Pending <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04878211" style="color:#006d2c" target="_blank">NCT04878211</a>', 
-          start = '31/03/2021', end = '26/11/2021', stage = "Phase IV", use="Yes") %>% 
+  # add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
+  #         content = '<b>BNT162/mRNA-1273</b><br>Phase IV, Pending <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04878211" style="color:#006d2c" target="_blank">NCT04878211</a>', 
+  #         start = '31/03/2021', end = '26/11/2021', stage = "Phase IV", use="Yes") %>% 
   
   # add timeline input for NCT04900467
   add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 

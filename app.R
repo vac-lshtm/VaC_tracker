@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "01 June 2021"
+update_full = "07 June 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -163,7 +163,7 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (224)" = "preclin",
+                                                                    "Pre-clinical (225)" = "preclin",
                                                                     "Phase I (28)" = "phasei",
                                                                     "Phase I/II (31)" = "phasei_ii",
                                                                     "Phase II (8)" = "phaseii",
@@ -174,7 +174,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (304)" = "not_in_use",
+                                                        choices = c("No (305)" = "not_in_use",
                                                                     "Yes (17)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -193,7 +193,7 @@ ui <- bootstrapPage(
                                                                     "Vector (replicating) (24)" = "rvv",
                                                                     "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (102)" = "ps",
+                                                                    "Protein subunit (103)" = "ps",
                                                                     "Virus-like particle (25)" = "vlp",
                                                                     "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
@@ -251,7 +251,7 @@ ui <- bootstrapPage(
                       "Each week, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
                       "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
                       Additional trials are identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
-                      "Trials are listed by decreasing size. Only trials with a registered protocol are included.",
+                      "Trials are listed by decreasing size. Only trials with a registered protocol are included. We exclude observational studies as well as intervention trials evaluating the influence of other treatments on COVID-19 vaccine outcome.",
                       tags$br(),tags$br(),
                       
                       pickerInput("trial_select_subset", h4("Select subset:"),
@@ -1043,6 +1043,10 @@ server <- function(input, output, session) {
     # Modify Shenzhen Kangtai KCONVAC  phase I to include 2 corresponding trials
     eligible$`Trial number`[eligible$Reference=="Pan; Chin Med J 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04758273 target="_blank">NCT04758273</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04756323 target="_blank">NCT04756323</a>' 
+
+    # Modify Genexine GX-19  phase I/II to include 2 corresponding trials
+    eligible$`Trial number`[eligible$Reference=="Ahn; medRxiv 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04715997 target="_blank">NCT04715997</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04445389 target="_blank">NCT04445389</a>' 
     
     eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
     eligible = eligible %>% select(-c(`Reference link`, Link, Platform))
