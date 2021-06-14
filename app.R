@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "07 June 2021"
+update_full = "14 June 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -46,6 +46,7 @@ source("input_code/VaC_implementation.R")
 table(landscape$Phase)
 table(landscape$Platform)
 table(landscape$In.use)
+
 
 
 ### UI -------------------------------------------------------------------------------------
@@ -165,10 +166,10 @@ ui <- bootstrapPage(
                                                         choices = c("Terminated (4)" = "term",
                                                                     "Pre-clinical (225)" = "preclin",
                                                                     "Phase I (28)" = "phasei",
-                                                                    "Phase I/II (31)" = "phasei_ii",
+                                                                    "Phase I/II (30)" = "phasei_ii",
                                                                     "Phase II (8)" = "phaseii",
                                                                     "Phase III (23)" = "phaseiii",
-                                                                    "Phase IV (7)" = "phaseiv"),
+                                                                    "Phase IV (8)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
                                      tags$br(),
                                      
@@ -406,7 +407,7 @@ ui <- bootstrapPage(
                                      tags$b("Abbreviations:"),
                                      tags$p("AZLB: Anhui Zhifei Longcom Biopharmaceutical; BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
                                      tags$b("Notes:"),
-                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020), and AZLB ZF2001 (Yang; Lancet Infect Dis 2021)."
+                                     tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020), AZLB ZF2001 (Yang; Lancet Infect Dis 2021), and Shenzhen Kangtai KCONVAC (Pan; Chin Med J 2021)."
                                        #   Paper by Emary et al (2021) had not been indexed on PubMed as of 05 Apr 2021 and is therefore not included in the search log below." 
                                      ),
                                      tags$br(),
@@ -437,7 +438,7 @@ ui <- bootstrapPage(
                                                       tabsetPanel(
                                                         tabPanel("Plot", 
                                                                  tags$br(),
-                                                                 plotOutput("outcome_plot_efficacy", width = "900px",  height = "525px"), 
+                                                                 plotOutput("outcome_plot_efficacy", width = "900px",  height = "auto"), 
                                                                  tags$br()),
                                                         tabPanel("Table",
                                                                  fluidPage(style = "font-size: 85%; padding: 0px 0px; margin: 0%", DT::dataTableOutput("efficacy_table", width="100%")),
@@ -467,6 +468,8 @@ ui <- bootstrapPage(
                                      tags$br(),tags$br(),
                                      
                                      conditionalPanel("input.select_phase == 'Immunogenicity' | 
+                                                          input.select_trial == 'Wuhan-Sinopharm/Beijing-Sinopharm phase III' | 
+                                                          input.select_trial == 'BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)' | 
                                                           input.select_trial == 'Gamaleya Gam-COVID-Vac phase III' | 
                                                           input.select_trial == 'Oxford ChAdOx1 phase III (report 2; Voysey 2021)' | 
                                                           input.select_trial == 'Oxford ChAdOx1 phase I/II (report 3 - South Africa; Madhi 2021)' |  
@@ -1145,8 +1148,10 @@ server <- function(input, output, session) {
     #reactive_db = db %>% filter(Identifier == "Oxford ChAdOx1 phase III")
     db_piecharts = reactive_db()
     db_piecharts$profile_plotgroup = "age"
-    db_piecharts$profile_plotgroup[db_piecharts$Efficacyprofileplotgroup %in% c("White", "Black", "Asian", "Mixed", "Other")] = "ethnicity"
+    db_piecharts$profile_plotgroup[db_piecharts$Efficacyprofileplotgroup %in% c("White", "Black", "Asian", "Mixed", "Other", "Indigenous", "Not reported")] = "ethnicity"
     db_piecharts$Efficacyprofileplotgroup = factor(db_piecharts$Efficacyprofileplotgroup, levels = db_piecharts$Efficacyprofileplotgroup)
+    
+    if ( reactive_db()$Identifier == "Wuhan-Sinopharm/Beijing-Sinopharm phase III") { db_piecharts$EfficacyN[1] = 38206 } # modify N to include total from 3 arms of study
     
     g1 = ggplot(subset(db_piecharts, profile_plotgroup=="age"), aes(x="", y=as.numeric(Efficacyprofileplotpercentage), fill=Efficacyprofileplotgroup)) +
       geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + theme_minimal() + guides(fill=guide_legend(title="Age (y)")) +
@@ -1171,15 +1176,26 @@ server <- function(input, output, session) {
                             label = format(as.numeric(VEmid),nsmall=1))) +
       geom_point(aes(size=as.numeric(Efficacycases)), alpha=0.8) + xlab("") + ylab("Efficacy, %") +
       geom_errorbar(aes(ymin=as.numeric(VElower), ymax=as.numeric(VEupper)), width=0, size=0.8, alpha=0.8, position=position_dodge(.5, preserve = 'single')) +
-      scale_colour_manual(values = c("Symptomatic COVID-19" = covid_col, "Virologically confirmed COVID-19" = covid_col, "Asymptomatic SARS-CoV-2" = "#3B9AB2", "Moderate/Severe COVID-19" = "#9970ab", "Severe COVID-19" = "#9970ab")) + 
+      scale_colour_manual(values = c("Symptomatic COVID-19" = covid_col, "Virologically confirmed COVID-19" = covid_col, "Symptomatic/asymptomatic SARS-CoV-2" = "#3B9AB2", "Asymptomatic SARS-CoV-2" = "#3B9AB2", "Moderate/Severe COVID-19" = "#9970ab", "Severe COVID-19" = "#9970ab")) + 
       geom_text(nudge_x = 0.3, nudge_y = -10, show.legend=FALSE, size=3.5) + ylim(-10,100) + ggtitle(" ") +
       theme_bw() + coord_flip() + facet_grid(Efficacystratum~., scales="free_y", space = "free_y") +
       guides(colour=guide_legend(title="Endpoint", order=2), size=guide_legend(title="N cases")) +
       theme(strip.background = element_blank(), strip.text.y = element_text(size=0), 
             text = element_text(size=11), legend.text=element_text(size=9)) 
 
-    plot_grid(plot_grid(g1, g2, ncol=1, nrow=3, rel_heights = c(1.1,1,1.1),align="v"), g3, ncol=2, rel_widths = c(1,3))
-  }, res = 100)
+    if ( reactive_db()$Identifier=="BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)" ) { 
+      # change nrow to 2 for Frenck Jr given lack of subgroup analyses
+      plot_grid(plot_grid(g1, g2, ncol=1, nrow=2, rel_heights = c(1.1,1,1.1),align="v"), g3, ncol=2, rel_widths = c(1,3)) 
+    } else {
+      plot_grid(plot_grid(g1, g2, ncol=1, nrow=3, rel_heights = c(1.1,1,1.1),align="v"), g3, ncol=2, rel_widths = c(1,3))
+    }
+  }, res = 100, height = function(){ 
+    # tune output height up or down based on number of subgroups included
+    if ( reactive_db()$Identifier=="BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)" ) { 350 } 
+    else if ( reactive_db()$Identifier=="Janssen Ad26.COV2.S phase III" ) { 600 } 
+    else { 500 } 
+    }
+  )
   
   output$efficacy_table <- DT::renderDataTable({
     db_efficacy <- subset(reactive_db(), !is.na(Efficacyendpoint))
