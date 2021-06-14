@@ -42,7 +42,7 @@ Key elements of the analysis code are as follows:
 ### Living review
 * Updated weekly
 * Input data: *VaC_LSHTM_search_log.csv*, *VaC_LSHTM_eligible_studies.csv*,  and *VaC_LSHTM_living_review_data.xlsx*
-* Search term: *"(coronavirus OR COVID OR SARS*) AND vaccin* AND (trial OR phase)"*
+* Search term: *"(coronavirus OR COVID OR SARS\*) AND vaccin\* AND (trial OR phase)"*
 * Approach:
   - A search of medRxiv and Pubmed is implemented via the *VaC_LSHTM_living_review.Rmd* script (in the *living_review* folder) using the R packages *medrxivr* and *easyPubMed*
   - Titles and abstracts are screened for articles reporting outcome data from human trials of SARS-CoV-2 vaccines
