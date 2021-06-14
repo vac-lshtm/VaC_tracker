@@ -400,6 +400,11 @@ ui <- bootstrapPage(
                                      "Data extraction is performed for all peer-reviewed manuscripts. Links are provided to all preprints.",
                                      tags$br(),tags$br(),
                                      
+                                     tags$h4("Protocol update, June 2021"),
+                                     "Data extraction was performed for all eligible peer-reviewed manuscripts published up until", tags$b("31st May 2021."),
+                                     "As of this date, extraction is performed for studies presenting efficacy data, as well as those reporting safety and immunogenicity data for (i) children, (ii) pregnant women, and (iii) heterologous prime–boost trials.",
+                                     tags$br(),tags$br(),
+                                     
                                      tags$h4("Eligible studies"),
                                      "Total number of studies included: ", living_review_study_count,
                                      DT::dataTableOutput("eligible_studies", width="100%"),
@@ -413,7 +418,7 @@ ui <- bootstrapPage(
                                      tags$br(),
                                      
                                      tags$h4("Search log"),
-                                     DT::dataTableOutput("search_log", width="100%"),
+                                     plotlyOutput("search_log", width="100%"),
                                      tags$br(), tags$br()
                                      
                                        ),
@@ -630,7 +635,7 @@ ui <- bootstrapPage(
                                              multiple = TRUE),
                                  DT::dataTableOutput("implementation_table", width="100%"),
                                  tags$br(),
-                                 "Vaccines in widespread use are included.",
+                                 "Vaccines in widespread use are included. ONE Vaccine Access test scores and company manufacturing projections are updated every 3-4 weeks.",
                                  tags$br(), tags$br()
                       
                       ),
@@ -1010,13 +1015,24 @@ server <- function(input, output, session) {
   ### LIVING REVIEW PAGE ###
   ##########################
   
-  output$search_log <- DT::renderDataTable({
+  output$search_log <- renderPlotly({
     search = fread("input_data/VaC_LSHTM_search_log.csv")
-    search$`Search date` = format(as.Date(search$`Search date`, format="%d/%m/%Y"),"%d %b %Y")
-    search$`N eligible` = paste0("<p style=\"text-align:right;\"><b><span style=\"color:green\">",search$`N eligible`,"</span></b>")
+    search$`Search date` = as.Date(search$`Search date`, format="%d/%m/%Y")
+    #search$`Search date` = format(as.Date(search$`Search date`, format="%d/%m/%Y"),"%d %b %Y")
+    #search$`N eligible` = paste0("<p style=\"text-align:right;\"><b><span style=\"color:green\">",search$`N eligible`,"</span></b>")
     
-    DT::datatable(search, rownames=F, escape = FALSE, options = list(dom = 't', ordering=F, pageLength = 50)) %>%
-      formatStyle(columns = c(1:7), fontSize = '80%') 
+    s1 = data.frame(date = rep(search$`Search date`,4),
+                    group = c(rep("Pubmed hits", nrow(search)), rep("medRxiv hits", nrow(search)), rep("eligible (main search)", nrow(search)), rep("eligible (other sources)", nrow(search))),
+                    N = unlist(c(search[,2], search[,3], search[,4], search[,5]))
+    )
+                    
+    g1 = ggplot(s1, aes(x = date, y = N, colour = group, group = 1, text = paste0("N: ", N, "<br><i>", group,"</i><br>", format(date,"%d %b %Y")))) +
+      geom_line()  + theme_bw() + scale_colour_brewer(palette = "Spectral") +
+      theme(legend.title = element_blank(), text = element_text(size=13)) +
+      scale_x_date(labels = date_format("%b %y")) + xlab("")
+    
+    ggplotly(g1, tooltip = c("text"))
+    
   })
   
   output$eligible_studies <- DT::renderDataTable({
