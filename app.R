@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "17 June 2021"
+update_full = "19 June 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -164,9 +164,9 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (4)" = "term",
-                                                                    "Pre-clinical (225)" = "preclin",
+                                                                    "Pre-clinical (224)" = "preclin",
                                                                     "Phase I (28)" = "phasei",
-                                                                    "Phase I/II (29)" = "phasei_ii",
+                                                                    "Phase I/II (30)" = "phasei_ii",
                                                                     "Phase II (8)" = "phaseii",
                                                                     "Phase III (24)" = "phaseiii",
                                                                     "Phase IV (8)" = "phaseiv"),
