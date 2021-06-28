@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "19 June 2021"
+update_full = "28 June 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -167,7 +167,7 @@ ui <- bootstrapPage(
                                                                     "Pre-clinical (224)" = "preclin",
                                                                     "Phase I (28)" = "phasei",
                                                                     "Phase I/II (30)" = "phasei_ii",
-                                                                    "Phase II (8)" = "phaseii",
+                                                                    "Phase II (9)" = "phaseii",
                                                                     "Phase III (24)" = "phaseiii",
                                                                     "Phase IV (8)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
@@ -175,7 +175,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (304)" = "not_in_use",
+                                                        choices = c("No (305)" = "not_in_use",
                                                                     "Yes (18)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -188,7 +188,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (38)" = "rna",
+                                                        choices = c("RNA (39)" = "rna",
                                                                     "DNA (27)" = "dna",
                                                                     "Vector (non-replicating) (40)" = "nrvv",
                                                                     "Vector (replicating) (24)" = "rvv",

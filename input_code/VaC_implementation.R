@@ -87,7 +87,7 @@ s$n_country = NA
 s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines))
 s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
 s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("Pfizer/BioNTech", owid$vaccines))
-s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines) | grepl("Sinopharm/HayatVax", owid$vaccines))
+s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines) | grepl("Sinopharm/HayatVax", owid$vaccines) | grepl("BBIBP-CorV", owid$vaccines))
 s$n_country[s$Institutes=="Cansino Ad5-nCoV"] = sum(grepl("CanSino", owid$vaccines))
 s$n_country[s$Institutes=="CIGB CIGB-66/Abdala"] = sum(grepl("Abdala", owid$vaccines))
 # No row for Chumakov vaccine
