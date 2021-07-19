@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "05 July 2021"
+update_full = "19 July 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -165,9 +165,9 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (5)" = "term",
                                                                     "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (27)" = "phasei",
+                                                                    "Phase I (29)" = "phasei",
                                                                     "Phase I/II (30)" = "phasei_ii",
-                                                                    "Phase II (9)" = "phaseii",
+                                                                    "Phase II (10)" = "phaseii",
                                                                     "Phase III (25)" = "phaseiii",
                                                                     "Phase IV (8)" = "phaseiv"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
@@ -175,7 +175,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (304)" = "not_in_use",
+                                                        choices = c("No (307)" = "not_in_use",
                                                                     "Yes (18)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -190,11 +190,11 @@ ui <- bootstrapPage(
                                                         label = "Vaccine type",
                                                         choices = c("RNA (39)" = "rna",
                                                                     "DNA (27)" = "dna",
-                                                                    "Vector (non-replicating) (40)" = "nrvv",
-                                                                    "Vector (replicating) (24)" = "rvv",
+                                                                    "Vector (non-replicating) (39)" = "nrvv",
+                                                                    "Vector (replicating) (25)" = "rvv",
                                                                     "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (103)" = "ps",
+                                                                    "Protein subunit (105)" = "ps",
                                                                     "Virus-like particle (25)" = "vlp",
                                                                     "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
@@ -608,7 +608,7 @@ ui <- bootstrapPage(
                         ), 
                         
                         mainPanel(
-                          h4(textOutput("equity_date_clean",inline = T),"-",textOutput("equity_sum",inline = T),"million doses of vaccine given worldwide"),
+                          h4(textOutput("equity_date_clean",inline = T),"-",textOutput("equity_sum",inline = T),"billion doses of vaccine given worldwide"),
                           plotlyOutput("equity_plot", height="400px", width="700px")
                         )
                       ),
@@ -1067,6 +1067,10 @@ server <- function(input, output, session) {
     eligible$`Trial number`[eligible$Reference=="Ahn; medRxiv 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04715997 target="_blank">NCT04715997</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04445389 target="_blank">NCT04445389</a>' 
     
+    # Modify West China Hospital protein subunit vaccine phase I/II to include 2 corresponding trials
+    eligible$`Trial number`[eligible$Reference=="Meng; Signal Transduct Target Ther 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04530656 target="_blank">NCT04530656</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04640402 target="_blank">NCT04640402</a>' 
+
     eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
     eligible = eligible %>% select(-c(`Reference link`, Link, Platform))
     eligible$`Data extraction`[eligible$`Data extraction`=="Complete"] = "<em><span style=\"color:green\">Complete</span></em>"
@@ -1709,7 +1713,7 @@ server <- function(input, output, session) {
     equity
   })
   
-  output$equity_sum <- renderText({ round(sum(equity_input()$total_vaccinations, na.rm=TRUE)/1e6,0)})
+  output$equity_sum <- renderText({ round(sum(equity_input()$total_vaccinations, na.rm=TRUE)/1e9,1)})
   output$equity_date_clean <-  renderText({ format(as.Date(input$equity_date, format="%d %b %y"), "%d %b %Y") })
     
   
