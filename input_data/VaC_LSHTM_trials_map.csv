@@ -29,7 +29,9 @@ BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase I/II/III,BioNTech/Pfizer BNT162,R
 BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase I/II/III,BioNTech/Pfizer BNT162,RNA,4500,0.5–11,2,Finland (children),Finland,Active/recruiting,FIN,64,26,Unknown,NA,NA,24/03/2021,29/04/2022,NCT04816643,https://clinicaltrials.gov/ct2/show/NCT04816643,Recruiting,NA
 BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase I/II/III,BioNTech/Pfizer BNT162,RNA,4500,0.5–11,2,Poland (children),Poland,Active/recruiting,POL,52,20,Unknown,NA,NA,24/03/2021,29/04/2022,NCT04816643,https://clinicaltrials.gov/ct2/show/NCT04816643,Recruiting,NA
 BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase I/II/III,BioNTech/Pfizer BNT162,RNA,4500,0.5–11,2,Spain (children),Spain,Active/recruiting,ESP,40,-4,Unknown,NA,NA,24/03/2021,29/04/2022,NCT04816643,https://clinicaltrials.gov/ct2/show/NCT04816643,Recruiting,NA
-BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase III,BioNTech/Pfizer BNT162,RNA,10000,≥16,1 (boost),USA (booster dose),USA,Not yet recruiting,USA,38,-97,Unknown,NA,NA,28/06/2021,06/02/2022,NCT04955626,https://clinicaltrials.gov/ct2/show/NCT04713553,Not yet recruiting,NA
+BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase III,BioNTech/Pfizer BNT162,RNA,10000,≥16,1 (boost),USA (booster dose),USA,Active/recruiting,USA,38,-97,Unknown,NA,NA,01/07/2021,12/10/2022,NCT04955626,https://clinicaltrials.gov/ct2/show/NCT04955626,"Active, not recruiting",NA
+BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase III,BioNTech/Pfizer BNT162,RNA,10000,≥16,1 (boost),Brazil (booster dose),Brazil,Active/recruiting,BRA,-10,-55,Unknown,NA,NA,01/07/2021,12/10/2022,NCT04955626,https://clinicaltrials.gov/ct2/show/NCT04955626,"Active, not recruiting",NA
+BioNTech/Pfizer/Fosun Pharma,BNT162 (b2),Phase III,BioNTech/Pfizer BNT162,RNA,10000,≥16,1 (boost),Canada (booster dose),Canada,Active/recruiting,CAN,60,-95,Unknown,NA,NA,01/07/2021,12/10/2022,NCT04955626,https://clinicaltrials.gov/ct2/show/NCT04955626,"Active, not recruiting",NA
 ,,,,,,,,,,,,,,,,,,,,,,
 Bharat Biotech/ICMR/National Institute of Virology,COVAXIN,Phase III,Bharat Covaxin/BBV152,Inactivated,25800,≥18,2,India,India,Active/recruiting,IND,20,77,Unknown,NA,NA,16/11/2020,08/01/2021,NCT04641481,https://clinicaltrials.gov/ct2/show/NCT04641481,"Active, not recruiting",NA
 ,,,,,,,,,,,,,,,,,,,,,,
@@ -123,15 +125,16 @@ Moderna/NIAID,mRNA-1273,Phase III,Moderna mRNA-1273,RNA,37500,18–26,2,USA (stu
 Nanogen Biopharmaceutical,Nanocovax,Phase III,Nanogen Nanocovax,Protein subunit,13000,≥18,2,Vietnam,Vietnam,Active/recruiting,VNM,16,106,Unknown,NA,NA,07/06/2021,07/07/2022,NCT04922788,https://clinicaltrials.gov/ct2/show/NCT04922788,Recruiting,NA
 ,,,,,,,,,,,,,,,,,,,,,,
 Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,15000,18–84,2,UK,UK,Active/recruiting,GBR,54,-2,Unknown,NA,NA,28/09/2020,31/01/2021,NCT04583995,https://clinicaltrials.gov/ct2/show/NCT04583995,Recruiting,NA
-Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,33000,≥12,2,USA,USA,Active/recruiting,USA,38,-97,Unknown,NA,NA,27/12/2020,30/06/2021,NCT04611802,https://clinicaltrials.gov/ct2/show/NCT04611802,Recruiting,NA
-Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,33000,≥12,2,Mexico,Mexico,Active/recruiting,MEX,23,-102,Unknown,NA,NA,27/12/2020,30/06/2021,NCT04611802,https://clinicaltrials.gov/ct2/show/NCT04611802,Recruiting,NA
-Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,33000,≥12,2,Puerto Rico,Puerto Rico,Active/recruiting,PRI,18.25,-66.5,Unknown,NA,NA,27/12/2020,30/06/2021,NCT04611802,https://clinicaltrials.gov/ct2/show/NCT04611802,Recruiting,NA
+Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,33000,≥12,2,USA,USA,Active/recruiting,USA,38,-97,Unknown,NA,NA,27/12/2020,30/06/2021,NCT04611802,https://clinicaltrials.gov/ct2/show/NCT04611802,"Active, not recruiting",NA
+Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,33000,≥12,2,Mexico,Mexico,Active/recruiting,MEX,23,-102,Unknown,NA,NA,27/12/2020,30/06/2021,NCT04611802,https://clinicaltrials.gov/ct2/show/NCT04611802,"Active, not recruiting",NA
+Novavax,NVX-CoV2373,Phase III,Novavax NVX-CoV2373,Protein subunit,33000,≥12,2,Puerto Rico,Puerto Rico,Active/recruiting,PRI,18.25,-66.5,Unknown,NA,NA,27/12/2020,30/06/2021,NCT04611802,https://clinicaltrials.gov/ct2/show/NCT04611802,"Active, not recruiting",NA
 ,,,,,,,,,,,,,,,,,,,,,,
 ReiThera/Leukocare/Univercells,GRAd-COV2,Phase II/III,ReiThera GRAd-COV2,Vector (non-replicating),10300,≥18,1 or 2,Italy,Italy,Active/recruiting,ITA,42.8333,12.8333,Unknown,NA,NA,15/03/2021,30/10/2021,NCT04791423,https://clinicaltrials.gov/ct2/show/NCT04791423,"Active, not recruiting",NA
 ,,,,,,,,,,,,,,,,,,,,,,
-Research Institute for Biological Safety Problems,QazCovid-in,Phase III,Research Institute for Biological Safety Problems QazCovid-in,Inactivated,3000,≥18,2,Kazakhstan,Kazakhstan,Active/recruiting,KAZ,48,68,Unknown,NA,NA,25/12/2020,20/07/2021,NCT04691908,https://clinicaltrials.gov/ct2/show/NCT04691908,"Active, not recruiting",NA
+Research Institute for Biological Safety Problems,QazCovid-in,Phase III,Research Institute for Biological Safety Problems QazCovid-in,Inactivated,3000,≥18,2,Kazakhstan,Kazakhstan,Active/recruiting,KAZ,48,68,Unknown,NA,NA,25/12/2020,26/04/2021,NCT04691908,https://clinicaltrials.gov/ct2/show/NCT04691908,Completed,NA
 ,,,,,,,,,,,,,,,,,,,,,,
 Sanofi Pasteur/GSK,CoV2 preS dTM,Phase III,Sanofi/GSK CoV2 preS dTM,Protein subunit,37430,≥18,2,USA,USA,Active/recruiting,USA,38,-97,Unknown,NA,NA,26/05/2021,26/01/2023,NCT04904549,https://clinicaltrials.gov/ct2/show/NCT04904549,Recruiting,NA
+Sanofi Pasteur/GSK,CoV2 preS dTM,Phase III,Sanofi/GSK CoV2 preS dTM,Protein subunit,37430,≥18,2,Colombia,Colombia,Active/recruiting,COL,4,-72,Unknown,NA,NA,26/05/2021,26/01/2023,NCT04904549,https://clinicaltrials.gov/ct2/show/NCT04904549,Recruiting,NA
 Sanofi Pasteur/GSK,CoV2 preS dTM,Phase III,Sanofi/GSK CoV2 preS dTM,Protein subunit,37430,≥18,2,Honduras,Honduras,Active/recruiting,HND,15,-86.5,Unknown,NA,NA,26/05/2021,26/01/2023,NCT04904549,https://clinicaltrials.gov/ct2/show/NCT04904549,Recruiting,NA
 Sanofi Pasteur/GSK,CoV2 preS dTM,Phase III,Sanofi/GSK CoV2 preS dTM,Protein subunit,37430,≥18,2,Japan,Japan,Active/recruiting,JPN,36,138,Unknown,NA,NA,26/05/2021,26/01/2023,NCT04904549,https://clinicaltrials.gov/ct2/show/NCT04904549,Recruiting,NA
 ,,,,,,,,,,,,,,,,,,,,,,
@@ -139,8 +142,8 @@ Shifa Pharmed,Inactivated vaccine,Phase II/III,Shifa Pharmed vaccine,Inactivated
 ,,,,,,,,,,,,,,,,,,,,,,
 Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,12688,≥18,2,Brazil (phase III),Brazil,Active/recruiting,BRA,-10,-55,Unknown,NA,NA,21/07/2020,17/12/2020,NCT04456595,https://clinicaltrials.gov/ct2/show/NCT04456595,"Active, not recruiting",NA
 Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,1620,18–59,2,Indonesia,Indonesia,Active/recruiting,IDN,-5,120,Unknown,NA,NA,10/08/2020,09/01/2021,NCT04508075,https://clinicaltrials.gov/ct2/show/NCT04508075,"Active, not recruiting",NA
-Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,13000,18–59,2,Turkey,Turkey,Active/recruiting,TUR,39,35,Unknown,NA,NA,14/09/2020,15/02/2021,NCT04582344,https://clinicaltrials.gov/ct2/show/NCT04582344,Recruiting,NA
-Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,1040,≥18,2,China,Mainland China,Active/recruiting,CHN,35,105,Unknown,NA,NA,31/10/2020,28/11/2020,NCT04617483,https://clinicaltrials.gov/ct2/show/NCT04617483,Recruiting,NA
+Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,13000,18–59,2,Turkey,Turkey,Active/recruiting,TUR,39,35,Unknown,NA,NA,14/09/2020,15/02/2021,NCT04582344,https://clinicaltrials.gov/ct2/show/NCT04582344,"Active, not recruiting",NA
+Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,1040,≥18,2,China,Mainland China,Active/recruiting,CHN,35,105,Unknown,NA,NA,31/10/2020,28/11/2020,NCT04617483,https://clinicaltrials.gov/ct2/show/NCT04617483,Completed,NA
 Sinovac,CoronaVac,Phase III,Sinovac CoronaVac,Inactivated,2300,≥18,2,Chile,Chile,Active/recruiting,CHL,-30,-71,Unknown,NA,NA,27/11/2020,31/01/2022,NCT04651790,https://clinicaltrials.gov/ct2/show/NCT04651790,Recruiting,NA
 Sinovac,CoronaVac,Phase IV,Sinovac CoronaVac,Inactivated,30000,≥18,2,Brazil (phase IV),Brazil,Active/recruiting,BRA,-10,-55,Unknown,NA,NA,17/02/2021,31/05/2021,NCT04747821,https://clinicaltrials.gov/ct2/show/NCT04747821,Enrolling by invitation,NA
 ,,,,,,,,,,,,,,,,,,,,,,

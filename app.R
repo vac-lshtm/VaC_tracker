@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "26 July 2021"
+update_full = "02 August 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -165,7 +165,7 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (5)" = "term",
                                                                     "Pre-clinical (223)" = "preclin",
-                                                                    "Phase I (29)" = "phasei",
+                                                                    "Phase I (30)" = "phasei",
                                                                     "Phase I/II (30)" = "phasei_ii",
                                                                     "Phase II (10)" = "phaseii",
                                                                     "Phase III (25)" = "phaseiii",
@@ -175,7 +175,7 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (306)" = "not_in_use",
+                                                        choices = c("No (307)" = "not_in_use",
                                                                     "Yes (19)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
@@ -194,7 +194,7 @@ ui <- bootstrapPage(
                                                                     "Vector (replicating) (25)" = "rvv",
                                                                     "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (105)" = "ps",
+                                                                    "Protein subunit (106)" = "ps",
                                                                     "Virus-like particle (25)" = "vlp",
                                                                     "Other/Unknown (38)" = "unknown"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
