@@ -16,7 +16,7 @@ Key elements of the analysis code are as follows:
 ## Sources and search strategy for each tracker feature
 
 ### Vaccine landscape
-* Updated weekly
+* Updated weekly from April 2020 to August 2021, then monthly thereafter
 * Input data: *VaC_LSHTM_landscape.csv* and *VaC_LSHTM_trials.csv*
 * Input code: *VaC_landscape.R*
 * Sources:
@@ -25,14 +25,14 @@ Key elements of the analysis code are as follows:
   - US National Institute of Health’s clinical trials database ([clinicaltrials.gov](https://clinicaltrials.gov))
 
 ### Clinical trials database
-* Updated weekly
+* Updated weekly from April 2020 to August 2021, then monthly thereafter
 * Input data: *VaC_LSHTM_trials.csv*
 * Sources:
   - US National Institute of Health’s clinical trials database ([clinicaltrials.gov](https://clinicaltrials.gov))
   - [WHO COVID-19 candidate vaccine landscape](https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines)
 
 ### Trial map
-* Updated weekly
+* Updated weekly from April 2020 to August 2021, then monthly thereafter
 * Input data: 
   - Trial data: *VaC_LSHTM_trials_map.csv* - data from *VaC_LSHTM_trials.csv* serve as input for this (see above)
   - Mapping data: *countries_codes_and_coordinates.csv*, *country_geoms.csv*, and *50m.geojson*

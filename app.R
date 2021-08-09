@@ -64,7 +64,7 @@ ui <- bootstrapPage(
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
                         
-                        #tags$b("*** Update:"),"See",tags$b("Implementation"),"tab for new feature tracking the equity of vaccine roll-out.",tags$b("***"),tags$br(),tags$br(),
+                        tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -215,8 +215,9 @@ ui <- bootstrapPage(
                         mainPanel(
                           "Last updated on ", tags$b(paste0(update_full,".")),
                           tags$br(),tags$br(),
+                          tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
                           
-                          "We currently update the vaccine landscape weekly, pooling the latest information from the", 
+                          "Our vaccine landscape pools the latest information from the", 
                           tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO,", target="_blank"),
                           "the ",tags$a(href="https://milken-institute-covid-19-tracker.webflow.io", "Milken Institute", target="_blank"), 
                           "and ", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov.", target="_blank"), 
@@ -248,8 +249,9 @@ ui <- bootstrapPage(
              tabPanel("Clinical trials",
                       "Last updated on ", tags$b(paste0(update_full,".")),
                       tags$br(),tags$br(),
+                      tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
                       
-                      "Each week, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
+                      "For each update, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
                       "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
                       Additional trials are identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
                       "Trials are listed by decreasing size. Only trials with a registered protocol are included. We exclude observational studies as well as intervention trials evaluating the influence of other treatments on COVID-19 vaccine outcome.",
@@ -372,6 +374,7 @@ ui <- bootstrapPage(
                                      
                                      "Last updated on ",tags$b(paste0(update_full,".")),
                                      tags$br(),tags$br(),
+                                     tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
                                      
                                      tags$h4("Approach"),
                                      "This living review summarises the available clinical trial data on different COVID-19 vaccine candidates. 
