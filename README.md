@@ -40,7 +40,7 @@ Key elements of the analysis code are as follows:
 * Input code: *VaC_efficacy_map.R* and *VaC_jhu_daily_cases.R*
 
 ### Living review
-* Updated weekly
+* Updated weekly from April 2020 to August 2021, then monthly thereafter
 * Input data: *VaC_LSHTM_search_log.csv*, *VaC_LSHTM_eligible_studies.csv*,  and *VaC_LSHTM_living_review_data.xlsx*
 * Search term: *"(coronavirus OR COVID OR SARS\*) AND vaccin\* AND (trial OR phase)"*
 * Approach:
