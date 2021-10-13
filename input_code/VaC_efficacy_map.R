@@ -29,6 +29,8 @@ if (all(unique(cv_cases$country) %in% unique(countries$country))==FALSE) { print
 
 # merge case data with country data and extract key summary variables
 cv_cases = merge(cv_cases, countries, by = "country")
+cv_cases$country = as.character(cv_cases$country)
+cv_cases$country[cv_cases$country=="Iran (Islamic Republic of)"] = "Iran"
 
 # set format for date column and sort by increasing date
 if (any(grepl("/", cv_cases$date))) { 

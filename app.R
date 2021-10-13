@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "02 August 2021"
+update_full = "13 October 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -64,7 +64,7 @@ ui <- bootstrapPage(
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
                         
-                        tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
+                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 01 November 2021."),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -164,19 +164,20 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (5)" = "term",
-                                                                    "Pre-clinical (223)" = "preclin",
+                                                                    "Pre-clinical (219)" = "preclin",
                                                                     "Phase I (30)" = "phasei",
                                                                     "Phase I/II (30)" = "phasei_ii",
                                                                     "Phase II (10)" = "phaseii",
-                                                                    "Phase III (25)" = "phaseiii",
-                                                                    "Phase IV (8)" = "phaseiv"),
-                                                        selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv")),
+                                                                    "Phase III (34)" = "phaseiii",
+                                                                    "Phase IV (9)" = "phaseiv", 
+                                                                    "Heterologous" = "phaseheterol"),
+                                                        selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv", "phaseheterol")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (307)" = "not_in_use",
-                                                                    "Yes (19)" = "in_use"),
+                                                        choices = c("No (310)" = "not_in_use",
+                                                                    "Yes (22)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -185,19 +186,20 @@ ui <- bootstrapPage(
                                                         choices = c("Filter" = "pub_available"),
                                                         selected = NULL),
                                      tags$br(),
-                                     
+                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (39)" = "rna",
-                                                                    "DNA (27)" = "dna",
+                                                        choices = c("RNA (42)" = "rna",
+                                                                    "DNA (28)" = "dna",
                                                                     "Vector (non-replicating) (39)" = "nrvv",
                                                                     "Vector (replicating) (25)" = "rvv",
                                                                     "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (106)" = "ps",
+                                                                    "Protein subunit (108)" = "ps",
                                                                     "Virus-like particle (25)" = "vlp",
-                                                                    "Other/Unknown (38)" = "unknown"),
-                                                        selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown")),
+                                                                    "Other/Unknown (38)" = "unknown",
+                                                                    "Heterologous" = "heterol"),
+                                                        selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown", "heterol")),
                                      tags$br(),
                                      
                                      tags$b("Colour code for vaccine type"),tags$br(),
@@ -215,7 +217,7 @@ ui <- bootstrapPage(
                         mainPanel(
                           "Last updated on ", tags$b(paste0(update_full,".")),
                           tags$br(),tags$br(),
-                          tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
+                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 01 November 2021."),tags$br(),tags$br(),
                           
                           "Our vaccine landscape pools the latest information from the", 
                           tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO,", target="_blank"),
@@ -249,7 +251,7 @@ ui <- bootstrapPage(
              tabPanel("Clinical trials",
                       "Last updated on ", tags$b(paste0(update_full,".")),
                       tags$br(),tags$br(),
-                      tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
+                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 01 November 2021."),tags$br(),tags$br(),
                       
                       "For each update, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
                       "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
@@ -374,7 +376,7 @@ ui <- bootstrapPage(
                                      
                                      "Last updated on ",tags$b(paste0(update_full,".")),
                                      tags$br(),tags$br(),
-                                     tags$b("As of August 2021, the site will be updated on the first Monday of every month."),tags$br(),tags$br(),
+                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 01 November 2021."),tags$br(),tags$br(),
                                      
                                      tags$h4("Approach"),
                                      "This living review summarises the available clinical trial data on different COVID-19 vaccine candidates. 
@@ -413,7 +415,7 @@ ui <- bootstrapPage(
                                      DT::dataTableOutput("eligible_studies", width="100%"),
                                      tags$br(),
                                      tags$b("Abbreviations:"),
-                                     tags$p("AZLB: Anhui Zhifei Longcom Biopharmaceutical; BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
+                                     tags$p("AZLB: Anhui Zhifei Longcom Biopharmaceutical; BIBP: Beijing Institute of Biological Products; CAMS: Chinese Academy of Medical Sciences; RIBSP: Research Institute for Biological Safety Problems; WIBP: Wuhan Institute of Biological Products."), #, style="font-size:13px;"
                                      tags$b("Notes:"),
                                      tags$p("Phase I and phase II data extracted separately for WIBP inactivated vaccine (Xia; JAMA 2020), BBIBP-CorV (Xia; Lancet Infect Dis 2020), Sinovac CoronaVac (Zhang; Lancet Infect Dis 2020), AZLB ZF2001 (Yang; Lancet Infect Dis 2021), and Shenzhen Kangtai KCONVAC (Pan; Chin Med J 2021)."
                                        #   Paper by Emary et al (2021) had not been indexed on PubMed as of 05 Apr 2021 and is therefore not included in the search log below." 
@@ -623,23 +625,23 @@ ui <- bootstrapPage(
                       tags$br(),tags$br(),
                       h4("Testing and implementation status of front-running candidates"),
                       tags$br(),
-                      plotOutput("summary_matrix", height="900px", width="950px"),
+                      plotOutput("summary_matrix", height="700px", width="800px"),
                       tags$br(),
                       "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; CIGB: Center for Genetic Engineering and Biotechnology; nr, non-replicating; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
                       Candidates in phase III testing and/or widespread use are included. 
                       Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
-                      tags$br(), tags$br(),
+                      tags$br(), tags$br()#,
                         
-                      h4("Side-by-side comparison of front-running candidates"),
-                                 pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
-                                             choices = as.character(imp_list), 
-                                             options = list(`actions-box` = TRUE, `max-options` = 5),
-                                             selected = imp_list[sample(1:17, 5, replace = FALSE, prob = NULL)],
-                                             multiple = TRUE),
-                                 DT::dataTableOutput("implementation_table", width="100%"),
-                                 tags$br(),
-                                 "Vaccines in widespread use are included. ONE Vaccine Access test scores and company manufacturing projections are updated every 3-4 weeks.",
-                                 tags$br(), tags$br()
+                      # h4("Side-by-side comparison of front-running candidates"),
+                      #            pickerInput("implementation_select_vaccine", h4("Select up to 5 vaccines:"),   
+                      #                        choices = as.character(imp_list), 
+                      #                        options = list(`actions-box` = TRUE, `max-options` = 5),
+                      #                        selected = imp_list[sample(1:17, 5, replace = FALSE, prob = NULL)],
+                      #                        multiple = TRUE),
+                      #            DT::dataTableOutput("implementation_table", width="100%"),
+                      #            tags$br(),
+                      #            "Vaccines in widespread use are included. ONE Vaccine Access test scores and company manufacturing projections are updated every 3-4 weeks.",
+                      #            tags$br(), tags$br()
                       
                       ),
              
@@ -723,12 +725,13 @@ server <- function(input, output, session) {
     if ("phaseii" %in% input$stage==FALSE) { timeline = subset(timeline, stage!="Phase II") }
     if ("phaseiii" %in% input$stage==FALSE) { timeline = subset(timeline, stage!="Phase III" & stage!="Phase II/III") }
     if ("phaseiv" %in% input$stage==FALSE) { timeline = subset(timeline, stage!="Phase IV") }
+    if ("phaseheterol" %in% input$stage==FALSE) { timeline = subset(timeline, stage!="Heterologous") }
     
     if ("not_in_use" %in% input$in_use==FALSE) { timeline = subset(timeline, use!="No") }
     if ("in_use" %in% input$in_use==FALSE) { timeline = subset(timeline, use!="Yes") }
     
     if ("pub_available" %in% input$pub_paper==TRUE) { timeline = subset(timeline, pub=="yes") }
-    
+
     if ("rna" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="RNA") }
     if ("dna" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="DNA") }
     if ("nrvv" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="Vector (non-replicating)") }
@@ -738,6 +741,7 @@ server <- function(input, output, session) {
     if ("ps" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="Protein subunit") }
     if ("vlp" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="Virus-like particle") }
     if ("unknown" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="Other/Unknown") }
+    if ("heterol" %in% input$vacc==FALSE) { timeline = subset(timeline, subgroup!="Heterologous") }
     timeline
   })
   
@@ -1073,12 +1077,23 @@ server <- function(input, output, session) {
     # Modify West China Hospital protein subunit vaccine phase I/II to include 2 corresponding trials
     eligible$`Trial number`[eligible$Reference=="Meng; Signal Transduct Target Ther 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04530656 target="_blank">NCT04530656</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04640402 target="_blank">NCT04640402</a>' 
+    
+    # Modify Flaxman; Lancet 2021
+    eligible$`Trial number`[eligible$Reference=="Flaxman; Lancet 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04400838 target="_blank">NCT04400838</a>' 
 
-    eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
+    # Modify Flaxman; Lancet 2021
+    eligible$`Trial number`[eligible$Reference=="Sadoff; medRxiv 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04436276 target="_blank">NCT04436276</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04535453 target="_blank">NCT04535453</a>' 
+    
+    # Modify Feng; medRxiv 2021
+    eligible$`Trial number`[eligible$Reference=="Feng; medRxiv 2021"] = '<a href=http://www.chictr.org.cn/historyversionpuben.aspx?regno=ChiCTR2100041705 target="_blank">ChiCTR2100041705</a><br>
+    <a href=http://www.chictr.org.cn/historyversionpuben.aspx?regno=ChiCTR2100041706 target="_blank">ChiCTR2100041706</a>' 
+
+        eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
     eligible = eligible %>% select(-c(`Reference link`, Link, Platform))
     eligible$`Data extraction`[eligible$`Data extraction`=="Complete"] = "<em><span style=\"color:green\">Complete</span></em>"
-    eligible$`Data extraction`[eligible$`Data extraction`=="In progress"] = "<em><span style=\"color:orange\">In progress</span></em>"
-    eligible$`Data extraction`[eligible$`Data extraction`=="In progress (complete for preprint)"] = "<em><span style=\"color:orange\">In progress (complete for preprint)</span></em>"
+    eligible$`Data extraction`[eligible$`Data extraction`=="Pending"] = "<em><span style=\"color:orange\">Pending</span></em>"
     DT::datatable(eligible,  extensions = 'RowGroup', rownames=F, escape = FALSE, 
                   options = list(dom = 't', ordering=F, rowGroup = list(dataSrc = 2), pageLength = 100, columnDefs = list(list(visible=FALSE, targets=2)))) %>%
       formatStyle(columns = c(1:8), fontSize = '80%') 

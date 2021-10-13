@@ -16,18 +16,18 @@ s$Institutes = factor(s$Institutes, levels = rev(s$Institutes))
 s$Platform = factor(s$Platform, levels=c("RNA", "Vector (nr)", "Vector (r)", "Inactivated", "Live-attenuated", "Subunit", "VLP", "DNA", "Other"))
 
 # convert input data into ggplot input dataframe (one row per record)
-nvar = 7
+nvar = 6
 nvac = nrow(s)
 s1 = data.frame(
   Institutes = rep(as.character(s$Institutes), nvar),
   Platform = rep(s$Platform, nvar),
-  Stage = c(rep("I", nvac), rep("II", nvac), rep("III", nvac), rep("I", nvac), rep("II", nvac), rep("III", nvac), rep(" ", nvac)),
-  Group = c(rep("Registered trial", nvac*3), rep("Published", nvac*3), rep("In use", nvac)),
-  Status = c(s$PhaseI_trial, s$PhaseII_trial, s$PhaseIII_trial, s$PhaseI_pub, s$PhaseII_pub, s$PhaseIII_pub, s$In_use)
+  Stage = c(rep("I", nvac), rep("II", nvac), rep("III", nvac), rep("I", nvac), rep("II", nvac), rep("III", nvac)),
+  Group = c(rep("Registered trial", nvac*3), rep("Published", nvac*3)),
+  Status = c(s$PhaseI_trial, s$PhaseII_trial, s$PhaseIII_trial, s$PhaseI_pub, s$PhaseII_pub, s$PhaseIII_pub)
 )
 
 # set group, platform, and institute factor levels
-s1$Group = factor(s1$Group, levels=c("Registered trial", "Published", "In use"))
+s1$Group = factor(s1$Group, levels=c("Registered trial", "Published"))
 s1$Platform = factor(s1$Platform, levels=levels(s$Platform))
 s1$Institutes = factor(s1$Institutes, levels = rev(as.character(s$Institutes)))
 
@@ -55,23 +55,23 @@ g1 = ggplot(subset(s1, !is.na(Status)), aes(Stage, Institutes, fill=factor(Statu
   theme(panel.background = element_rect(fill = "#f7f7f7",colour = "#f7f7f7", linetype = "blank"),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(),
         text = element_text(size = 15), strip.background = element_blank(), strip.text.y = element_blank(), 
-        strip.placement = "outside", legend.position = "bottom", legend.title = element_blank(),
+        strip.placement = "outside", legend.position = "left", legend.title = element_blank(),
         legend.text = element_text(size = 14), axis.text = element_text(size=15), strip.text = element_text(size=15))
   
 # create plot of manufacture projections (plot panel 2)
-g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) + 
-  geom_bar(stat = "identity") + theme_bw() +
-  scale_fill_manual(values = c("RNA" = pal_1[2], "DNA" = pal_2[2], "Vector (nr)" = pal_3[2], "Vector (r)" = pal_4[2], 
-                               "Inactivated" = pal_5[2], "Live-attenuated" = pal_6[2], "Subunit" = pal_7[2], "VLP" = pal_8[2], "Other" = pal_9[2])) + 
-  facet_grid(Platform~., scales = "free", space='free') + 
-  ylab("") + xlab("") + ggtitle("N doses\nproduced per year\n") + 
-  scale_x_log10(limits=c(10^6,10^10), labels = trans_format("log10", math_format(10^.x)), oob = rescale_none) +
-  theme(legend.position = "none", text = element_text(size = 15), axis.text.y = element_blank(), title = element_text(size = 12), 
-        axis.text = element_text(size=15), 
-        strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",
-        panel.border = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),
-        panel.grid.major.x = element_line(size = 0.5, linetype = 'solid', colour = "white"), 
-        panel.background = element_rect(fill = "#f7f7f7",colour = "#f7f7f7", linetype = "blank"))
+# g2 = ggplot(s, aes(as.numeric(Manufacture), Institutes, fill = Platform)) + 
+#   geom_bar(stat = "identity") + theme_bw() +
+#   scale_fill_manual(values = c("RNA" = pal_1[2], "DNA" = pal_2[2], "Vector (nr)" = pal_3[2], "Vector (r)" = pal_4[2], 
+#                                "Inactivated" = pal_5[2], "Live-attenuated" = pal_6[2], "Subunit" = pal_7[2], "VLP" = pal_8[2], "Other" = pal_9[2])) + 
+#   facet_grid(Platform~., scales = "free", space='free') + 
+#   ylab("") + xlab("") + ggtitle("N doses\nproduced per year\n") + 
+#   scale_x_log10(limits=c(10^6,10^10), labels = trans_format("log10", math_format(10^.x)), oob = rescale_none) +
+#   theme(legend.position = "none", text = element_text(size = 15), axis.text.y = element_blank(), title = element_text(size = 12), 
+#         axis.text = element_text(size=15), 
+#         strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",
+#         panel.border = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),
+#         panel.grid.major.x = element_line(size = 0.5, linetype = 'solid', colour = "white"), 
+#         panel.background = element_rect(fill = "#f7f7f7",colour = "#f7f7f7", linetype = "blank"))
   
 
 # import Our Wolrd in Data country reporting statistics
@@ -84,7 +84,7 @@ owid = subset(owid, iso_code!="")
 
 # calculate N reporting countries reporting use for each vaccine candidate
 s$n_country = NA
-s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines))
+s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines) | grepl("ZF2001", owid$vaccines))
 s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
 s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("Pfizer/BioNTech", owid$vaccines))
 s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines) | grepl("Sinopharm/HayatVax", owid$vaccines) | grepl("BBIBP-CorV", owid$vaccines))
@@ -94,10 +94,12 @@ s$n_country[s$Institutes=="CIGB CIGB-66/Abdala"] = sum(grepl("Abdala", owid$vacc
 s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik V", owid$vaccines))
 s$n_country[s$Institutes=="Instituto Finlay de Vacunas Soberana 02"] = sum(grepl("Soberana02", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
+s$n_country[s$Institutes=="Medigen MVC-COV1901"] = sum(grepl("Medigen", owid$vaccines))
 s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
 s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford/AstraZeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
 s$n_country[s$Institutes=="RIBSP Kazakhstan QazCovid-in"] = sum(grepl("QazVac", owid$vaccines))
 s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
+s$n_country[s$Institutes=="Shifa Pharmed COVIran"] = sum(grepl("COVIran Barekat", owid$vaccines))
 s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
 s$n_country[s$Institutes=="Wuhan/Sinopharm vaccine"] = sum(grepl("Sinopharm/Wuhan", owid$vaccines))
 
@@ -108,7 +110,7 @@ g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n
   facet_grid(Platform~., scales = "free", space='free') + 
   geom_text(nudge_x = 30, nudge_y = 0.1, show.legend = FALSE, size=5) +
   ylab("") + xlab("") + ggtitle("N countries\nreporting use\n") + 
-  scale_x_continuous(limits=c(0,220), breaks=c(0,50,100,150)) +
+  scale_x_continuous(limits=c(0,240), breaks=c(0,50,100,150,200)) +
   theme(text = element_text(size = 15), axis.text = element_text(size=15), legend.position="none",
         axis.text.y = element_blank(), title = element_text(size = 12),
         strip.background = element_blank(), strip.text.y = element_blank(), strip.placement = "outside",
@@ -117,7 +119,7 @@ g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n
         panel.background = element_rect(fill = "#f7f7f7",colour = "#f7f7f7", linetype = "blank"))
   
 # create multi-panel plot
-summary_matrix = plot_grid(g1, g2, g3, align = "h", axis = "bt", rel_widths = c(4,1,1), ncol=3)
+summary_matrix = plot_grid(g1, g3, align = "h", axis = "bt", rel_widths = c(4,1), ncol=2)
 
 # pdf("myplot.pdf", width = 13.5, height = 10)
 # print(summary_matrix)
