@@ -23,7 +23,7 @@ if (!("mx_reduced.csv" %in% list.files())) {
   term2 <- c("[Vv]accin*") # OR
   term3 <- c("[Tt]rial", "[Pp]hase") # OR
   query <- list(term1, term2, term3) # AND
-  mx_results <- mx_search(data = mx_snapshot(), query = query, from_date = "2020-01-01", to_date = "2021-10-13") ### UPDATE ###
+  mx_results <- mx_search(data = mx_snapshot(), query = query, from_date = "2020-01-01", to_date = "2021-11-05") ### UPDATE ###
   mx_reduced = mx_results %>% select(c(ID, title, abstract, date, doi, author_corresponding, 
                                      author_corresponding_institution))
   mx_reduced$source = "medrxiv"
@@ -32,7 +32,7 @@ if (!("mx_reduced.csv" %in% list.files())) {
 
 # search pubmed
 if (!("pm_df.csv" %in% list.files())) {
-  query <- "(coronavirus OR COVID OR SARS*) AND vaccin* AND (trial OR phase) AND 2021/08/16:2021/10/13[crdt]"  ### UPDATE
+  query <- "(coronavirus OR COVID OR SARS*) AND vaccin* AND (trial OR phase) AND 2021/09/15:2021/11/05[crdt]"  ### UPDATE
   pm_download <- batch_pubmed_download(pubmed_query_string = query, encoding = "ASCII")
   pm_df <- table_articles_byAuth(pubmed_data = pm_download[[1]], included_authors = "first", encoding = "ASCII")
   write.csv(pm_df, "pm_df.csv")
@@ -51,7 +51,7 @@ pm_results <- data.frame(
 
 # collate results 
 collated = rbind(mx_reduced, pm_results)
-write.csv(collated, "pre_abstract_screening_13Oct2021_full.csv")  ### UPDATE ###
+write.csv(collated, "pre_abstract_screening_05Nov2021_full.csv")  ### UPDATE ###
 #system("rm pubmed_*")
 #system("rm mx_reduced*")
 #system("rm easyPubMed_data_01.txt*")
