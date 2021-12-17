@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "05 November 2021"
+update_full = "14 December 2021"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -64,7 +64,7 @@ ui <- bootstrapPage(
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
                         
-                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 December 2021."),tags$br(),tags$br(),
+                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 03 January 2021."),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -164,10 +164,10 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (9)" = "term",
-                                                                    "Pre-clinical (218)" = "preclin",
-                                                                    "Phase I (27)" = "phasei",
-                                                                    "Phase I/II (30)" = "phasei_ii",
-                                                                    "Phase II (9)" = "phaseii",
+                                                                    "Pre-clinical (216)" = "preclin",
+                                                                    "Phase I (30)" = "phasei",
+                                                                    "Phase I/II (31)" = "phasei_ii",
+                                                                    "Phase II (11)" = "phaseii",
                                                                     "Phase III (36)" = "phaseiii",
                                                                     "Phase IV (9)" = "phaseiv", 
                                                                     "Heterologous" = "phaseheterol"),
@@ -176,27 +176,27 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (306)" = "not_in_use",
+                                                        choices = c("No (319)" = "not_in_use",
                                                                     "Yes (23)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
                                      checkboxGroupInput(inputId = "pub_paper",
-                                                        label = "Published results",
+                                                        label = "Published results (phase I-III)",
                                                         choices = c("Filter" = "pub_available"),
                                                         selected = NULL),
                                      tags$br(),
                       
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (41)" = "rna",
-                                                                    "DNA (28)" = "dna",
-                                                                    "Vector (non-replicating) (39)" = "nrvv",
-                                                                    "Vector (replicating) (25)" = "rvv",
-                                                                    "Inactivated (23)" = "inact",
+                                                        choices = c("RNA (44)" = "rna",
+                                                                    "DNA (29)" = "dna",
+                                                                    "Vector (non-replicating) (40)" = "nrvv",
+                                                                    "Vector (replicating) (27)" = "rvv",
+                                                                    "Inactivated (24)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (107)" = "ps",
-                                                                    "Virus-like particle (25)" = "vlp",
+                                                                    "Protein subunit (111)" = "ps",
+                                                                    "Virus-like particle (26)" = "vlp",
                                                                     "Other/Unknown (38)" = "unknown",
                                                                     "Heterologous" = "heterol"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown", "heterol")),
@@ -217,7 +217,7 @@ ui <- bootstrapPage(
                         mainPanel(
                           "Last updated on ", tags$b(paste0(update_full,".")),
                           tags$br(),tags$br(),
-                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 December 2021."),tags$br(),tags$br(),
+                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 03 January 2021."),tags$br(),tags$br(),
                           
                           "Our vaccine landscape pools the latest information from the", 
                           tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO,", target="_blank"),
@@ -251,7 +251,7 @@ ui <- bootstrapPage(
              tabPanel("Clinical trials",
                       "Last updated on ", tags$b(paste0(update_full,".")),
                       tags$br(),tags$br(),
-                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 December 2021."),tags$br(),tags$br(),
+                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 03 January 2021."),tags$br(),tags$br(),
                       
                       "For each update, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
                       "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
@@ -376,10 +376,10 @@ ui <- bootstrapPage(
                                      
                                      "Last updated on ",tags$b(paste0(update_full,".")),
                                      tags$br(),tags$br(),
-                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 December 2021."),tags$br(),tags$br(),
+                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 03 January 2021."),tags$br(),tags$br(),
                                      
                                      tags$h4("Approach"),
-                                     "This living review summarises the available clinical trial data on different COVID-19 vaccine candidates. 
+                                     "This living review summarises the available clinical trial data (phase I to phase III) on different COVID-19 vaccine candidates. 
                                      Since 24 August 2020, we have performed a weekly search of",strong(em("medRxiv")),"and",strong("PubMed"),
                                      "(see", tags$b("Search log"),"below) using the R packages",em("medrxivr"),"and",em("easyPubMed."),
                                      "Titles and abstracts are screened to identify articles reporting outcome data from human clinical trials of COVID-19 vaccine candidates.",
@@ -408,6 +408,10 @@ ui <- bootstrapPage(
                                      tags$h4("Protocol update, June 2021"),
                                      "Data extraction was performed for all eligible peer-reviewed manuscripts published up until", tags$b("31st May 2021."),
                                      "As of this date, extraction is performed for studies presenting efficacy data, as well as those reporting safety and immunogenicity data for (i) children, (ii) pregnant women, and (iii) heterologous prime–boost trials.",
+                                     tags$br(),tags$br(),
+
+                                     tags$h4("Protocol update, September 2021"),
+                                     "As of", tags$b("1st September 2021,")," the search is updated monthly.",
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Eligible studies"),
@@ -1082,15 +1086,19 @@ server <- function(input, output, session) {
     eligible$`Trial number`[eligible$Reference=="Flaxman; Lancet 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04324606 target="_blank">NCT04324606</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04400838 target="_blank">NCT04400838</a>' 
 
-    # Modify Flaxman; Lancet 2021
+    # Modify Sadoff; medRxiv 2021
     eligible$`Trial number`[eligible$Reference=="Sadoff; medRxiv 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04436276 target="_blank">NCT04436276</a><br>
     <a href=https://clinicaltrials.gov/ct2/show/NCT04535453 target="_blank">NCT04535453</a>' 
     
     # Modify Feng; medRxiv 2021
     eligible$`Trial number`[eligible$Reference=="Feng; medRxiv 2021"] = '<a href=http://www.chictr.org.cn/historyversionpuben.aspx?regno=ChiCTR2100041705 target="_blank">ChiCTR2100041705</a><br>
     <a href=http://www.chictr.org.cn/historyversionpuben.aspx?regno=ChiCTR2100041706 target="_blank">ChiCTR2100041706</a>' 
+    
+    # Modify Zeng; Lancet Infect Dis 2021
+    eligible$`Trial number`[eligible$Reference=="Zeng; Lancet Infect Dis 2021"] = '<a href=https://clinicaltrials.gov/ct2/show/NCT04352608 target="_blank">NCT04352608</a><br>
+    <a href=https://clinicaltrials.gov/ct2/show/NCT04383574 target="_blank">NCT04383574</a>' 
 
-        eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
+    eligible$Reference = paste0("<a href=",eligible$`Reference link`,' target="_blank">',eligible$Reference,"</a>")
     eligible = eligible %>% select(-c(`Reference link`, Link, Platform))
     eligible$`Data extraction`[eligible$`Data extraction`=="Complete"] = "<em><span style=\"color:green\">Complete</span></em>"
     eligible$`Data extraction`[eligible$`Data extraction`=="Pending"] = "<em><span style=\"color:orange\">Pending</span></em>"
