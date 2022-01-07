@@ -40,9 +40,10 @@ timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Ph
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Moderna<br>NIAID"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Moderna<br>NIAID<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Moderna<br>NIAID<br>University of Oxford<br>AstraZeneca<br>Novavax"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
+timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Sinovac"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Sinovac<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>University of Oxford<br>AstraZeneca"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
-timeline_clinical$group[timeline_clinical$group=="Erciyes University (inactivated)<br>Sinovac"] = "Erciyes University (inactivated)"
+#timeline_clinical$group[timeline_clinical$group=="Erciyes University (inactivated)<br>Sinovac"] = "Erciyes University (inactivated)"
 timeline_clinical$group[timeline_clinical$group=="University of Oxford<br>AstraZeneca<br>Beijing Institute of Biological Products<br>Sinopharm"] = "University of Oxford<br>AstraZeneca"
 timeline_clinical$group[timeline_clinical$group=="Valneva<br>Dynavax<br>University of Oxford<br>AstraZeneca"] = "Valneva<br>Dynavax"
 # timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>CureVac<br>Moderna<br>NIAID<br>Novavax<br>University of Oxford<br>AstraZeneca<br>Valneva<br>Dynavax"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
@@ -58,6 +59,7 @@ timeline_clinical$subgroup = as.character(timeline_clinical$subgroup)
 timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Vector (non-replicating)"] = "RNA"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="Inactivated/Vector (non-replicating)"] = "Inactivated"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="Vector (non-replicating)/Inactivated"] = "Vector (non-replicating)"
+timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Inactivated"] = "RNA"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Inactivated/Vector (non-replicating)"] = "RNA"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Vector (non-replicating)/Protein subunit"] = "RNA"
 # timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Protein subunit/Vector (non-replicating)/Inactivated"] = "RNA"
@@ -132,7 +134,7 @@ timeline = timeline %>%
   
   # add timeline input for phase III NCT04805125
   add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
-          content = '<b>BNT162/mRNA-1273</b><br>Phase III, Switzerland <i>(Active, not recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04805125" style="color:#006d2c" target="_blank">NCT04805125</a>', 
+          content = '<b>BNT162/mRNA-1273</b><br>Phase III, Switzerland <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04805125" style="color:#006d2c" target="_blank">NCT04805125</a>', 
           start = '19/04/2021', end = '31/07/2022', stage = "Phase IV", use="Yes") %>% 
   
   # add timeline input for EUCTR2021-003388-90-NL
@@ -163,26 +165,13 @@ timeline = timeline %>%
   
   # add timeline input for phase III NCT04800133
   add_row(group = "Sinovac", subgroup = "Inactivated", 
-          content = '<b>BNT162/CoronaVac/ChAdOx1-S</b><br>Phase III, Hong Kong <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04800133" style="color:#006d2c" target="_blank">NCT04800133</a>', 
+          content = '<b>BNT162/CoronaVac</b><br>Phase II, Hong Kong <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04800133" style="color:#006d2c" target="_blank">NCT04800133</a>', 
           start = '08/05/2021', end = '31/03/2025', stage = "Phase IV", use="Yes") %>% 
-  add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
-          content = '<b>BNT162/CoronaVac/ChAdOx1-S</b><br>Phase III, Hong Kong <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04800133" style="color:#006d2c" target="_blank">NCT04800133</a>', 
-          start = '08/05/2021', end = '31/03/2025', stage = "Phase IV", use="Yes") %>% 
-  
+
   # add timeline input for ACTRN12621000661875
   add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
           content = '<b>BNT162/ChAdOx1-S</b><br>Phase IV, Australia <i>(Recruiting)</i><br><a href="https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12621000661875" style="color:#006d2c" target="_blank">ACTRN12621000661875</a>', 
           start = '10/05/2021', end = '', stage = "Phase IV", use="Yes") %>% 
-  
-  # add timeline input for NCT04979949
-  add_row(group = "Sinovac", subgroup = "Inactivated", 
-          content = '<b>TURKOVAC/CoronaVac</b><br>Phase II, Turkey <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04979949" style="color:#006d2c" target="_blank">NCT04979949</a>', 
-          start = '12/07/2021', end = '30/12/2021', stage = "Phase IV", use="Yes") %>% 
-  
-  # add timeline input for NCT04979949
-  add_row(group = "Sinovac", subgroup = "Inactivated", 
-          content = '<b>TURKOVAC/CoronaVac</b><br>Phase II, Turkey <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT04942405" style="color:#006d2c" target="_blank">NCT04942405</a>', 
-          start = '21/06/2021', end = '21/01/2022', stage = "Phase IV", use="Yes") %>% 
   
   # add timeline input for phase II/III NCT04885764
   add_row(group = "Beijing Institute of Biological Products<br>Sinopharm", subgroup = "Inactivated", 
@@ -196,8 +185,8 @@ timeline = timeline %>%
   
   # add timeline input for phase III NCT05047718
   add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
-          content = '<b>BNT162/mRNA-1273</b><br>Phase IV, France <i>(Not yet recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT05047718" style="color:#006d2c" target="_blank">NCT05047718</a>', 
-          start = '01/10/2021', end = '01/09/2022', stage = "Phase IV", use="Yes") %>% 
+          content = '<b>BNT162/mRNA-1273</b><br>Phase IV, France <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT05047718" style="color:#006d2c" target="_blank">NCT05047718</a>', 
+          start = '05/10/2021', end = '01/09/2022', stage = "Phase IV", use="Yes") %>% 
   
   # add timeline input for phase III NCT05047718
   add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
@@ -209,11 +198,16 @@ timeline = timeline %>%
   add_row(group = "Novavax", subgroup = "Protein subunit", 
           content = '<b>BBNT162/mRNA-1273/ChAdOx1-S/NVX-CoV2373</b><br>Phase II, UK <i>(Recruiting)</i><br><a href="https://www.isrctn.com/ISRCTN15279830" style="color:#006d2c" target="_blank">ISRCTN15279830</a>', 
           start = '01/06/2021', end = '01/08/2023', stage = "Phase III", use="No") %>% 
+
+  # add timeline input for phase II NCT05160766
+  add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
+        content = '<b>BNT162/mRNA-1273</b><br>Phase II, Germany <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT05047718" style="color:#006d2c" target="_blank">NCT05047718</a>', 
+        start = '08/11/2021', end = '30/04/2022', stage = "Phase IV", use="Yes")
   
   # add timeline input for phase III NCT05077176
-  add_row(group = "Sinovac", subgroup = "Inactivated", 
-          content = '<b>TURKOVAC/CoronaVac</b><br>Phase III, Turkey <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT05077176" style="color:#006d2c" target="_blank">NCT05077176</a>', 
-          start = '08/10/2021', end = '05/04/2022', stage = "Phase IV", use="Yes")#%>% 
+  # add_row(group = "Sinovac", subgroup = "Inactivated", 
+  #         content = '<b>TURKOVAC/CoronaVac</b><br>Phase III, Turkey <i>(Recruiting)</i><br><a href="https://clinicaltrials.gov/ct2/show/NCT05077176" style="color:#006d2c" target="_blank">NCT05077176</a>', 
+  #         start = '08/10/2021', end = '05/04/2022', stage = "Phase IV", use="Yes")#%>% 
   
   # add timeline input for terminated candidates
   # add_row(group = "University of Queensland<br>CSL<br>Seqirus", subgroup = "Protein subunit", 

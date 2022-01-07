@@ -22,12 +22,12 @@ s1 = data.frame(
   Institutes = rep(as.character(s$Institutes), nvar),
   Platform = rep(s$Platform, nvar),
   Stage = c(rep("I", nvac), rep("II", nvac), rep("III", nvac), rep("I", nvac), rep("II", nvac), rep("III", nvac)),
-  Group = c(rep("Registered trial", nvac*3), rep("Published", nvac*3)),
+  Group = c(rep("Registered", nvac*3), rep("Published", nvac*3)),
   Status = c(s$PhaseI_trial, s$PhaseII_trial, s$PhaseIII_trial, s$PhaseI_pub, s$PhaseII_pub, s$PhaseIII_pub)
 )
 
 # set group, platform, and institute factor levels
-s1$Group = factor(s1$Group, levels=c("Registered trial", "Published"))
+s1$Group = factor(s1$Group, levels=c("Registered", "Published"))
 s1$Platform = factor(s1$Platform, levels=levels(s$Platform))
 s1$Institutes = factor(s1$Institutes, levels = rev(as.character(s$Institutes)))
 
@@ -169,7 +169,7 @@ countries_sub = countries[!duplicated(countries$iso_code),]
 equity = merge(equity, countries_sub[,c("iso_code", "latitude", "longitude", "population")], by = "iso_code", all.y=TRUE)
 equity_full = merge(equity, gdp, by = "iso_code")
 
-equity_slider = seq(as.Date("2021-01-01"), current_date, by="weeks")
+equity_slider = seq(as.Date("2021-01-01"), current_date, by="months")
 if(max(equity_slider != current_date)) { equity_slider = c(equity_slider, current_date) }
 
 # equity = equity_full
