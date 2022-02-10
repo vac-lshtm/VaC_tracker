@@ -4,7 +4,7 @@ Moderna mRNA-1273,RNA,1,1,1,1,1,1
 Oxford/AstraZeneca ChAdOx1-S,Vector (nr),1,1,1,1,1,1
 Janssen Ad26.COV2.S,Vector (nr),1,1,1,1,1,1
 Gamaleya Gam-COVID-Vac/Sputnik V,Vector (nr),1,1,1,1,1,1
-Cansino Ad5-nCoV,Vector (nr),1,1,1,1,1,0
+Cansino Ad5-nCoV,Vector (nr),1,1,1,1,1,1
 Beijing/Sinopharm BBIBP-CorV,Inactivated,1,1,1,1,1,1
 Sinovac CoronaVac,Inactivated,1,1,1,1,1,1
 Bharat Covaxin/BBV152,Inactivated,1,1,1,1,1,1
@@ -24,4 +24,5 @@ Instituto Finlay de Vacunas Soberana 01,Subunit,1,1,1,1,0,0
 Vaxine SpikoGen,Subunit,1,1,1,0,0,0
 Razi Cov Pars,Subunit,1,1,1,0,0,0
 Biological E Ltd Corbevax,Subunit,1,1,1,0,0,0
+NVSI NVSI-06-07,Subunit,1,1,0,0,1,0
 Zydus Cadila ZyCoV-D,DNA,1,1,1,1,0,0
