@@ -81,28 +81,34 @@ owid = subset(owid, iso_code!="")
 
 #write.csv(owid, "owid.csv")
 #unique(owid$vaccines)
+#list = unique(unlist(strsplit(unique(owid$vaccines),", ")))
+#list[order(list)]
 
 # calculate N reporting countries reporting use for each vaccine candidate
 s$n_country = NA
-s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines) | grepl("ZF2001", owid$vaccines))
-s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
-s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("Pfizer/BioNTech", owid$vaccines))
-s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines) | grepl("Sinopharm/HayatVax", owid$vaccines) | grepl("BBIBP-CorV", owid$vaccines))
-s$n_country[s$Institutes=="Cansino Ad5-nCoV"] = sum(grepl("CanSino", owid$vaccines))
 s$n_country[s$Institutes=="CIGB CIGB-66/Abdala"] = sum(grepl("Abdala", owid$vaccines))
-# No row for Chumakov vaccine
-s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik", owid$vaccines))
-s$n_country[s$Institutes=="Instituto Finlay de Vacunas Soberana 02"] = sum(grepl("Soberana02", owid$vaccines))
+s$n_country[s$Institutes=="Cansino Ad5-nCoV"] = sum(grepl("CanSino", owid$vaccines))
+s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
+s$n_country[s$Institutes=="Shifa Pharmed COVIran"] = sum(grepl("COVIran Barekat", owid$vaccines))
+s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
 s$n_country[s$Institutes=="Medigen MVC-COV1901"] = sum(grepl("Medigen", owid$vaccines))
 s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
 s$n_country[s$Institutes=="Novavax NVX-CoV2373"] = sum(grepl("Novavax", owid$vaccines))
 s$n_country[s$Institutes=="Oxford/AstraZeneca ChAdOx1-S"] = sum(grepl("Oxford/AstraZeneca", owid$vaccines) | grepl("Covishield", owid$vaccines))
+s$n_country[s$Institutes=="BioNTech/Pfizer BNT162b2"] = sum(grepl("Pfizer/BioNTech", owid$vaccines))
 s$n_country[s$Institutes=="RIBSP Kazakhstan QazCovid-in"] = sum(grepl("QazVac", owid$vaccines))
-s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
-s$n_country[s$Institutes=="Shifa Pharmed COVIran"] = sum(grepl("COVIran Barekat", owid$vaccines))
-s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
+s$n_country[s$Institutes=="Razi Cov Pars"] = sum(grepl("Razi Cov Pars", owid$vaccines))
+s$n_country[s$Institutes=="Beijing/Sinopharm BBIBP-CorV"] = sum(grepl("Sinopharm/Beijing", owid$vaccines) | grepl("Sinopharm/HayatVax", owid$vaccines) | grepl("BBIBP-CorV", owid$vaccines))
 s$n_country[s$Institutes=="Wuhan/Sinopharm vaccine"] = sum(grepl("Sinopharm/Wuhan", owid$vaccines))
+s$n_country[s$Institutes=="Sinovac CoronaVac"] = sum(grepl("Sinovac", owid$vaccines))
+s$n_country[s$Institutes=="Instituto Finlay de Vacunas Soberana 02"] = sum(grepl("Soberana02", owid$vaccines))
+s$n_country[s$Institutes=="Instituto Finlay de Vacunas Soberana 01"] = sum(grepl("Soberana Plus", owid$vaccines))
+s$n_country[s$Institutes=="Vaxine SpikoGen"] = sum(grepl("SpikoGen", owid$vaccines))
+s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik", owid$vaccines))
+s$n_country[s$Institutes=="Erciyes TURKOVAC"] = sum(grepl("Turkovac", owid$vaccines))
+s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines) | grepl("ZF2001", owid$vaccines))
+# No row for Chumakov vaccine
 
 # create plot of N countries reporting use (plot panel 3)
 g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n_country)) + geom_bar(stat = "identity") + theme_bw() +
