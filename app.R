@@ -32,7 +32,7 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "07 March 2022"
+update_full = "11 April 2022"
 update_equity = format(Sys.Date(), "%d %B %Y")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
@@ -64,7 +64,7 @@ ui <- bootstrapPage(
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
                         
-                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 07 March 2022."),tags$br(),tags$br(),
+                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -163,12 +163,12 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
-                                                        choices = c("Terminated (9)" = "term",
+                                                        choices = c("Terminated (12)" = "term",
                                                                     "Pre-clinical (218)" = "preclin",
-                                                                    "Phase I (30)" = "phasei",
-                                                                    "Phase I/II (31)" = "phasei_ii",
-                                                                    "Phase II (16)" = "phaseii",
-                                                                    "Phase III (36)" = "phaseiii",
+                                                                    "Phase I (33)" = "phasei",
+                                                                    "Phase I/II (32)" = "phasei_ii",
+                                                                    "Phase II (17)" = "phaseii",
+                                                                    "Phase III (35)" = "phaseiii",
                                                                     "Phase IV (9)" = "phaseiv", 
                                                                     "Heterologous" = "phaseheterol"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv", "phaseheterol")),
@@ -176,8 +176,8 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (310)" = "not_in_use",
-                                                                    "Yes (30)" = "in_use"),
+                                                        choices = c("No (313)" = "not_in_use",
+                                                                    "Yes (31)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -190,15 +190,15 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (44)" = "rna",
-                                                                    "DNA (29)" = "dna",
+                                                        choices = c("RNA (47)" = "rna",
+                                                                    "DNA (28)" = "dna",
                                                                     "Vector (non-replicating) (39)" = "nrvv",
-                                                                    "Vector (replicating) (26)" = "rvv",
-                                                                    "Inactivated (24)" = "inact",
+                                                                    "Vector (replicating) (25)" = "rvv",
+                                                                    "Inactivated (26)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (109)" = "ps",
-                                                                    "Virus-like particle (26)" = "vlp",
-                                                                    "Other/Unknown (38)" = "unknown",
+                                                                    "Protein subunit (111)" = "ps",
+                                                                    "Virus-like particle (28)" = "vlp",
+                                                                    "Other/Unknown (37)" = "unknown",
                                                                     "Heterologous" = "heterol"),
                                                         selected = c("rna", "dna", "inact", "nrvv", "rvv", "live", "ps", "vlp", "unknown", "heterol")),
                                      tags$br(),
@@ -212,13 +212,13 @@ ui <- bootstrapPage(
                                      span("Live-attenuated", style="color:#238B45"),tags$br(),
                                      span("Protein subunit", style="color:#BCBDDC"),tags$br(),
                                      span("Virus-like particle", style="color:#6A51A3"),tags$br(),
-                                     span("Other/Unknown", style="color:#BDBDBD")     
+                                     span("Heterologous/Other/Unknown", style="color:#BDBDBD")     
                         ), 
                         
                         mainPanel(
                           "Last updated on ", tags$b(paste0(update_full,".")),
                           tags$br(),tags$br(),
-                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 07 March 2022."),tags$br(),tags$br(),
+                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
                           
                           "Our vaccine landscape pools the latest information from the", 
                           tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO,", target="_blank"),
@@ -252,7 +252,7 @@ ui <- bootstrapPage(
              tabPanel("Clinical trials",
                       "Last updated on ", tags$b(paste0(update_full,".")),
                       tags$br(),tags$br(),
-                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 07 March 2022."),tags$br(),tags$br(),
+                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
                       
                       "For each update, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
                       "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
@@ -380,7 +380,7 @@ ui <- bootstrapPage(
                                      
                                      "Last updated on ",tags$b(paste0(update_full,".")),
                                      tags$br(),tags$br(),
-                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 07 March 2022."),tags$br(),tags$br(),
+                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
                                      
                                      tags$h4("Approach"),
                                      "This living review summarises available clinical trial data (phase I to phase III) on different COVID-19 vaccine candidates. 
@@ -630,8 +630,9 @@ ui <- bootstrapPage(
                       tags$br(),
                       plotOutput("summary_matrix", height="700px", width="800px"),
                       tags$br(),
-                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; CIGB: Center for Genetic Engineering and Biotechnology; nr, non-replicating; NVSI: National Vaccine and Serum Institute; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
-                      Candidates in phase III testing and/or widespread use are included. 
+                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; CIGB: Center for Genetic Engineering and Biotechnology; nr, non-replicating; NVSI: National Vaccine and Serum Institute; 
+                      ODIR, Organization of Defensive/Innovation and Research; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
+                      Candidates approved for widespread use in one or more countries are included. 
                       Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
                       tags$br(), tags$br()#,
                       
@@ -1758,7 +1759,7 @@ server <- function(input, output, session) {
   outputOptions(output, "equity_plot", suspendWhenHidden = FALSE)
 }
 
-shinyApp(ui = ui, server = server)
-#runApp(shinyApp(ui, server), launch.browser = TRUE)
+#shinyApp(ui = ui, server = server)
+runApp(shinyApp(ui, server), launch.browser = TRUE)
 #library(rsconnect)
 #deployApp(account="vac-lshtm")

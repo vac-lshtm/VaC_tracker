@@ -81,6 +81,7 @@ owid = subset(owid, iso_code!="")
 
 #write.csv(owid, "owid.csv")
 #unique(owid$vaccines)
+unique(unlist(strsplit(paste(owid$vaccines, collapse = ', '), ", ")))
 #list = unique(unlist(strsplit(unique(owid$vaccines),", ")))
 #list[order(list)]
 
@@ -91,6 +92,7 @@ s$n_country[s$Institutes=="Cansino Ad5-nCoV"] = sum(grepl("CanSino", owid$vaccin
 s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
 s$n_country[s$Institutes=="Shifa Pharmed COVIran"] = sum(grepl("COVIran Barekat", owid$vaccines))
 s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
+s$n_country[s$Institutes=="ODIR FAKHRAVAC"] = sum(grepl("FAKHRAVAC", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
 s$n_country[s$Institutes=="Medigen MVC-COV1901"] = sum(grepl("Medigen", owid$vaccines))
 s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))

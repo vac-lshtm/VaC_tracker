@@ -206,7 +206,17 @@ timeline = timeline %>%
   # add timeline input for phase III NCT05230953
   add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
           content = '<b>BNT162/mRNA-1273</b><br>Phase III, Israel<br><a href="https://clinicaltrials.gov/ct2/show/NCT05230953" style="color:#006d2c" target="_blank">NCT05230953</a>', 
-          start = '05/01/2022', end = '04/07/2022', stage = "Phase IV", use="Yes") 
+          start = '05/01/2022', end = '04/07/2022', stage = "Phase IV", use="Yes") %>% 
+  
+  # add timeline input for NCT05268185 (phase not specified)
+  add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
+          content = '<b>BNT162/mRNA-1273</b><br>Not specified, USA<br><a href="https://clinicaltrials.gov/ct2/show/NCT05268185" style="color:#006d2c" target="_blank">NCT05268185</a>', 
+          start = '18/01/2022', end = '31/12/2022', stage = "Phase IV", use="Yes") %>% 
+  
+  # add timeline input for phase II/III NCT05279365
+  add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
+          content = '<b>BNT162/mRNA-1273</b><br>Phase II/III, USA<br><a href="https://clinicaltrials.gov/ct2/show/NCT05279365" style="color:#006d2c" target="_blank">NCT05279365</a>', 
+          start = '30/07/2021', end = '31/08/2022', stage = "Phase IV", use="Yes") 
 
 # set factor levels
 timeline$subgroup = factor(timeline$subgroup, levels=c("RNA", "DNA", "Vector (non-replicating)", "Vector (replicating)", "Inactivated", "Live-attenuated",
