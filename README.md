@@ -32,7 +32,7 @@ Key elements of the analysis code are as follows:
   - [WHO COVID-19 candidate vaccine landscape](https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines)
 
 ### Trial map
-* Updated weekly from April 2020 to August 2021, then monthly thereafter
+* Updated weekly from April 2020 to August 2021, then monthly thereafter until 07 January 2022
 * Input data: 
   - Trial data: *VaC_LSHTM_trials_map.csv* - data from *VaC_LSHTM_trials.csv* serve as input for this (see above)
   - Mapping data: *countries_codes_and_coordinates.csv*, *country_geoms.csv*, and *50m.geojson*
@@ -58,8 +58,8 @@ Key elements of the analysis code are as follows:
   - Vaccine roll-out data obtained from [Our World in Data](https://ourworldindata.org/covid-vaccinations)
   - Country income data obtained from [Gapminder](https://www.gapminder.org/tools/) and [World Bank](https://data.worldbank.org)
   - Dosing, description, and efficacy data obtained from *VaC_LSHTM_living_review_data.xlsx*. Where interim efficacy estimates have been in press releases but there is no published manuscript, hyperlinks are provided.
-  - Vaccine Access Test scores obtained from [ONE](https://www.one.org/international/vaccine-access-test/)
-  - Manufacture projections obtained from company websites. If unavailable, we report projections stated by a company spokesperson in the mainstream media where available and provide relevant hyperlinks.
+  - Vaccine Access Test scores obtained from [ONE](https://www.one.org/international/vaccine-access-test/) (No longer included from October 2021)
+  - Manufacture projections obtained from company websites. If unavailable, we report projections stated by a company spokesperson in the mainstream media where available and provide relevant hyperlinks. (No longer included from October 2021)
 
 ## Contact
 vaccines@lshtm.ac.uk
