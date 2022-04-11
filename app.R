@@ -1759,7 +1759,7 @@ server <- function(input, output, session) {
   outputOptions(output, "equity_plot", suspendWhenHidden = FALSE)
 }
 
-#shinyApp(ui = ui, server = server)
-runApp(shinyApp(ui, server), launch.browser = TRUE)
+shinyApp(ui = ui, server = server)
+#runApp(shinyApp(ui, server), launch.browser = TRUE)
 #library(rsconnect)
 #deployApp(account="vac-lshtm")
