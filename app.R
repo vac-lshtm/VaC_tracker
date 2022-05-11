@@ -32,12 +32,17 @@ if(!require(scales)) install.packages("scales", repos = "https://bioconductor.or
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "11 April 2022"
-update_equity = format(Sys.Date(), "%d %B %Y")
+update_full = "11 May 2022"
+update_equity = as.Date("2022-05-11")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
+
+# logical for whether to run full update of equity plot - set as full before running scripts during monthly updates
+run_bubble_update=FALSE
 source("input_code/VaC_implementation.R")
+equity_slider = seq(as.Date("2021-01-01"), update_equity, by="months")
+if(max(equity_slider != current_date)) { equity_slider = c(equity_slider, current_date) }
 
 # additional code to update case counts for weekly updates
 #source("input_code/VaC_jhu_daily_cases.R")
@@ -64,7 +69,7 @@ ui <- bootstrapPage(
                       tags$div(
                         "Last updated on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
                         
-                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
+                        tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 June 2022."),tags$br(),tags$br(),
                         
                         "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         tags$br(),tags$br(),
@@ -164,11 +169,11 @@ ui <- bootstrapPage(
                                      checkboxGroupInput(inputId = "stage",
                                                         label = "Stage of development",
                                                         choices = c("Terminated (12)" = "term",
-                                                                    "Pre-clinical (218)" = "preclin",
-                                                                    "Phase I (33)" = "phasei",
+                                                                    "Pre-clinical (219)" = "preclin",
+                                                                    "Phase I (35)" = "phasei",
                                                                     "Phase I/II (32)" = "phasei_ii",
                                                                     "Phase II (17)" = "phaseii",
-                                                                    "Phase III (35)" = "phaseiii",
+                                                                    "Phase III (36)" = "phaseiii",
                                                                     "Phase IV (9)" = "phaseiv", 
                                                                     "Heterologous" = "phaseheterol"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv", "phaseheterol")),
@@ -176,8 +181,8 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (313)" = "not_in_use",
-                                                                    "Yes (31)" = "in_use"),
+                                                        choices = c("No (316)" = "not_in_use",
+                                                                    "Yes (32)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                      
@@ -190,13 +195,13 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (47)" = "rna",
+                                                        choices = c("RNA (49)" = "rna",
                                                                     "DNA (28)" = "dna",
-                                                                    "Vector (non-replicating) (39)" = "nrvv",
+                                                                    "Vector (non-replicating) (40)" = "nrvv",
                                                                     "Vector (replicating) (25)" = "rvv",
                                                                     "Inactivated (26)" = "inact",
                                                                     "Live-attenuated (3)" = "live", 
-                                                                    "Protein subunit (111)" = "ps",
+                                                                    "Protein subunit (112)" = "ps",
                                                                     "Virus-like particle (28)" = "vlp",
                                                                     "Other/Unknown (37)" = "unknown",
                                                                     "Heterologous" = "heterol"),
@@ -218,7 +223,7 @@ ui <- bootstrapPage(
                         mainPanel(
                           "Last updated on ", tags$b(paste0(update_full,".")),
                           tags$br(),tags$br(),
-                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
+                          tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 June 2022."),tags$br(),tags$br(),
                           
                           "Our vaccine landscape pools the latest information from the", 
                           tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO,", target="_blank"),
@@ -252,7 +257,7 @@ ui <- bootstrapPage(
              tabPanel("Clinical trials",
                       "Last updated on ", tags$b(paste0(update_full,".")),
                       tags$br(),tags$br(),
-                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
+                      tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 June 2022."),tags$br(),tags$br(),
                       
                       "For each update, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
                       "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
@@ -380,7 +385,7 @@ ui <- bootstrapPage(
                                      
                                      "Last updated on ",tags$b(paste0(update_full,".")),
                                      tags$br(),tags$br(),
-                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 02 May 2022."),tags$br(),tags$br(),
+                                     tags$b("The site is currently updated monthly. The next update is scheduled for the week commencing 06 June 2022."),tags$br(),tags$br(),
                                      
                                      tags$h4("Approach"),
                                      "This living review summarises available clinical trial data (phase I to phase III) on different COVID-19 vaccine candidates. 
@@ -626,12 +631,19 @@ ui <- bootstrapPage(
                       "Source for income group data:", a("World Bank.", href="https://data.worldbank.org", target="_blank"),
                       
                       tags$br(),tags$br(),
-                      h4("Testing and implementation status of front-running candidates"),
+                      h4("Testing and implementation status of vaccines authorised for limited or full use"),
                       tags$br(),
                       plotOutput("summary_matrix", height="700px", width="800px"),
                       tags$br(),
-                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; CIGB: Center for Genetic Engineering and Biotechnology; nr, non-replicating; NVSI: National Vaccine and Serum Institute; 
-                      ODIR, Organization of Defensive/Innovation and Research; RIBSP, Research Institute for Biological Safety Problems; VLP, virus-like particle. 
+                      "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; 
+                      CAMS, Chinese Academy of Medical Sciences;
+                      CIGB, Center for Genetic Engineering and Biotechnology; 
+                      IMB, Institute of Medical Biology; 
+                      nr, non-replicating; 
+                      NVSI, National Vaccine and Serum Institute; 
+                      ODIR, Organization of Defensive/Innovation and Research; 
+                      RIBSP, Research Institute for Biological Safety Problems; 
+                      VLP, virus-like particle. 
                       Candidates approved for widespread use in one or more countries are included. 
                       Source for N countries reporting use: ",a("Our World in Data.", href="https://ourworldindata.org/covid-vaccinations", target="_blank"),
                       tags$br(), tags$br()#,

@@ -4,8 +4,6 @@
 
 ### Implementation feature inputs
 
-current_date = as.Date(Sys.Date()) #"2021-04-19"
-
 ### Figure --------------------------------------------------------------------
 
 # load data
@@ -91,9 +89,12 @@ s$n_country[s$Institutes=="CIGB CIGB-66/Abdala"] = sum(grepl("Abdala", owid$vacc
 s$n_country[s$Institutes=="Cansino Ad5-nCoV"] = sum(grepl("CanSino", owid$vaccines))
 s$n_country[s$Institutes=="Bharat Covaxin/BBV152"] = sum(grepl("Covaxin", owid$vaccines))
 s$n_country[s$Institutes=="Shifa Pharmed COVIran"] = sum(grepl("COVIran Barekat", owid$vaccines))
+s$n_country[s$Institutes=="Chumakov Center CoviVac"] = sum(grepl("CoviVac", owid$vaccines))
 s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
 s$n_country[s$Institutes=="ODIR FAKHRAVAC"] = sum(grepl("FAKHRAVAC", owid$vaccines))
+s$n_country[s$Institutes=="Institute of Medical Biology CAMS"] = sum(grepl("IMBCAMS", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
+s$n_country[s$Institutes=="Shenzhen Kangtai KCONVAC"] = sum(grepl("KCONVAC", owid$vaccines))
 s$n_country[s$Institutes=="Medigen MVC-COV1901"] = sum(grepl("Medigen", owid$vaccines))
 s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
 s$n_country[s$Institutes=="Novavax NVX-CoV2373"] = sum(grepl("Novavax", owid$vaccines))
@@ -110,7 +111,6 @@ s$n_country[s$Institutes=="Vaxine SpikoGen"] = sum(grepl("SpikoGen", owid$vaccin
 s$n_country[s$Institutes=="Gamaleya Gam-COVID-Vac/Sputnik V"] = sum(grepl("Sputnik", owid$vaccines))
 s$n_country[s$Institutes=="Erciyes TURKOVAC"] = sum(grepl("Turkovac", owid$vaccines))
 s$n_country[s$Institutes=="AZLB ZF2001"] = sum(grepl("RBD-Dimer", owid$vaccines) | grepl("ZF2001", owid$vaccines))
-# No row for Chumakov vaccine
 
 # create plot of N countries reporting use (plot panel 3)
 g3 = ggplot(s, aes(as.numeric(n_country), Institutes, fill = Platform, label = n_country)) + geom_bar(stat = "identity") + theme_bw() +
@@ -142,44 +142,46 @@ imp = subset(imp, Metric!="")
 imp_list = as.character(unique(imp$Vaccine))
 
 ### Bubble plot --------------------------------------------------------------------
-
-gdp = read.csv("input_data/equity_data.csv")
-owid_vac <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"))
-owid_vac = subset(owid_vac, iso_code!="")
-owid_vac$date = as.Date(owid_vac$date)
-owid_vac = merge(owid_vac, owid[,c("iso_code", "vaccines")], by = "iso_code")
-date = seq(as.Date("2021-01-01"), current_date, by="days")
-country_list = unique(owid_vac$location) 
-#write.csv(owid_vac, "owid_vac.csv")
-
-equity = NULL
-for (i in 1:length(country_list)) {
-  country_sub = data.frame(date = date)
-  country_sub$location = country_list[i]
-  owid_sub = subset(owid_vac, location==country_list[i])
-  country_sub = merge(country_sub, owid_sub[,c("date", "total_vaccinations", "people_vaccinated", "people_fully_vaccinated",
-                                               "total_vaccinations_per_hundred", "people_vaccinated_per_hundred", "people_fully_vaccinated_per_hundred")], by = "date", all.x = TRUE)
-  # replace NAs with 0s  
-  country_sub[is.na(country_sub)] = 0 
-  # for each row use maximum value observed up until that point (i.e. replace 0s with rolling total)
-  for (j in 1:nrow(country_sub)) {
-    rows = country_sub[1:j,]
-    country_sub$total_vaccinations[j] = max(rows$total_vaccinations) 
-    country_sub$people_vaccinated[j] = max(rows$people_vaccinated) 
-    country_sub$people_fully_vaccinated[j] = max(rows$people_fully_vaccinated) 
-    country_sub$total_vaccinations_per_hundred[j] = max(rows$total_vaccinations_per_hundred) 
-    country_sub$people_vaccinated_per_hundred[j] = max(rows$people_vaccinated_per_hundred) 
-    country_sub$people_fully_vaccinated_per_hundred[j] = max(rows$people_fully_vaccinated_per_hundred) 
+if (run_bubble_update==TRUE) {
+  current_date = as.Date(Sys.Date()) #"2021-04-19"
+  gdp = read.csv("input_data/equity_data.csv")
+  owid_vac <- as.data.frame(data.table::fread("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"))
+  owid_vac = subset(owid_vac, iso_code!="")
+  owid_vac$date = as.Date(owid_vac$date)
+  owid_vac = merge(owid_vac, owid[,c("iso_code", "vaccines")], by = "iso_code")
+  date = seq(as.Date("2021-01-01"), current_date, by="days")
+  country_list = unique(owid_vac$location) 
+  #write.csv(owid_vac, "owid_vac.csv")
+  
+  equity = NULL
+  for (i in 1:length(country_list)) {
+    country_sub = data.frame(date = date)
+    country_sub$location = country_list[i]
+    owid_sub = subset(owid_vac, location==country_list[i])
+    country_sub = merge(country_sub, owid_sub[,c("date", "total_vaccinations", "people_vaccinated", "people_fully_vaccinated",
+                                                 "total_vaccinations_per_hundred", "people_vaccinated_per_hundred", "people_fully_vaccinated_per_hundred")], by = "date", all.x = TRUE)
+    # replace NAs with 0s  
+    country_sub[is.na(country_sub)] = 0 
+    # for each row use maximum value observed up until that point (i.e. replace 0s with rolling total)
+    for (j in 1:nrow(country_sub)) {
+      rows = country_sub[1:j,]
+      country_sub$total_vaccinations[j] = max(rows$total_vaccinations) 
+      country_sub$people_vaccinated[j] = max(rows$people_vaccinated) 
+      country_sub$people_fully_vaccinated[j] = max(rows$people_fully_vaccinated) 
+      country_sub$total_vaccinations_per_hundred[j] = max(rows$total_vaccinations_per_hundred) 
+      country_sub$people_vaccinated_per_hundred[j] = max(rows$people_vaccinated_per_hundred) 
+      country_sub$people_fully_vaccinated_per_hundred[j] = max(rows$people_fully_vaccinated_per_hundred) 
+    }
+    equity = rbind(equity, country_sub)
   }
-  equity = rbind(equity, country_sub)
+  equity = merge(equity, owid[,c("location", "iso_code", "vaccines")], by = "location")
+  countries_sub = countries[!duplicated(countries$iso_code),]
+  equity = merge(equity, countries_sub[,c("iso_code", "latitude", "longitude", "population")], by = "iso_code", all.y=TRUE)
+  equity_full = merge(equity, gdp, by = "iso_code")
+  write.csv(equity_full, "input_data/VaC_LSHTM_formatted_equity_data.csv")
+} else { 
+  equity_full = read.csv("input_data/VaC_LSHTM_formatted_equity_data.csv", header = T) 
 }
-equity = merge(equity, owid[,c("location", "iso_code", "vaccines")], by = "location")
-countries_sub = countries[!duplicated(countries$iso_code),]
-equity = merge(equity, countries_sub[,c("iso_code", "latitude", "longitude", "population")], by = "iso_code", all.y=TRUE)
-equity_full = merge(equity, gdp, by = "iso_code")
-
-equity_slider = seq(as.Date("2021-01-01"), current_date, by="months")
-if(max(equity_slider != current_date)) { equity_slider = c(equity_slider, current_date) }
 
 # equity = equity_full
 # equity$date[is.na(equity$date)] = current_date

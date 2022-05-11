@@ -10,23 +10,24 @@ Sinovac CoronaVac,Inactivated,1,1,1,1,1,1
 Bharat Covaxin/BBV152,Inactivated,1,1,1,1,1,1
 Wuhan/Sinopharm vaccine,Inactivated,1,1,1,1,1,1
 RIBSP Kazakhstan QazCovid-in,Inactivated,1,1,1,0,0,0
-Shifa Pharmed COVIran,Inactivated,1,1,1,0,0,0
+Shifa Pharmed COVIran,Inactivated,1,1,1,1,1,0
 Erciyes TURKOVAC,Inactivated,1,1,1,0,0,0
 ODIR FAKHRAVAC,Inactivated,1,1,0,0,0,0
 Shenzhen Kangtai KCONVAC,Inactivated,1,1,1,1,1,0
-Valneva VLA2001,Inactivated,1,1,1,1,1,0
+Institute of Medical Biology CAMS vaccine,Inactivated,1,1,1,1,1,0
 Chumakov Center CoviVac,Inactivated,1,1,0,1,1,0
+Valneva VLA2001,Inactivated,1,1,1,1,1,0
 Novavax NVX-CoV2373,Subunit,1,1,1,1,1,1
-CIGB CIGB-66/Abdala,Subunit,1,1,1,0,0,0
+CIGB CIGB-66/Abdala,Subunit,1,1,1,1,1,0
 Instituto Finlay de Vacunas Soberana 02,Subunit,1,1,1,0,0,0
-AZLB ZF2001,Subunit,1,1,1,1,1,0
+AZLB ZF2001,Subunit,1,1,1,1,1,1
 Vector Institute EpiVacCorona,Subunit,1,1,1,1,1,0
 Medigen MVC-COV1901,Subunit,1,1,1,1,1,0
 Instituto Finlay de Vacunas Soberana 01,Subunit,1,1,1,1,0,0
-Vaxine SpikoGen,Subunit,1,1,1,0,0,0
+Vaxine SpikoGen,Subunit,1,1,1,0,1,0
 Razi Cov Pars,Subunit,1,1,1,0,0,0
 Biological E Corbevax,Subunit,1,1,1,0,0,0
 Bagheiat-allah AmitisGen,Subunit,1,1,0,0,0,0
 NVSI NVSI-06-07,Subunit,1,1,0,0,1,0
-Zydus Cadila ZyCoV-D,DNA,1,1,1,1,0,0
+Zydus Cadila ZyCoV-D,DNA,1,1,1,1,0,1
 Medicago CoVLP,VLP,1,1,1,1,1,1
