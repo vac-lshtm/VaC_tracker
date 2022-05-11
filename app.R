@@ -37,12 +37,8 @@ update_equity = as.Date("2022-05-11")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
-
-# logical for whether to run full update of equity plot - set as full before running scripts during monthly updates
-run_bubble_update=FALSE
 source("input_code/VaC_implementation.R")
-equity_slider = seq(as.Date("2021-01-01"), update_equity, by="months")
-if(max(equity_slider != current_date)) { equity_slider = c(equity_slider, current_date) }
+equity_slider = c(seq(as.Date("2021-01-01"), update_equity, by="months"), update_equity)
 
 # additional code to update case counts for weekly updates
 #source("input_code/VaC_jhu_daily_cases.R")
@@ -106,7 +102,7 @@ ui <- bootstrapPage(
                           ),
                           h3("Efficacy trial map", align="center"),
                           HTML("<div class=\"text-center\"><i class=\"fas fa-globe-africa fa-4x\"></i></div>"),
-                          tags$p("Map of planned and ongoing phase III trials", align="center"),
+                          tags$p("Map of ongoing phase III trials as of Jan 2022", align="center"),
                           HTML("<div class=\"text-center\"><button class=\"btn btn-primary\" onclick=\"$('li:eq(3) a').tab('show');\" role=\"button\">View map</button></div>"),
                           tags$br()                          
                         ),
@@ -599,8 +595,8 @@ ui <- bootstrapPage(
                         sidebarPanel(width = 3,
                                      
                                      pickerInput("equity_outcome", h5("Select outcome:"),   
-                                                 choices = c("% vaccinated with at least 1 dose", "% fully vaccinated", "Total vaccines per hundred people"), # "Total vaccines" 
-                                                 selected = c("% vaccinated with at least 1 dose"),
+                                                 choices = c("% vaccinated with at least 1 dose", "% vaccinated with full primary series", "Total vaccines per hundred people"), # "Total vaccines" 
+                                                 selected = c("% vaccinated with full primary series"),
                                                  multiple = FALSE),
                                      
                                      checkboxGroupInput(inputId = "equity_group",
@@ -1700,7 +1696,7 @@ server <- function(input, output, session) {
     }
     
     if (input$equity_outcome=="% vaccinated with at least 1 dose") { equity$y = equity$people_vaccinated_per_hundred }
-    if (input$equity_outcome=="% fully vaccinated") { equity$y = equity$people_fully_vaccinated_per_hundred }
+    if (input$equity_outcome=="% vaccinated with full primary series") { equity$y = equity$people_fully_vaccinated_per_hundred }
     if (input$equity_outcome=="Total vaccines per hundred people") { equity$y = equity$total_vaccinations_per_hundred }
     if (input$equity_outcome=="Total vaccines") { equity$y = equity$total_vaccinations }
     
@@ -1719,7 +1715,7 @@ server <- function(input, output, session) {
       ymax = max(equity_full$people_vaccinated_per_hundred, na.rm=TRUE)+10
       units = "%"
     }
-    if (input$equity_outcome=="% fully vaccinated") { 
+    if (input$equity_outcome=="% vaccinated with full primary series") { 
       ymax = max(equity_full$people_fully_vaccinated_per_hundred, na.rm=TRUE)+10
       units = "%"
     }

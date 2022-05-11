@@ -6,6 +6,9 @@
 
 ### Figure --------------------------------------------------------------------
 
+# logical for whether to run full update of equity plot - set as TRUE before running scripts during monthly updates
+run_bubble_update = FALSE
+
 # load data
 s = read.csv("input_data/VaC_LSHTM_landscape_summary.csv", stringsAsFactors = FALSE)
 
@@ -92,7 +95,7 @@ s$n_country[s$Institutes=="Shifa Pharmed COVIran"] = sum(grepl("COVIran Barekat"
 s$n_country[s$Institutes=="Chumakov Center CoviVac"] = sum(grepl("CoviVac", owid$vaccines))
 s$n_country[s$Institutes=="Vector Institute EpiVacCorona"] = sum(grepl("EpiVacCorona", owid$vaccines))
 s$n_country[s$Institutes=="ODIR FAKHRAVAC"] = sum(grepl("FAKHRAVAC", owid$vaccines))
-s$n_country[s$Institutes=="Institute of Medical Biology CAMS"] = sum(grepl("IMBCAMS", owid$vaccines))
+s$n_country[s$Institutes=="Institute of Medical Biology CAMS vaccine"] = sum(grepl("IMBCAMS", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
 s$n_country[s$Institutes=="Shenzhen Kangtai KCONVAC"] = sum(grepl("KCONVAC", owid$vaccines))
 s$n_country[s$Institutes=="Medigen MVC-COV1901"] = sum(grepl("Medigen", owid$vaccines))
