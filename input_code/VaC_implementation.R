@@ -99,6 +99,7 @@ s$n_country[s$Institutes=="ODIR FAKHRAVAC"] = sum(grepl("FAKHRAVAC", owid$vaccin
 s$n_country[s$Institutes=="Institute of Medical Biology CAMS vaccine"] = sum(grepl("IMBCAMS", owid$vaccines))
 s$n_country[s$Institutes=="Janssen Ad26.COV2.S"] = sum(grepl("Johnson&Johnson", owid$vaccines))
 s$n_country[s$Institutes=="Shenzhen Kangtai KCONVAC"] = sum(grepl("KCONVAC", owid$vaccines))
+s$n_country[s$Institutes=="Medicago CoVLP"] = sum(grepl("Medicago", owid$vaccines))
 s$n_country[s$Institutes=="Medigen MVC-COV1901"] = sum(grepl("Medigen", owid$vaccines))
 s$n_country[s$Institutes=="Moderna mRNA-1273"] = sum(grepl("Moderna", owid$vaccines))
 s$n_country[s$Institutes=="Novavax NVX-CoV2373"] = sum(grepl("Novavax", owid$vaccines))

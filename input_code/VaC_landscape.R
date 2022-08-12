@@ -48,7 +48,8 @@ timeline_clinical$group[timeline_clinical$group=="Medigen Vaccine Biologics Corp
 timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>Sanofi Pasteur<br>GSK"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
 timeline_clinical$group[timeline_clinical$group=="Janssen Pharmaceutical Companies<br>Novavax"] = "Novavax"
 timeline_clinical$group[timeline_clinical$group=="Beijing Institute of Biological Products<br>Sinopharm<br>Gamaleya Research Institute"] = "Beijing Institute of Biological Products<br>Sinopharm"
-timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>University of Oxford<br>AstraZeneca<br>Sinovac"] = "BioNTech<br>Pfizer<br>Fosun Pharmm"
+timeline_clinical$group[timeline_clinical$group=="BioNTech<br>Pfizer<br>Fosun Pharma<br>University of Oxford<br>AstraZeneca<br>Sinovac"] = "BioNTech<br>Pfizer<br>Fosun Pharma"
+timeline_clinical$group[timeline_clinical$group=="Clover Biopharmaceuticals Inc<br>GSK<br>Dynavax<br>University of Oxford<br>AstraZeneca<br>Sinovac"] = "Clover Biopharmaceuticals Inc<br>GSK<br>Dynavax"
 
 
 timeline_clinical$subgroup = as.character(timeline_clinical$subgroup)
@@ -61,6 +62,7 @@ timeline_clinical$subgroup[timeline_clinical$subgroup=="RNA/Vector (non-replicat
 timeline_clinical$subgroup[timeline_clinical$subgroup=="Protein subunit/RNA/Vector (non-replicating)"] = "Protein subunit"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="Protein subunit/Vector (non-replicating)"] = "Protein subunit"
 timeline_clinical$subgroup[timeline_clinical$subgroup=="Protein subunit/RNA"] = "RNA"
+timeline_clinical$subgroup[timeline_clinical$subgroup=="Protein subunit/Vector (non-replicating)/Inactivated"] = "Protein subunit"
 
 
 # merge clinical and preclinical timelines
@@ -255,11 +257,32 @@ timeline = timeline %>%
   
   # add timeline input for phase II TCTR20210720005
   add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
-          content = '<b>BNT162 (b2)/ChAdOx1-S/CoronaVac</b><br>Phase II, Thailand<br><a https://www.thaiclinicaltrials.org/show/TCTR20210720005" style="color:#006d2c" target="_blank">TCTR20210720005</a>', 
+          content = '<b>BNT162 (b2)/ChAdOx1-S/CoronaVac</b><br>Phase II, Thailand<br><a href="https://www.thaiclinicaltrials.org/show/TCTR20210720005" style="color:#006d2c" target="_blank">TCTR20210720005</a>', 
           start = '10/08/2021', end = '30/11/2021', stage = "Phase IV", use="Yes") %>%
   add_row(group = "Sinovac", subgroup = "Inactivated", 
-          content = '<b>BNT162 (b2)/ChAdOx1-S/CoronaVac</b><br>Phase II, Thailand<br><a https://www.thaiclinicaltrials.org/show/TCTR20210720005" style="color:#006d2c" target="_blank">TCTR20210720005</a>', 
-          start = '10/08/2021', end = '30/11/2021', stage = "Phase IV", use="Yes")
+          content = '<b>BNT162 (b2)/ChAdOx1-S/CoronaVac</b><br>Phase II, Thailand<br><a href="https://www.thaiclinicaltrials.org/show/TCTR20210720005" style="color:#006d2c" target="_blank">TCTR20210720005</a>', 
+          start = '10/08/2021', end = '30/11/2021', stage = "Phase IV", use="Yes") %>%
+  
+  # add timeline input for phase III NCT05470803
+  add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
+          content = '<b>SCB-2019/ChAdOx1-S/CoronaVac</b><br>Phase III, Brazil<br><a href="https://clinicaltrials.gov/ct2/show/NCT05470803" style="color:#006d2c" target="_blank">NCT05470803</a>', 
+          start = '01/08/2022', end = '31/12/2022', stage = "Phase IV", use="Yes") %>%
+  add_row(group = "Sinovac", subgroup = "Inactivated", 
+          content = '<b>SCB-2019/ChAdOx1-S/CoronaVac</b><br>Phase III, Brazil<br><a href="https://clinicaltrials.gov/ct2/show/NCT05470803" style="color:#006d2c" target="_blank">NCT05470803</a>', 
+          start = '01/08/2022', end = '31/12/2022', stage = "Phase IV", use="Yes") %>%
+  
+  # add timeline input for NCT05471440
+  add_row(group = "Janssen Pharmaceutical Companies", subgroup = "Vector (non-replicating)", 
+          content = '<b>BNT162/Ad26.COV2.S/mRNA-1273</b><br>Not specified, Pending<br><a href="https://clinicaltrials.gov/ct2/show/NCT05471440" style="color:#006d2c" target="_blank">NCT05471440</a>', 
+          start = '01/08/2022', end = '30/08/2022', stage = "Phase IV", use="Yes") %>% 
+  add_row(group = "Moderna<br>NIAID", subgroup = "RNA", 
+          content = '<b>BNT162/Ad26.COV2.S/mRNA-1273</b><br>Not specified, Pending<br><a href="https://clinicaltrials.gov/ct2/show/NCT05471440" style="color:#006d2c" target="_blank">NCT05471440</a>', 
+          start = '01/08/2022', end = '30/08/2022', stage = "Phase IV", use="Yes") %>%
+  
+  # add timeline input for TCTR20211102003
+  add_row(group = "University of Oxford<br>AstraZeneca", subgroup = "Vector (non-replicating)", 
+          content = '<b>BNT162/ChAdOx1-S</b><br>Phase III, Thailand<br><a href="http://www.thaiclinicaltrials.org/show/TCTR20211102003" style="color:#006d2c" target="_blank">TCTR20211102003</a>', 
+          start = '22/11/2021', end = '30/01/2022', stage = "Phase IV", use="Yes")
   
 # set factor levels
 timeline$subgroup = factor(timeline$subgroup, levels=c("RNA", "DNA", "Vector (non-replicating)", "Vector (replicating)", "Inactivated", "Live-attenuated",

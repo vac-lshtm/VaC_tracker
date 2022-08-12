@@ -25,15 +25,13 @@ if(!require(cowplot)) install.packages("cowplot", repos = "http://cran.us.r-proj
 if(!require(BiocManager)) install.packages("BiocManager", repos = "http://cran.us.r-project.org")
 if(!require(leaflet)) install.packages("leaflet", repos = "http://cran.us.r-project.org")
 if(!require(geojsonio)) install.packages("geojsonio", repos = "http://cran.us.r-project.org")
-options(repos = BiocManager::repositories())
-if(!require(ComplexHeatmap)) install.packages("ComplexHeatmap", repos = "https://bioconductor.org")
-if(!require(scales)) install.packages("scales", repos = "https://bioconductor.org")
-
+if(!require(scales)) install.packages("scales", repos = "http://cran.us.r-project.org")
+if(!require(ComplexHeatmap)) install.packages("ComplexHeatmap",  repos = "http://cran.us.r-project.org")
 
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
-update_full = "26 June 2022"
-update_equity = as.Date("2022-06-26")
+update_full = "11 August 2022"
+update_equity = as.Date("2022-08-11")
 source("input_code/VaC_landscape.R")
 source("input_code/VaC_efficacy_map.R")
 source("input_code/VaC_living_review.R")
@@ -164,10 +162,10 @@ ui <- bootstrapPage(
                                                         label = "Stage of development",
                                                         choices = c("Terminated (12)" = "term",
                                                                     "Pre-clinical (218)" = "preclin",
-                                                                    "Phase I (38)" = "phasei",
+                                                                    "Phase I (39)" = "phasei",
                                                                     "Phase I/II (32)" = "phasei_ii",
-                                                                    "Phase II (17)" = "phaseii",
-                                                                    "Phase III (39)" = "phaseiii",
+                                                                    "Phase II (18)" = "phaseii",
+                                                                    "Phase III (40)" = "phaseiii",
                                                                     "Phase IV (9)" = "phaseiv", 
                                                                     "Heterologous" = "phaseheterol"),
                                                         selected = c("phasei", "phasei_ii", "phaseii", "phaseiii", "phaseiv", "phaseheterol")),
@@ -175,14 +173,14 @@ ui <- bootstrapPage(
                                      
                                      checkboxGroupInput(inputId = "in_use",
                                                         label = "In use",
-                                                        choices = c("No (321)" = "not_in_use",
-                                                                    "Yes (32)" = "in_use"),
+                                                        choices = c("No (322)" = "not_in_use",
+                                                                    "Yes (34)" = "in_use"),
                                                         selected = c("not_in_use", "in_use")),
                                      tags$br(),
                                   
                                      checkboxGroupInput(inputId = "vacc",
                                                         label = "Vaccine type",
-                                                        choices = c("RNA (51)" = "rna",
+                                                        choices = c("RNA (54)" = "rna",
                                                                     "DNA (28)" = "dna",
                                                                     "Vector (non-replicating) (40)" = "nrvv",
                                                                     "Vector (replicating) (25)" = "rvv",
@@ -614,7 +612,7 @@ ui <- bootstrapPage(
                       tags$br(),tags$br(),
                       h4("Testing and implementation status of vaccines authorised for limited or full use"),
                       tags$br(),
-                      plotOutput("summary_matrix", height="700px", width="800px"),
+                      plotOutput("summary_matrix", height="900px", width="800px"),
                       tags$br(),
                       "Abbreviations: AZLB, Anhui Zhifei Longcom Biopharmaceutical; 
                       CAMS, Chinese Academy of Medical Sciences;
@@ -1742,6 +1740,6 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server)
-runApp(shinyApp(ui, server), launch.browser = TRUE)
+#runApp(shinyApp(ui, server), launch.browser = TRUE)
 #library(rsconnect)
 #deployApp(account="vac-lshtm")

@@ -8,7 +8,7 @@
 
 # load data
 db = data.frame(read_excel("input_data/VaC_LSHTM_living_review_data.xlsx", range="A2:DD1000"))
-living_review_study_count = nrow(fread("input_data/VaC_LSHTM_eligible_studies.csv"))
+living_review_study_count = nrow(read.csv("input_data/VaC_LSHTM_eligible_studies.csv"))
 names(db) = str_replace_all(names(db), "\\.", "") 
 
 # Add html tags for printing developer names and vaccine doses to datatable

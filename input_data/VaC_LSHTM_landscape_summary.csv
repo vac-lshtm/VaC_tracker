@@ -1,6 +1,7 @@
 Institutes,Platform,PhaseI_trial,PhaseII_trial,PhaseIII_trial,PhaseI_pub,PhaseII_pub,PhaseIII_pub
 BioNTech/Pfizer BNT162b2,RNA,1,1,1,1,1,1
 Moderna mRNA-1273,RNA,1,1,1,1,1,1
+Gennova GEMCOVAC-19,RNA,0,1,1,0,0,0
 Oxford/AstraZeneca ChAdOx1-S,Vector (nr),1,1,1,1,1,1
 Janssen Ad26.COV2.S,Vector (nr),1,1,1,1,1,1
 Gamaleya Gam-COVID-Vac/Sputnik V,Vector (nr),1,1,1,1,1,1
@@ -24,10 +25,11 @@ AZLB ZF2001,Subunit,1,1,1,1,1,1
 Vector Institute EpiVacCorona,Subunit,1,1,1,1,1,0
 Medigen MVC-COV1901,Subunit,1,1,1,1,1,0
 Instituto Finlay de Vacunas Soberana 01,Subunit,1,1,1,1,0,0
-Vaxine SpikoGen,Subunit,1,1,1,0,1,0
+Vaxine SpikoGen,Subunit,1,1,1,0,1,1
 Razi Cov Pars,Subunit,1,1,1,0,0,0
 Biological E Corbevax,Subunit,1,1,1,0,0,0
 Bagheiat-allah AmitisGen,Subunit,1,1,0,0,0,0
 NVSI NVSI-06-07,Subunit,1,1,0,0,1,0
+SK Biosciences GBP510,Subunit,1,1,1,1,1,0
 Zydus Cadila ZyCoV-D,DNA,1,1,1,1,0,1
 Medicago CoVLP,VLP,1,1,1,1,1,1
