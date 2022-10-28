@@ -26,8 +26,8 @@ if(!require(BiocManager)) install.packages("BiocManager", repos = "http://cran.u
 if(!require(leaflet)) install.packages("leaflet", repos = "http://cran.us.r-project.org")
 if(!require(geojsonio)) install.packages("geojsonio", repos = "http://cran.us.r-project.org")
 if(!require(scales)) install.packages("scales", repos = "http://cran.us.r-project.org")
-if(!require(ComplexHeatmap)) install.packages("ComplexHeatmap",  repos = "http://cran.us.r-project.org")
-
+options(repos = BiocManager::repositories())
+if(!require(ComplexHeatmap)) BiocManager::install("ComplexHeatmap")
 
 ### Generate landscape inputs for each layer -------------------------------------------------------------------------------------
 update_full = "11 August 2022"
@@ -61,18 +61,18 @@ ui <- bootstrapPage(
              
              tabPanel("Home",
                       tags$div(
-                        "The site is currently updated approximately once per month. The last update was carried out on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
+                        "The site is no longer updated. The last update was carried out on 11th August 2022.",tags$br(),tags$br(),
                         
-                        "The COVID-19 pandemic has prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
-                        tags$br(),tags$br(),
-                        
+                        "The COVID-19 pandemic prompted numerous research institutes and companies to develop vaccine candidates targeting this novel disease.",
                         "First launched in April 2020, this tracker was developed by the", a("Vaccine Centre", href="https://www.lshtm.ac.uk/research/centres/vaccine-centre", target="_blank"),
-                        "at the", a("London School of Hygiene & Tropical Medicine", href="https://www.lshtm.ac.uk", target="_blank"), "to follow candidates as they progress through the development pipeline.",
+                        "at the", a("London School of Hygiene & Tropical Medicine", href="https://www.lshtm.ac.uk", target="_blank"), "to follow candidates as they progressed through the development pipeline.",
+                        "Weekly or monthly updates of the tracker were performed between April 2020 and August 2022.", 
                         "Read our", a("Correspondence", href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(21)00043-7/fulltext", target="_blank"),"in",em("Lancet Global Health"),"for further details.",
                         "All data and code are available via the LSHTM Vaccine Centre's", tags$a(href="https://github.com/vac-lshtm/VaC_tracker", "Github page.", target="_blank"),
                         tags$br(),tags$br(),
                         
-                        "Citation details: Shrotri, Swinnen, Kampmann, Parker (2021). An interactive website tracking COVID-19 vaccine development.",tags$i("Lancet Glob Health;"),"9(5):e590-e592.",
+                        "Citation details: Shrotri, Swinnen, Kampmann, Parker (2021).",
+                        a("An interactive website tracking COVID-19 vaccine development.", href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(21)00043-7/fulltext", target="_blank"),tags$i("Lancet Glob Health;"),"9(5):e590-e592.",
                         tags$br(),tags$br(),
                         
                         actionButton("twitter_share", label = "Share", icon = icon("twitter"),class = "btn btn-warning",
@@ -206,9 +206,9 @@ ui <- bootstrapPage(
                         ), 
                         
                         mainPanel(
-                          "The site is currently updated approximately once per month. The last update was carried out on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
+                          "The site is no longer updated. The last update was carried out on 11th August 2022.",tags$br(),tags$br(),
                           
-                          "Our vaccine landscape pools the latest information from the", 
+                          "Our vaccine landscape summarises information from the", 
                           tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO,", target="_blank"),
                           "the ",tags$a(href="https://milken-institute-covid-19-tracker.webflow.io", "Milken Institute", target="_blank"), 
                           "and ", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov.", target="_blank"), 
@@ -217,9 +217,6 @@ ui <- bootstrapPage(
                           
                           "All data and code are available via the LSHTM Vaccine Centre's", tags$a(href="https://github.com/vac-lshtm/VaC_tracker", "Github page.", target="_blank"),
                           "Click on trial numbers to access the published protocols.",
-                          tags$br(),tags$br(),
-                          
-                          "If you have any queries or wish to inform us of a candidate that is not included, please contact", HTML('<a href = "mailto: vaccines@lshtm.ac.uk">vaccines@lshtm.ac.uk.</a>'),
                           tags$br(),tags$br(),
                           
                           tabsetPanel(
@@ -238,14 +235,16 @@ ui <- bootstrapPage(
              ################################
              
              tabPanel("Clinical trials",
-                      "The site is currently updated approximately once per month. The last update was carried out on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
+                      "The site is no longer updated. The last update was carried out on 11th August 2022.",tags$br(),tags$br(),
                       
-                      "For each update, we search", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
-                      "for studies of COVID-19 vaccine candidates and extract key attributes from the registered protocols.
-                      Additional trials are identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
-                      "Trials are listed by decreasing size. Only trials with a registered protocol are included. We exclude observational studies as well as intervention trials evaluating the influence of other treatments on COVID-19 vaccine outcome.",
+                      "For each update, we searched", tags$a(href="https://clinicaltrials.gov", "clinicaltrials.gov", target="_blank"), 
+                      "for studies of COVID-19 vaccine candidates and extracted key attributes from the registered protocols.
+                      Additional trials were identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
                       tags$br(),tags$br(),
-                      "As of February 2022, we no longer incorporate protocol modifications that occur after a trial is registered. Details such as sample size, start date, and primary completion date are subject to change.",
+                      
+                      "Trials are listed by decreasing size. Only trials with a registered protocol are included. We excluded observational studies as well as intervention trials evaluating the influence of other treatments on COVID-19 vaccine outcome.",
+                      tags$br(),tags$br(),
+                      "From February 2022 onwards, we no longer incorporated protocol modifications that occured after a trial was registered. Details such as sample size, start date, and primary completion date are subject to change.",
                       "The latest version of the published protocols can be obtained by clicking on the trial number.",
                       tags$br(),tags$br(),
                       
@@ -364,14 +363,14 @@ ui <- bootstrapPage(
                             tabPanel("Methods",
                                      tags$br(),
                                      
-                                     "The site is currently updated approximately once per month. The last update was carried out on ",tags$b(paste0(update_full,".")),tags$br(),tags$br(),
+                                     "The site is no longer updated. The last update was carried out on 11th August 2022.",tags$br(),tags$br(),
                                      
                                      tags$h4("Approach"),
                                      "This living review summarises available clinical trial data (phase I to phase III) on different COVID-19 vaccine candidates. 
-                                     Since 24 August 2020, we have performed a weekly (up to September 2021) or monthly (September 2021 onwards) search of",strong(em("medRxiv")),"and",strong("PubMed"),
+                                     Between 24 August 2020 and 11 August 2022, we performed weekly (up to September 2021) or monthly (September 2021 onwards) searches of",strong(em("medRxiv")),"and",strong("PubMed"),
                                      "(see", tags$b("Search log"),"below) using the R packages",em("medrxivr"),"and",em("easyPubMed."),
-                                     "Titles and abstracts are screened to identify articles reporting outcome data from human clinical trials of COVID-19 vaccine candidates.",
-                                     "Additional preprints are identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
+                                     "Titles and abstracts were screened to identify articles reporting outcome data from human clinical trials of COVID-19 vaccine candidates.",
+                                     "Additional preprints were identified using the", tags$a(href="https://www.who.int/publications/m/item/draft-landscape-of-covid-19-candidate-vaccines", "WHO COVID-19 vaccine landscape.", target="_blank"),
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Search term"),
@@ -379,7 +378,7 @@ ui <- bootstrapPage(
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Data extraction"),
-                                     "We extract data on the following study attributes:",
+                                     "We extracted data on the following study attributes:",
                                      tags$ul(
                                        tags$li(strong("Design:"),"location, number and age of individuals enrolled, vaccine dose, etc."),
                                        tags$li(strong("Safety profile:"),"serious adverse events as well as non-serious adverse events with ≥25% prevalence in one or more study groups."),
@@ -390,14 +389,13 @@ ui <- bootstrapPage(
                                                estimates stratified by relevant covariates (dose regimen, age group, ethnicity, and presence of comorbidities)."),
                                        tags$li(strong("Planned next steps"),"for clinical testing and/or manufacture. See",strong("Implementation"),"tab for additional details.")
                                      ),
-                                     "Data extraction is performed for all peer-reviewed manuscripts. Links are provided to all preprints.",
+                                     "Data extraction was performed for all peer-reviewed manuscripts. Links are provided to all preprints.",
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Protocol update"),
-                                     "Data extraction was performed for all eligible peer-reviewed manuscripts published up until", tags$b("31st May 2021,"),
-                                     "and all efficacy studies published up until 30th June 2021.",
+                                     "Data extraction was performed for all eligible peer-reviewed manuscripts published up until 31st May 2021 and all efficacy studies published up until 30th June 2021.",
                                      tags$br(),tags$br(),
-                                     "As of", tags$b("1st July 2021,")," new articles are identified and summarised in the table below, but full data extraction is no longer performed.",
+                                     "New articles published between 1st July 2021 and 11th August 2022 are summarised in the table below, but full data extraction was not performed.",
                                      tags$br(),tags$br(),
                                      
                                      tags$h4("Eligible studies"),
@@ -568,6 +566,7 @@ ui <- bootstrapPage(
              ###########################
              
              tabPanel("Implementation",
+                      "The site is no longer updated. The last update was carried out on 11th August 2022.",tags$br(),tags$br(),
                       
                       h4("Equity of vaccine roll-out"),
                       "Vaccines against COVID-19 are now being rolled out across the globe. However, we are falling considerably short of achieving equitable global distribution.
@@ -610,7 +609,7 @@ ui <- bootstrapPage(
                       "Source for income group data:", a("World Bank.", href="https://data.worldbank.org", target="_blank"),
                       
                       tags$br(),tags$br(),
-                      h4("Testing and implementation status of vaccines authorised for limited or full use"),
+                      h4("Testing and implementation status of vaccines authorised for limited or full use as of 11th August 2022"),
                       tags$br(),
                       plotOutput("summary_matrix", height="900px", width="800px"),
                       tags$br(),
