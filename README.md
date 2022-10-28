@@ -2,7 +2,7 @@
 
 This github page contains the code and input data for the [COVID-19 vaccine tracker](https://vac-lshtm.shinyapps.io/ncov_vaccine_landscape/) developed by the Vaccine Centre at the London School of Hygiene & Tropical Medicine.
 
-The Shiny app, first launched in April 2020, follows candidates as they progress through the development pipeline.
+The Shiny app, first launched in April 2020 and maintained until August 2022, followed candidates as they progressed through the development pipeline.
 
 ## Analysis code
 
