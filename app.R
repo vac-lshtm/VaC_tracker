@@ -1128,13 +1128,13 @@ server <- function(input, output, session) {
   })
   
   output$outcome_plot_efficacy <- renderPlot({
-    #reactive_db = db %>% filter(Identifier == "Oxford ChAdOx1 phase III")
+    #reactive_db = db %>% filter(Identifier == "Novavax NVX-CoV2373 phase III (UK)")
     db_piecharts = reactive_db()
     db_piecharts$profile_plotgroup = "age"
     db_piecharts$profile_plotgroup[db_piecharts$Efficacyprofileplotgroup %in% c("White", "Black", "Asian", "Mixed", "Other", "Indigenous", "Not reported")] = "ethnicity"
     db_piecharts$Efficacyprofileplotgroup = factor(db_piecharts$Efficacyprofileplotgroup, levels = db_piecharts$Efficacyprofileplotgroup)
     
-    if ( reactive_db()$Identifier == "Wuhan-Sinopharm/Beijing-Sinopharm phase III") { db_piecharts$EfficacyN[1] = 38206 } # modify N to include total from 3 arms of study
+    if ( reactive_db()$Identifier[1] == "Wuhan-Sinopharm/Beijing-Sinopharm phase III") { db_piecharts$EfficacyN[1] = 38206 } # modify N to include total from 3 arms of study
     
     g1 = ggplot(subset(db_piecharts, profile_plotgroup=="age"), aes(x="", y=as.numeric(Efficacyprofileplotpercentage), fill=Efficacyprofileplotgroup)) +
       geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + theme_minimal() + guides(fill=guide_legend(title="Age (y)")) +
@@ -1166,7 +1166,7 @@ server <- function(input, output, session) {
       theme(strip.background = element_blank(), strip.text.y = element_text(size=0), 
             text = element_text(size=11), legend.text=element_text(size=9)) 
     
-    if ( reactive_db()$Identifier=="BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)" ) { 
+    if ( reactive_db()$Identifier[1]=="BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)" ) { 
       # change nrow to 2 for Frenck Jr given lack of subgroup analyses
       plot_grid(plot_grid(g1, g2, ncol=1, nrow=2, rel_heights = c(1.1,1,1.1),align="v"), g3, ncol=2, rel_widths = c(1,3)) 
     } else {
@@ -1174,8 +1174,8 @@ server <- function(input, output, session) {
     }
   }, res = 100, height = function(){ 
     # tune output height up or down based on number of subgroups included
-    if ( reactive_db()$Identifier=="BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)" ) { 350 } 
-    else if ( reactive_db()$Identifier=="Janssen Ad26.COV2.S phase III" ) { 600 } 
+    if ( reactive_db()$Identifier[1]=="BioNTech BNT162 phase III (report 2 - adolescents; Frenck Jr 2021)" ) { 350 } 
+    else if ( reactive_db()$Identifier[1]=="Janssen Ad26.COV2.S phase III" ) { 600 } 
     else { 500 } 
   }
   )
